@@ -1,7 +1,7 @@
 CREATE TABLE membership (
 membership_id serial primary key,
 membership_type varchar(200),
-price numeric(2000),
+price numeric(1000),
 start_date date,
 end_date date
 );
@@ -20,7 +20,7 @@ membership_id INT REFERENCES membership(membership_id)
 
 );
 
-insert into profile (email, password, profile_pic, first_name, last_name, birthday, membership_id)
+insert into profile (email, password, first_name, last_name)
 values('stacy@testmail.com', 'stacy', 'Stacy', 'Grenier' );
 
 
@@ -43,8 +43,8 @@ instructor_id int references instructor(instructor_id)
 
 CREATE TABLE circuit_completed (
 completed_id serial primary key,
-circuit_id references circuit_moves(circuit_id),
-user_id references profile(user_id),
+circuit_id int references circuit_moves(circuit_id),
+user_id int references profile(user_id),
 date date
 
 );
@@ -52,7 +52,7 @@ date date
 CREATE TABLE quit_reasons (
     reason_id serial primary key,
     reason varchar(300),
-    user_id references profile(user_id),
+    user_id int references profile(user_id),
     date date
 
 );
@@ -60,6 +60,14 @@ CREATE TABLE quit_reasons (
 CREATE TABLE photos (
     photo_id serial primary key,
     photo text,
-    circuit_id references circuit_moves(circuit_id)
+    circuit_id int references circuit_moves(circuit_id)
 );
 
+
+select * from membership;
+select * from profile;
+select * from instructor;
+select * from circuit_moves;
+select * from circuit_completed;
+select * from quit_reasons;
+select * from photos;

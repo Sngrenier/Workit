@@ -1,14 +1,15 @@
 module.exports = {
     register: async(req, res) => {
+        
 
     },
     login: async(req, res)=>{
 
     },
-    getUser: async(req, res)=>{
+    get_user: async(req, res)=>{
 
     }, 
-    logOut: async(req, res)=> {
+    log_out: async(req, res)=> {
         
     }
 }

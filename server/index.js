@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 
 authCtrl = require('./controllers/authController')
+circuitCtrl= require(`./controllers/circuitController`)
 
 const massive = require('massive')
 const session = require('express-session')
@@ -23,5 +24,18 @@ massive({
     })
 
 
-//Endpoints---------------------------
+//User Endpoints---------------------------
+
+app.post(`/auth/register`, authCtrl.register)
+app.post(`/auth/login`, authCtrl.login)
+app.get(`/myaccount`, authCtrl.get_user)
+app.post(`/logout`, authCtrl.log_out)
+
+
+//Circuit Endpoints------------------------
+
+app.get(`/circuitselection/:circuit_id`, circuitCtrl.read_circuit_selection)
+app.post(`/completedcircuit`, circuitCtrl.completed_circuit)
+app.get(`/viewcompletedcircuits`, circuitCtrl.view_completed_circuits)
+app.post(`/quitreasons`, circuitCtrl.quit_reasons)
 
