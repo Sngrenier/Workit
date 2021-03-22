@@ -1,0 +1,1 @@
+select * from profile where email = $1

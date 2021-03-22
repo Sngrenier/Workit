@@ -1,4 +1,8 @@
 module.exports = {
+
+    read_all_circuits: async(req, res)=> {
+
+    },
     
     read_circuit_selection: async (req, res)=> {
 
