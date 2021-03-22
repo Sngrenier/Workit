@@ -22,13 +22,10 @@ class App extends Component {
       <React.Fragment>
 
         <Switch>
-<<<<<<< HEAD
           <Route exact path="/" component={Register} />
           <Route path="/landing" component={Landing} />
-=======
           <Route exact path="/register" component={Register} />
           <Route path="/login" component={Login} />
->>>>>>> main
           <Route path="/circuitselection" component={SelectCircuit} />
           <Route path="/moveCarousel" component={MoveCarousel} />
           <Route path="/moveDetail" component={MoveDetail} />
