@@ -4,6 +4,7 @@ import "./reset.css"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Register from './components/Authentication/Register'
+import Login from './components/Authentication/Login'
 import SelectCircuit from './components/Circuits/SelectCircuit'
 import QuitCircuit from './components/Circuits/QuitCircuit'
 import Profile from './components/Profile/Profile'
@@ -21,8 +22,13 @@ class App extends Component {
       <React.Fragment>
 
         <Switch>
+<<<<<<< HEAD
           <Route exact path="/" component={Register} />
           <Route path="/landing" component={Landing} />
+=======
+          <Route exact path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+>>>>>>> main
           <Route path="/circuitselection" component={SelectCircuit} />
           <Route path="/moveCarousel" component={MoveCarousel} />
           <Route path="/moveDetail" component={MoveDetail} />

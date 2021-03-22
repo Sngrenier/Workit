@@ -1,3 +1,14 @@
+
+Drop table if exists circuit_completed;
+Drop table if exists quit_reasons;
+Drop table if exists photos;
+Drop table if exists circuit;
+Drop table if exists moves;
+Drop table if exists profile;
+Drop table if exists instructor;
+Drop table if exists membership;
+
+
 CREATE TABLE membership (
 membership_id serial primary key,
 membership_type varchar(200),
@@ -5,6 +16,7 @@ price numeric(1000),
 start_date date,
 end_date date
 );
+
 
 
 CREATE TABLE profile (
@@ -24,6 +36,7 @@ insert into profile (email, password, first_name, last_name)
 values('stacy@testmail.com', 'stacy', 'Stacy', 'Grenier' );
 
 
+
 CREATE TABLE instructor(
  instructor_id serial primary key,
  first_name varchar(255),
@@ -32,8 +45,7 @@ CREATE TABLE instructor(
 );
 
 
-
-CREATE TABLE circuit_moves(
+CREATE TABLE circuit(
 circuit_id serial primary key,
 name varchar(255),
 description varchar(2000),
@@ -41,9 +53,19 @@ instructor_id int references instructor(instructor_id)
 
 );
 
+CREATE TABLE moves(
+moves_id serial primary key,
+move_name varchar(200) NOT NULL,
+move_description varchar(2000),
+circuit_id int references circuit(circuit_id)
+
+);
+
+
+
 CREATE TABLE circuit_completed (
 completed_id serial primary key,
-circuit_id int references circuit_moves(circuit_id),
+circuit_id int references circuit(circuit_id),
 user_id int references profile(user_id),
 date date
 
@@ -57,17 +79,25 @@ CREATE TABLE quit_reasons (
 
 );
 
+
+
+
+
 CREATE TABLE photos (
     photo_id serial primary key,
     photo text,
-    circuit_id int references circuit_moves(circuit_id)
+    circuit_id int references circuit(circuit_id),
+    moves_id int references moves(moves_id)
 );
+
+
 
 
 select * from membership;
 select * from profile;
 select * from instructor;
-select * from circuit_moves;
+select * from circuit;
+select * from moves;
 select * from circuit_completed;
 select * from quit_reasons;
 select * from photos;
