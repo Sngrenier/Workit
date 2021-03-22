@@ -43,6 +43,7 @@ app.post(`/logout`, authCtrl.log_out)
 
 //Circuit Endpoints------------------------
 
+app.get(`/circuits`, circuitCtrl.read_all_circuits)
 app.get(`/circuitselection/:circuit_id`, circuitCtrl.read_circuit_selection)
 app.post(`/completedcircuit`, circuitCtrl.completed_circuit)
 app.get(`/viewcompletedcircuits`, circuitCtrl.view_completed_circuits)
