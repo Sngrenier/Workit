@@ -1,13 +1,18 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
-import "./reset.css";
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { Component } from "react"
+import { Switch, Route } from "react-router-dom"
+import "./reset.css"
+import "./App.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 import Register from './components/Authentication/Register'
 import SelectCircuit from './components/Circuits/SelectCircuit'
 import QuitCircuit from './components/Circuits/QuitCircuit'
 import Profile from './components/Profile/Profile'
 import CompletedCircuit from './components/Circuits/CompletedCircuit'
+import Landing from './components/Landing/LandingPage'
+import MoveCarousel from './components/Circuits/MoveCarousel'
+import MoveDetail from './components/MoveDetail/MoveDetail'
+import Trainers from './components/Trainers/MeetTrainers'
+import CircuitHistory from './components/Circuits/CircuitHistory'
 
 
 class App extends Component {
@@ -17,10 +22,15 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Register} />
+          <Route path="/landing" component={Landing} />
           <Route path="/circuitselection" component={SelectCircuit} />
+          <Route path="/moveCarousel" component={MoveCarousel} />
+          <Route path="/moveDetail" component={MoveDetail} />
           <Route path="/quitcircuit" component={QuitCircuit} />
-          <Route path="/profile" component={Profile} />
           <Route path="/completedcircuit" component={CompletedCircuit} />
+          <Route path="/trainers" component={Trainers} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/circuitHistory" component={CircuitHistory} />
         </Switch>
       </React.Fragment>
     );
