@@ -38,7 +38,7 @@ massive({
 app.post(`/auth/register`, authCtrl.register)
 app.post(`/auth/login`, authCtrl.login)
 app.get(`/myaccount`, authCtrl.get_user)
-app.post(`/logout`, authCtrl.log_out)
+app.post(`/logout`, authCtrl.logout)
 
 
 //Circuit Endpoints------------------------

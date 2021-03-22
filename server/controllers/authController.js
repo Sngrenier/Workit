@@ -16,7 +16,7 @@ module.exports = {
     // },
 
 
-    register_user: async(req, res) => {
+    register: async(req, res) => {
         try{
             const {email, password, first_name, last_name, birthday, membership_type, price} = req.body
             const db = req.app.get('db')
@@ -85,7 +85,7 @@ module.exports = {
 
     }, 
 
-    log_out: (req, res)=> {
+    logout: (req, res)=> {
         req.session.destroy()
         return res.status(200)
         
