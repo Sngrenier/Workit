@@ -8,7 +8,7 @@ const massive = require('massive')
 const session = require('express-session')
 const app = express();
 
-const {SERVER_PORT, CONNECTION_STRING} = process.env
+const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
 app.use(express.json());
 
@@ -22,6 +22,15 @@ massive({
         console.log('db connected')
         app.listen(SERVER_PORT, ()=> console.log(`running on ${SERVER_PORT}`));
     })
+
+
+    app.use(session({
+        secret: SESSION_SECRET,
+        resave: false,
+        saveUninitialized: true,
+        cookie: {maxAge: 30 * 24 * 60 * 60 * 1000}
+
+    }))
 
 
 //User Endpoints---------------------------
