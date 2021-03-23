@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import CircuitList from './CircuitList'
+import Circuit from './Circuit'
+import NavButton from '../NavButton'
 
 
 
@@ -18,6 +20,7 @@ export default class LandingPage extends Component {
                 
                 
                 <CircuitList/>
+                <Circuit/>
 
 
                 </section>

@@ -40,6 +40,13 @@ CREATE TABLE instructor(
 );
 
 
+insert into instructor (first_name, last_name, instructor_description)
+values ('Gina', 'Linetti', 'Gina has 6 years of fitness instructor experience'),
+('Sarah', 'Moss', 'Sarah has 3 years of fitness instructor experience and got her start in gymnastics'),
+('Shae', 'Peterson', 'Shae got her start instructing fitness on youtube and has over 3 million followers'),
+('Heather', 'Carson', 'Heather is passionate about nutrition and physical exercise and has been training for 12 years');
+
+
 CREATE TABLE circuit(
 circuit_id serial primary key,
 title varchar(255),
@@ -48,6 +55,10 @@ mainImg text,
 info varchar(2000),
 instructor_id int references instructor(instructor_id)
 );
+
+
+
+
 
 
 CREATE TABLE moves(

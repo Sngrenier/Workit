@@ -28,13 +28,13 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
           <Route path="/circuitselection" component={SelectCircuit} />
-          <Route path="/moveCarousel" component={MoveCarousel} />
-          <Route path="/moveDetail" component={MoveDetail} />
+          <Route path="/movecarousel" component={MoveCarousel} />
+          <Route path="/movedetail" component={MoveDetail} />
           <Route path="/quitcircuit" component={QuitCircuit} />
           <Route path="/completedcircuit" component={CompletedCircuit} />
           <Route path="/trainers" component={Trainers} />
           <Route path="/profile" component={Profile} />
-          <Route path="/circuitHistory" component={CircuitHistory} />
+          <Route path="/circuithistory" component={CircuitHistory} />
         </Switch>
       </React.Fragment>
     );

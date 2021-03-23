@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {useState, useEffect} from 'react'
+import { ButtonContainer } from '../NavButton'
 import MoveCarousel from './MoveCarousel'
 
 //this selects the circuit for the user to start the workout
@@ -16,10 +17,10 @@ const SelectCircuit =()=> {
             <h3>what you'll need</h3>
             <h3>what you'll do</h3>
 
-            <button
+            <ButtonContainer
             className='startWorkout'
             onClick={<MoveCarousel/>}
-            >Start Workout </button>
+            >Start Workout  </ButtonContainer>
 
 
         </div>
