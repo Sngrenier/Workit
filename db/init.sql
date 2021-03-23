@@ -50,11 +50,18 @@ instructor_id int references instructor(instructor_id)
 );
 
 CREATE TABLE moves(
-moves_id serial primary key,
-move_name varchar(200) NOT NULL,
-move_description varchar(2000),
-circuit_id int references circuit(circuit_id)
-
+move_id serial primary key,
+move_title varchar(200) NOT NULL,
+step1 varchar(2000),
+step2 varchar(2000),
+step3 varchar(2000),
+step4 varchar(2000),
+step5 varchar(2000),
+step6 varchar(2000),
+circuit_id int references circuit(circuit_id),
+image text,
+reps varchar(100),
+gif text
 );
 
 
