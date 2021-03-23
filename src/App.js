@@ -24,7 +24,6 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Register} />
           <Route path="/landing" component={Landing} />
-          <Route exact path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/circuitselection" component={SelectCircuit} />
           <Route path="/moveCarousel" component={MoveCarousel} />

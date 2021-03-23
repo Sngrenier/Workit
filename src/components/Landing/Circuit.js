@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 export default class Circuit extends Component {
     render() {
-        const {moves_id, title} = this.props.circuitMove
+        const {moves_id, title} = this.props.circuits
         console.log(this.props)
         return (
             <CircuitWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
@@ -16,7 +16,7 @@ export default class Circuit extends Component {
                         {(value) => (
                         <div className="img-container p-5" onClick={()=> value.handleDetail(moves_id)}>
                     <Link to="/details">
-                        <img src={img} alt="product" className="card-img-top"
+                        <img src="https://media.restorationhardware.com/is/image/rhis/CO19SHF_p004x005_FF399?$l-pd1$&wid=650" alt="product" className="card-img-top"
                         />
                     </Link>
                     </div>)}
@@ -24,11 +24,11 @@ export default class Circuit extends Component {
 
                     <div className="card-footer d-flex justify-content-between">
                         <p className="align-self-center mb-0">
-                            {title}
+                            Hiya!
                         </p>
                         <h5 className="text-gray font-italic mb-0">
-                            <span className="mr-1">$</span>
-                            {price}
+                            <span className="mr-1">Today</span>
+                            Info
                         </h5>
                     </div>
                 </div>
@@ -37,19 +37,17 @@ export default class Circuit extends Component {
     }
 }
 
-Product.propTypes = {
-    product:PropTypes.shape({
-        id:PropTypes.number,
-        img:PropTypes.string,
-        title:PropTypes.string,
-        price:PropTypes.number,
-        inCart:PropTypes.bool
-    }).isRequired
-}
+// circuit.propTypes = {
+//     circuit:PropTypes.shape({
+//         id:PropTypes.number,
+//         img:PropTypes.string,
+//         title:PropTypes.string,
+//     }).isRequired
+// }
 
 
 
-const ProductWrapper = styled.div`
+const CircuitWrapper = styled.div`
 .card{
     border-color: transparent;
     transition: all 0.5s linear;

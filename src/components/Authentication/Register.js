@@ -7,9 +7,6 @@ export default class Register extends Component {
     render() {
         return (
             <div>
-                <Link to='/circuitselection'>
-                I'm the Register Component
-                </Link>
                 <h1>Create your account</h1>
 
                 <div className='profileImage'>
@@ -78,6 +75,9 @@ export default class Register extends Component {
 
                 </form>
 
+            <Link to="/landing">
+                Go to landing page
+            </Link>
 
             </div>
         )
