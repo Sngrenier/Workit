@@ -36,12 +36,14 @@ const logout = () => {
     axios
     .post('/logout')
     .then((_)=> {
-        push('/login')
+        push('/')
     })
 }
 
+return(
+    <AuthContext.Provider value={{user, setUser, register, login, logout}}>
+    {props.children}
+    </AuthContext.Provider>
 
-
-
-
+)
 }

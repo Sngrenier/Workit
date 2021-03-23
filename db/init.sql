@@ -2,8 +2,8 @@
 Drop table if exists circuit_completed;
 Drop table if exists quit_reasons;
 Drop table if exists photos;
-Drop table if exists circuit;
 Drop table if exists moves;
+Drop table if exists circuit;
 Drop table if exists profile;
 Drop table if exists instructor;
 Drop table if exists membership;
@@ -31,10 +31,6 @@ birthday date,
 membership_id INT REFERENCES membership(membership_id)
 
 );
-
-insert into profile (email, password, first_name, last_name)
-values('stacy@testmail.com', 'stacy', 'Stacy', 'Grenier' );
-
 
 
 CREATE TABLE instructor(

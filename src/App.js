@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom"
 import "./reset.css"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+import Auth from './components/Authentication/Auth'
 import Register from './components/Authentication/Register'
 import Login from './components/Authentication/Login'
 import SelectCircuit from './components/Circuits/SelectCircuit'
@@ -22,7 +23,7 @@ class App extends Component {
       <React.Fragment>
 
         <Switch>
-          <Route exact path="/" component={Register} />
+          <Route exact path="/" component={Auth} />
           <Route path="/landing" component={Landing} />
           <Route path="/login" component={Login} />
           <Route path="/circuitselection" component={SelectCircuit} />
