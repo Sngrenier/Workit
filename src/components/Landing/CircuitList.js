@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import {CircuitConsumer} from '../../context/circuitContext'
 import Circuit from './Circuit'
@@ -7,11 +8,13 @@ import Circuit from './Circuit'
 export default class CircuitList extends Component {
 
     render() {
+
+  
         return (
             <React.Fragment>
             <div className="py-5">
                 <div className="container">
-                    <div className="row">
+                    {/* <div className="row">
 
                         <CircuitConsumer>
                                 {(value) => {
@@ -20,10 +23,12 @@ export default class CircuitList extends Component {
                                     })
                                 }}
                             </CircuitConsumer>
-                            </div>
+                            </div> */}
+                             
                         </div>
                     </div>
         </React.Fragment>
         )
     }
 }
+

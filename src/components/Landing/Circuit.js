@@ -5,12 +5,15 @@ import {CircuitConsumer} from '../../context/circuitContext'
 import PropTypes from 'prop-types'
 
 
+//this displays the circuit to read more information 
+
 export default class Circuit extends Component {
     render() {
         const {moves_id, title} = this.props.circuits
         console.log(this.props)
         return (
             <CircuitWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+                <div>
                 <div className="card">
                     <CircuitConsumer>
                         {(value) => (
@@ -31,6 +34,10 @@ export default class Circuit extends Component {
                             Info
                         </h5>
                     </div>
+                    </div>
+
+                 
+
                 </div>
             </CircuitWrapper>
         )

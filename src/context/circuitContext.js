@@ -21,7 +21,7 @@ class CircuitProvider extends Component {
   }
 
   setCircuits = () => {
-    axios.get(`/api/circuits`).then((res) => {
+    axios.get(`/circuits`).then((res) => {
       this.setState({
         circuits: res.data,
       });
@@ -35,7 +35,7 @@ class CircuitProvider extends Component {
   };
 
   handleDetail = (moves_id) => {
-    axios.get(`/api/detailMove/${moves_id}`).then((res) => {
+    axios.get(`/detailMove/${moves_id}`).then((res) => {
       this.setState({
         detailMove: res.data,
       });

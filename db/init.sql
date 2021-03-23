@@ -1,7 +1,6 @@
 
 Drop table if exists circuit_completed;
 Drop table if exists quit_reasons;
-Drop table if exists photos;
 Drop table if exists moves;
 Drop table if exists circuit;
 Drop table if exists profile;
@@ -43,17 +42,27 @@ CREATE TABLE instructor(
 
 CREATE TABLE circuit(
 circuit_id serial primary key,
-name varchar(255),
-description varchar(2000),
+title varchar(255),
+subtitle varchar(255),
+mainImg text,
+info varchar(2000),
 instructor_id int references instructor(instructor_id)
-
 );
 
+
 CREATE TABLE moves(
-moves_id serial primary key,
-move_name varchar(200) NOT NULL,
-move_description varchar(2000),
-circuit_id int references circuit(circuit_id)
+move_id serial primary key,
+move_title varchar(200) NOT NULL,
+step1 varchar(2000),
+step2 varchar(2000),
+step3 varchar(2000),
+step4 varchar(2000),
+step5 varchar(2000),
+step6 varchar(2000),
+circuit_id int references circuit(circuit_id),
+image text,
+reps varchar(100),
+gif text
 
 );
 
@@ -77,18 +86,6 @@ CREATE TABLE quit_reasons (
 
 
 
-
-
-CREATE TABLE photos (
-    photo_id serial primary key,
-    photo text,
-    circuit_id int references circuit(circuit_id),
-    moves_id int references moves(moves_id)
-);
-
-
-
-
 select * from membership;
 select * from profile;
 select * from instructor;
@@ -96,4 +93,8 @@ select * from circuit;
 select * from moves;
 select * from circuit_completed;
 select * from quit_reasons;
-select * from photos;
+
+
+
+
+

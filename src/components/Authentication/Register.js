@@ -129,9 +129,9 @@ console.log(membership_type, membership_price, 'state after onClick')
                         />
                 </form>
 
-            <Link to="/landing">
+            {/* <Link to="/landing">
                 Go to landing page
-            </Link>
+            </Link> */}
 
             </div>
         )
