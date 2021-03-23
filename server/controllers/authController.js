@@ -17,8 +17,10 @@ module.exports = {
 
 
     register: async(req, res) => {
+        console.log(req.body, 'register controller function data')
+
         try{
-            const {email, password, first_name, last_name, birthday, membership_type, price} = req.body
+            const {email, password, first_name, last_name, birthday, membership_type, membership_price} = req.body
             const db = req.app.get('db')
             const date = new Date
             const alreadyExist = await db.user.find_user_by_email([email])
@@ -27,11 +29,14 @@ module.exports = {
             if(foundUser){
                 return res.status(409).send('An account already exists with this email address')
             }
+            const registerMembership = await db.user.register_membership([membership_type, membership_price, date])
+            const membership_id = registerMembership[0]
+            console.log(membership_id, 'this is the membership_id i am trying to pass')
 
             const salt = bcrypt.genSaltSync(10)
             const hash = bcrypt.hashSync(password, salt)
-            const registeredUser = await db.user.register_user([email, password, first_name, last_name, birthday])
-            const registerMembership = await db.user.register_membership([membership_type, price, date])
+            const registeredUser = await db.user.register_user([email, hash, first_name, last_name, birthday, membership_id.membership_id])
+      
             const user = registeredUser[0]
             delete user.password
             req.session.user = user
