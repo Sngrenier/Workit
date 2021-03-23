@@ -7,8 +7,6 @@ import axios from 'axios'
 
 
 const Register =()=>{
-
-
         
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
@@ -111,7 +109,7 @@ console.log(membership_type, membership_price, 'state after onClick')
 
 
 
-                    <form 
+                    <form
                     className='registrationForm'
                     onSubmit={onSignUp}>
 
@@ -129,43 +127,11 @@ console.log(membership_type, membership_price, 'state after onClick')
                         placeholder='password'
                         onChange={(e)=>setPassword(e.target.value)}
                         />
+                </form>
 
-
-                        <input 
-                        className='firstNameInput'
-                        type='text'
-                        placeholder='First Name'
-                        onChange={(e)=>setfirst_name(e.target.value)}
-                        
-                        />
-
-
-                        <input 
-                        className='lastNameInput'
-                        type='text'
-                        placeholder='Last Name'
-                        onChange={(e)=>setlast_name(e.target.value)}
-                        
-                        />
-
-                        <input 
-                        
-                        className='birthdayInput'
-                        type='date'
-                        placeholder='Birthday'
-                        onChange={(e)=>setBirthday(e.target.value)}
-                        />
-
-                    
-
-                        <button
-                        className='signUp'
-                       
-                        >
-                        Sign Up   
-                        </button>
-
-                    </form>
+            <Link to="/landing">
+                Go to landing page
+            </Link>
 
             </div>
         )
