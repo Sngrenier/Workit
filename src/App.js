@@ -10,7 +10,7 @@ import SelectCircuit from './components/Circuits/SelectCircuit'
 import QuitCircuit from './components/Circuits/QuitCircuit'
 import Profile from './components/Profile/Profile'
 import CompletedCircuit from './components/Circuits/CompletedCircuit'
-import Landing from './components/Landing/LandingPage'
+import LandingPage from './components/Landing/LandingPage'
 import MoveCarousel from './components/Circuits/MoveCarousel'
 import MoveDetail from './components/MoveDetail/MoveDetail'
 import Trainers from './components/Trainers/MeetTrainers'
@@ -24,16 +24,17 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Auth} />
-          <Route path="/landing" component={Landing} />
+          <Route path="/landing" component={LandingPage} />
           <Route path="/login" component={Login} />
+          <Route path='/register' component={Register} />
           <Route path="/circuitselection" component={SelectCircuit} />
-          <Route path="/moveCarousel" component={MoveCarousel} />
-          <Route path="/moveDetail" component={MoveDetail} />
+          <Route path="/movecarousel" component={MoveCarousel} />
+          <Route path="/movedetail" component={MoveDetail} />
           <Route path="/quitcircuit" component={QuitCircuit} />
           <Route path="/completedcircuit" component={CompletedCircuit} />
           <Route path="/trainers" component={Trainers} />
           <Route path="/profile" component={Profile} />
-          <Route path="/circuitHistory" component={CircuitHistory} />
+          <Route path="/circuithistory" component={CircuitHistory} />
         </Switch>
       </React.Fragment>
     );

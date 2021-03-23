@@ -5,16 +5,20 @@ import {CircuitConsumer} from '../../context/circuitContext'
 import PropTypes from 'prop-types'
 
 
+//this displays the circuit to read more information 
+
 export default class Circuit extends Component {
     render() {
-        const {moves_id, title} = this.props.circuits
-        console.log(this.props)
+        // const {circuit_id, title, subtitle, mainimg, info, instructor_id } = this.props.circuits
+        const {move_id} = this.props
+        // console.log(title, circuit_id, subtitle, mainimg, info, instructor_id)
         return (
             <CircuitWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+                <div>
                 <div className="card">
                     <CircuitConsumer>
                         {(value) => (
-                        <div className="img-container p-5" onClick={()=> value.handleDetail(moves_id)}>
+                        <div className="img-container p-5" onClick={()=> value.handleDetail(props.move_id)}>
                     <Link to="/details">
                         <img src="https://media.restorationhardware.com/is/image/rhis/CO19SHF_p004x005_FF399?$l-pd1$&wid=650" alt="product" className="card-img-top"
                         />
@@ -31,6 +35,10 @@ export default class Circuit extends Component {
                             Info
                         </h5>
                     </div>
+                    </div>
+
+                 
+
                 </div>
             </CircuitWrapper>
         )

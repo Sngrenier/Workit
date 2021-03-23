@@ -8,7 +8,7 @@ const CircuitContext = React.createContext();
 class CircuitProvider extends Component {
   state = {
     circuits: [],
-    detailMove: [],
+    moves: [],
     userInput: "",
     modalOpen: false,
     modalCircuit: [],
@@ -16,17 +16,28 @@ class CircuitProvider extends Component {
 
   //Mounting the new set of values
   componentDidMount() {
-    this.setCircuits();
+    this.setCircuits()
+    this.setMoves()
     // console.log("test");
   }
 
   setCircuits = () => {
-    axios.get(`/api/circuits`).then((res) => {
-      this.setState({
-        circuits: res.data,
+    axios.get(`/circuits`).then((res) => {
+      console.log(res.data, 'setCircuits function returning the circuits from the DB table')
+      this.setState({circuits: res.data})
+      
+
+    
       });
-    });
   };
+
+  setMoves =()=>{
+    axios.get(`/moves`)
+    .then((res)=>{
+      console.log(res.data, 'setMoves function')
+      this.setState({moves: res.data})
+    })
+  }
 
 
   getMove = (id) => {
@@ -35,7 +46,7 @@ class CircuitProvider extends Component {
   };
 
   handleDetail = (moves_id) => {
-    axios.get(`/api/detailMove/${moves_id}`).then((res) => {
+    axios.get(`/detailMove/${moves_id}`).then((res) => {
       this.setState({
         detailMove: res.data,
       });

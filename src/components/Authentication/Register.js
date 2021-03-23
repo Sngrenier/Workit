@@ -7,8 +7,6 @@ import axios from 'axios'
 
 
 const Register =()=>{
-
-
         
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
@@ -60,6 +58,7 @@ console.log(membership_type, membership_price, 'state after onClick')
 
     return (
             <div>
+              
                 <h1>Create your account</h1>
 
                 <div className='profileImage'>
@@ -130,9 +129,9 @@ console.log(membership_type, membership_price, 'state after onClick')
                         />
                 </form>
 
-            <Link to="/landing">
+            {/* <Link to="/landing">
                 Go to landing page
-            </Link>
+            </Link> */}
 
             </div>
         )

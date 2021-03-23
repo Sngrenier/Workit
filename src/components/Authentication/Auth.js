@@ -1,14 +1,15 @@
+import {Link} from 'react-router-dom'
+
 const Auth = ()=> {
 
 return (
     <div>
         
     <h1>Workit</h1>
-    <button 
-    className='loginBtn'
 
-    
-    >Login</button>
+    <Link to='/login'>
+    <button 
+    className='loginBtn'>Login</button></Link>
 
 
     Welcome to WORKit!
@@ -17,7 +18,10 @@ return (
     
     <button>Continue with Facebook</button>
     
-    <button>Register with email</button>
+
+        <Link to='/register'>
+        <button>Register with email</button> 
+        </Link>
 
     </div>
 )
