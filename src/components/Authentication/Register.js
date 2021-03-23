@@ -60,9 +60,7 @@ console.log(membership_type, membership_price, 'state after onClick')
 
     return (
             <div>
-                <Link to='/circuitselection'>
-                I'm the Register Component
-                </Link>
+              
                 <h1>Create your account</h1>
 
                 <div className='profileImage'>
