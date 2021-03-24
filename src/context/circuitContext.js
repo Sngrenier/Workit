@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import {withRouter} from 'react-router-dom'
 
 const CircuitContext = React.createContext();
 //Provider
 //Consumer
 
-class CircuitProvider extends Component {
+
+
+class CircuitProvidertest extends Component {
   state = {
     circuits: [],
+    individualCircuit: [],
     moves: [],
     userInput: "",
     modalOpen: false,
@@ -30,12 +33,22 @@ class CircuitProvider extends Component {
       .catch(error=> console.log(error))
   };
 
+  // setCircuitSelection = (id) => {
+  //   axios.get(`/circuitselection/${id}`)
+  //   .then( (res)=>{
+
+  //     this.setState({individualCircuit: res.data})
+  //     this.props.history.push()
+  //   }
+  //   )
+  // }
+
   setMoves =(circuit_id)=>{
     axios.get(`/moves/${circuit_id}`)
     .then((res)=>{
       console.log(res.data, 'setMoves function')
       this.setState({moves: res.data})
-      this.props.history.push('/circuitselection')
+      
   }).catch(err=>console.log(err))
   }
 
@@ -91,5 +104,7 @@ class CircuitProvider extends Component {
 }
 
 const CircuitConsumer = CircuitContext.Consumer;
+const CircuitProvider = withRouter(CircuitProvidertest)
+// export withRouter(CircuitProvider)
 
-export { CircuitProvider, CircuitConsumer, CircuitContext };
+ export  { CircuitProvider, CircuitConsumer, CircuitContext }
