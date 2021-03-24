@@ -5,7 +5,7 @@ import {CircuitContext} from '../../context/circuitContext'
 import CompletedCircuit from './CompletedCircuit'
 import {Link} from 'react-router-dom'
 import './SelectCircuit.css'
-import {useHistory} from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 import MoveSteps from '../MoveStepsModal/MoveStepsModal'
 
 
@@ -16,7 +16,7 @@ const SelectCircuit =()=> {
     const circuitContext = useContext(CircuitContext);
     const [moves, setMoves] =useState([]) 
     const {push} = useHistory()
-    
+    // const {move_id} = useParams()
     
 
     useEffect(()=>{
@@ -35,7 +35,7 @@ const SelectCircuit =()=> {
     const readMoveDetails = (id)=> {
         push(`movesteps/${id}`)
 
-    }
+        }
 
     return (
         <div>
@@ -47,7 +47,14 @@ const SelectCircuit =()=> {
            <h3>what you'll need</h3>
             <h3>what you'll do</h3>
 
-            <ul>{moves.map((el, i)=> <li key={i} onClick={()=>readMoveDetails(moves.move_id)}> <Link to={`/movesteps/${moves.move_id}`}><img src={el.image} height='auto' width='200px' /></Link> {el.move_title}</li> )}</ul>
+            <ul>{moves.map((elem, index)=> 
+            <li key={index} onClick={()=>readMoveDetails(elem.move_id)}> 
+                
+                <Link to={`/movesteps/${elem.move_id}`}>
+                
+                <img src={elem.image} height='auto' width='200px'/>
+               
+                </Link> {elem.move_title}</li> )}</ul>
            
             <ButtonContainer className='startWorkout' onClick={startWorkout}> Start Workout </ButtonContainer>
 
