@@ -1,0 +1,1 @@
+select * from circuit where circuit_id = $1;

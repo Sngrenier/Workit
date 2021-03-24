@@ -25,6 +25,23 @@ module.exports = {
 
     },
 
+    read_moves: async (req, res)=>{
+        try{
+            const {circuit_id} = req.params
+            const date = new Date 
+            const db = req.app.get('db')
+            const moves = await db.circuits.read_moves([circuit_id]) 
+            res.status(200).send(moves)
+    
+            }
+            catch(error){
+                res.status(500).send(error)  
+    
+            }
+            
+
+    },
+
     //this function is to insert the completed circuit into the db table
 
     completed_circuit: async (req, res)=> {

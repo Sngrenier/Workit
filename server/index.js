@@ -45,6 +45,7 @@ app.post(`/logout`, authCtrl.logout)
 
 app.get(`/circuits`, circuitCtrl.read_all_circuits)
 app.get(`/circuitselection/:circuit_id`, circuitCtrl.read_circuit_selection)
+app.get(`/moves/:circuit_id`, circuitCtrl.read_moves)
 app.post(`/completedcircuit`, circuitCtrl.completed_circuit)
 app.get(`/viewcompletedcircuits`, circuitCtrl.view_completed_circuits)
 app.post(`/quitreasons`, circuitCtrl.quit_reasons)
