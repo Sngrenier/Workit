@@ -7,9 +7,6 @@ import NavButton from '../NavButton'
 
 export default class LandingPage extends Component {
 
-  
-
-
     render() {
         return (
             <div>
@@ -18,14 +15,10 @@ export default class LandingPage extends Component {
                 <h3>Circuits</h3>
                 <section className='circuitListCard'>
                 
-                
                 <CircuitList/>
                 <Circuit/>
 
-
                 </section>
-
-                
 
                 <footer className='navBar'>
                 Workouts

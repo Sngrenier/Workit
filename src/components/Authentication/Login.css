@@ -1,0 +1,86 @@
+.login-container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://static.onecms.io/wp-content/uploads/sites/35/2015/04/03185350/sweaty-woman-abs_0.jpg");
+    backdrop-filter: grayscale(70);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+        height: 55vh;
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+        margin: auto;
+        background-color: transparent;
+        padding: 5%;
+        margin-bottom: 10%;
+        
+}
+.input-btn {
+    width: 80vw;
+    padding: 5%;
+    margin: 5%;
+}
+@media screen and (min-width: 310px) and (max-width: 600px) {
+    .login{
+        height: 55vh;
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+        margin: auto;
+        background-color: transparent;
+        padding: 5%;
+        margin-bottom: 10%;
+        
+    }
+    .input-btn {
+        width: 80vw;
+        padding: 5%;
+        margin: 5%;
+    }
+    .signin-btn{
+        width: 30vw !important;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1800px) {
+    .login{
+        height: 55vh;
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+        margin: auto;
+        background-color: transparent;
+        padding: 5%;
+        margin-bottom: 10%;     
+}
+    .input-btn {
+        width: 60vw;
+        padding: 5%;
+        margin: 5%;
+    }
+    .signin-btn{
+        width: 40vw !important;
+        padding: 5%;
+        margin: 5%;
+    }
+}

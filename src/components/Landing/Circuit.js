@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import {CircuitConsumer} from '../../context/circuitContext'
 import PropTypes from 'prop-types'
 
 
 const Circuit = (props) => {
     let title, subtitle, info, mainimg
-
 
     if(props.circuit){
         console.log(props.circuit.circuit_id, "circuit_id props")
