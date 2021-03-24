@@ -8,44 +8,32 @@ import PropTypes from 'prop-types'
 const Circuit = (props) => {
     let title, subtitle, info, mainimg
 
-<<<<<<< HEAD
-export default class Circuit extends Component {
-    render() {
-        // const {circuit_id, title, subtitle, mainimg, info, instructor_id } = this.props.circuits
-        // const {move_id} = this.props
-        // console.log(title, circuit_id, subtitle, mainimg, info, instructor_id)
-        return (
-            <CircuitWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
-                <div>
-                <div className="card">
-                    <CircuitConsumer>
-                        {/* {(value) => (
-                        <div className="img-container p-5" onClick={()=> value.handleDetail(props.move_id)}> */}
-                    <Link to="/details">
-                        <img src="https://media.restorationhardware.com/is/image/rhis/CO19SHF_p004x005_FF399?$l-pd1$&wid=650" alt="product" className="card-img-top"
-                        />
-                    </Link>
-                    {/* </div>)} */}
-                    </CircuitConsumer>
-=======
+
     if(props.circuit){
-        console.log(props, "props")
+        console.log(props.circuit.circuit_id, "circuit_id props")
         title = props.circuit.title
         mainimg = props.circuit.mainimg
         subtitle = props.circuit.subtitle
         info = props.circuit.info
+        
     }
->>>>>>> main
 
 
     return <CircuitWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+
+        
        
-        <div className="card" onClick={()=>props.setCircuit(props.circuit.circuit_id)}>
+      <div className="card" onClick={()=>props.setCircuit(props.circuit.circuit_id)}>  
 
             <section className="img-container p-5">
-                <img alt={title} src={mainimg} />
+                {title}
+                <br></br>
+                {subtitle}
+                <img alt={title} src={mainimg} height='auto' width='250px'/>
+                {info}
             </section>
         </div>
+   
     </CircuitWrapper>
 }
 
@@ -61,6 +49,8 @@ const CircuitWrapper = styled.div`
 .card{
     border-color: transparent;
     transition: all 0.5s linear;
+    width: 350px;
+    height: auto;
 }
 .card-footer{
     background: transparent;
@@ -75,14 +65,14 @@ const CircuitWrapper = styled.div`
         background: rgba(247, 247, 247, 247);
     }
 }
-.img-container {
+.img-container p-5 {
     position: relative;
     overflow: hidden;
+
 }
 .card-img-top {
     margin-left: -75px;
-    width: 275px;
-    height: 325px;
+ 
     transition: all 0.5s linear;
 }
 .img-container:hover .card-img-top{

@@ -12,7 +12,7 @@ import Profile from './components/Profile/Profile'
 import CompletedCircuit from './components/Circuits/CompletedCircuit'
 import LandingPage from './components/Landing/LandingPage'
 import MoveCarousel from './components/Circuits/MoveCarousel'
-import MoveDetail from './components/MoveDetail/MoveDetail'
+import MoveStepsModal from './components/MoveStepsModal/MoveStepsModal'
 import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
 
@@ -29,7 +29,7 @@ class App extends Component {
           <Route path='/register' component={Register} />
           <Route path="/circuitselection" component={SelectCircuit} />
           <Route path="/movecarousel"><MoveCarousel time={405}/></Route>
-          <Route path="/movedetail" component={MoveDetail} />
+          <Route path="/movesteps/:id" component={MoveStepsModal} />
           <Route path="/quitcircuit" component={QuitCircuit} />
           <Route path="/completedcircuit" component={CompletedCircuit} />
           <Route path="/trainers" component={Trainers} />
