@@ -13,10 +13,13 @@ select * from circuit;
 
 
 
+<<<<<<< HEAD
+=======
 
 /*Inserting into the moves table below********************************************************/
 
 
+>>>>>>> main
 INSERT INTO moves (move_title, step1, step2, step3, step4, step5, circuit_id,  image, reps, gif)
 VALUES (
 'X Plank',

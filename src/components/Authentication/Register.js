@@ -4,6 +4,8 @@ import {AuthContext} from '../../context/AuthContext'
 import {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from 'axios'
+import {ButtonContainer} from '../NavButton'
+import './Register.css'
 
 
 const Register =()=>{
@@ -21,20 +23,14 @@ const values = useContext(AuthContext)
 const {push} = useHistory()
 
 
-
 const closeErrorMessage =()=> {
     setErrorMsg(false)
 }
 
-
 const membership = (type, price)=>{
     setmembership_type(type)
     setmembership_price(price)
-    
-
 }
-
-
 
 const onSignUp = (formSubmit) => {
     formSubmit.preventDefault()
@@ -48,71 +44,58 @@ const onSignUp = (formSubmit) => {
     .then((res)=> {
         console.log(res.data, 'this is the response back from register')
         push('/landing')
-    })
-    .catch(error=> setErrorMsg(error))
-
-}
-
-
+    }).catch(error=> setErrorMsg(error))
+} 
 console.log(membership_type, membership_price, 'state after onClick')
 
     return (
-            <div>
-              
-                <h1>Create your account</h1>
+        <section>
+            <div className="register-container">
+                    <div className="row main-row">
+                <Link to="/">
+                <img className="close-box" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
+                </Link>
+                <h3 className="prof-title">Create your account</h3>
+                    </div>
 
-                <div className='profileImage'>
+                <div className="container-fluid reg-container">
+                <div className="profile-img"><img className="profile-icon" src="https://img.icons8.com/color/100/000000/test-account.png"/>
 
                 </div>
-                <button 
-                className='addImageBtn'
-                >+</button>
-
-
-
+                <div className="membership-btns">
                     Select a membership plan to continue
 
-
-                    <button
-
+                    <ButtonContainer
                     className='monthlyPlan'
-                    onClick={
-                    ()=>membership('monthly', 19.99)}>
+                    onClick={()=>membership('monthly', 19.99)}>
                     $19.99/ Monthly
+                    </ButtonContainer>
 
-                    </button>
 
-
-                    <button
-
+                    <ButtonContainer
                     className='quarterlyPlan'
-                    onClick={
-                    ()=>membership('quarterly', 83.99)}> 
+                    onClick={()=>membership('quarterly', 83.99)}> 
                     $83.99 / Quarterly 
-
-                    </button>
+                    </ButtonContainer>
                     $13.99 / month. Save 30%
 
 
-                    <button
+                    <ButtonContainer
                     className='annualPlan'
                     onClick={()=>membership('annual', 119.99)}>
                     $119.99 / Annually
+                    </ButtonContainer>
 
-                    </button>
                     $9.99 / month. Save 50%, our most popular plan for good reason!
-
+                    </div>
                     <input
                     className='termsofuse'
                     type='checkbox'
                     /> by continuing you accept our Privacy Policy and Terms of Use
 
-
-
                     <form
                     className='registrationForm'
                     onSubmit={onSignUp}>
-
 
                         <input 
                         className='emailInput'
@@ -127,13 +110,36 @@ console.log(membership_type, membership_price, 'state after onClick')
                         placeholder='password'
                         onChange={(e)=>setPassword(e.target.value)}
                         />
+
+                        <input
+                        className='first_nameInput'
+                        type='text'
+                        placeholder='First Name'
+                        onChange={(e)=>setfirst_name(e.target.value)}
+                        />
+
+                        <input
+                        className='last_nameInput'
+                        type='text'
+                        placeholder='Last Name'
+                        onChange={(e)=>setlast_name(e.target.value)}
+                        />
+
+                        <input
+                        className='birthdayInput'
+                        type='text'
+                        placeholder='Birthday'
+                        onChange={(e)=>setBirthday(e.target.value)}
+                        />
+                        
                 </form>
 
             {/* <Link to="/landing">
                 Go to landing page
             </Link> */}
-
+                </div>
             </div>
+            </section>
         )
 
     

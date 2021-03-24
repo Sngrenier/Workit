@@ -1,0 +1,94 @@
+.register-container{
+    width: 80vw;
+    height: 100vh;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    position: relative;
+}
+.prof-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: -10%;
+}
+
+.main-row {
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: space-around;
+    position: relative;
+    background-color: skyblue;
+    
+}
+@media screen and (min-width: 200px) and (max-width: 1080px) {
+    .reg-container {
+        width: 90vw;
+        height: 90vh;
+        padding: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        background-color: transparent;
+        margin: auto;
+    }
+    .main-row {
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+        justify-content: space-around;
+        position: relative;
+        background-color: transparent;
+    }
+    .membership-btns {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: flex-start;
+        margin: auto;
+        background-color: transparent;
+        padding: 5%;  
+    }
+    .prof-title {
+        font-size: 2rem;
+    }
+    .login-btn{
+        text-decoration: none !important;
+        color: var(--mainWhite) !important;
+    }
+    .auth-subtitle{
+        margin-top: 60%;
+        color: var(--mainWhite);
+        padding-bottom: 3%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+    .subtitle-msg{
+        color: var(--mainWhite);
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        font-weight: 400;
+        padding-bottom: 15%;
+    }
+    .profile-icon{
+        margin-top: -20%;
+        width: 120%;
+    }
+    .close-box{
+        padding-left: 40%;
+    }
+}
