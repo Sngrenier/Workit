@@ -7,6 +7,9 @@ values
 ('600 Rep Challenge','RESISTANCE', 'https://i.pinimg.com/originals/0c/8e/b8/0c8eb8bb610ba7f4970a1cef39459f11.jpg', '4 Circuits  |  8 Exercises  |  28-40 min', 1);
 
 select * from circuit;
+
+
+
 INSERT INTO moves (move_title, step1, step2, step3, step4, step5, circuit_id,  image, reps, gif)
 VALUES (
 'X Plank',
