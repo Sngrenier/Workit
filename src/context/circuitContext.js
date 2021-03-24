@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
 const CircuitContext = React.createContext();
 //Provider
 //Consumer
@@ -24,19 +25,18 @@ class CircuitProvider extends Component {
   setCircuits = () => {
     axios.get(`/circuits`).then((res) => {
       console.log(res.data, 'setCircuits function returning the circuits from the DB table')
-      this.setState({circuits: res.data})
-      
-
-    
-      });
+      this.setState({circuits: res.data}) 
+      })
+      .catch(error=> console.log(error))
   };
 
-  setMoves =()=>{
-    axios.get(`/moves`)
+  setMoves =(circuit_id)=>{
+    axios.get(`/moves/${circuit_id}`)
     .then((res)=>{
       console.log(res.data, 'setMoves function')
       this.setState({moves: res.data})
-    })
+      this.props.history.push('/circuitselection')
+  }).catch(err=>console.log(err))
   }
 
 
@@ -81,6 +81,7 @@ class CircuitProvider extends Component {
           handleDetail: this.handleDetail,
           openModal: this.openModal,
           closeModal: this.closeModal,
+          setMoves: this.setMoves
         }}
       >
         {this.props.children}

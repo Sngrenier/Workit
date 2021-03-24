@@ -5,8 +5,10 @@ import {CircuitConsumer} from '../../context/circuitContext'
 import PropTypes from 'prop-types'
 
 
-//this displays the circuit to read more information 
+const Circuit = (props) => {
+    let title, subtitle, info, mainimg
 
+<<<<<<< HEAD
 export default class Circuit extends Component {
     render() {
         // const {circuit_id, title, subtitle, mainimg, info, instructor_id } = this.props.circuits
@@ -25,34 +27,34 @@ export default class Circuit extends Component {
                     </Link>
                     {/* </div>)} */}
                     </CircuitConsumer>
-
-                    <div className="card-footer d-flex justify-content-between">
-                        <p className="align-self-center mb-0">
-                            Hiya!
-                        </p>
-                        <h5 className="text-gray font-italic mb-0">
-                            <span className="mr-1">Today</span>
-                            Info
-                        </h5>
-                    </div>
-                    </div>
-
-                 
-
-                </div>
-            </CircuitWrapper>
-        )
+=======
+    if(props.circuit){
+        console.log(props, "props")
+        title = props.circuit.title
+        mainimg = props.circuit.mainimg
+        subtitle = props.circuit.subtitle
+        info = props.circuit.info
     }
+>>>>>>> main
+
+
+    return <CircuitWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+       
+        <div className="card" onClick={()=>props.setCircuit(props.circuit.circuit_id)}>
+
+            <section className="img-container p-5">
+                <img alt={title} src={mainimg} />
+            </section>
+        </div>
+    </CircuitWrapper>
 }
 
-// circuit.propTypes = {
-//     circuit:PropTypes.shape({
-//         id:PropTypes.number,
-//         img:PropTypes.string,
-//         title:PropTypes.string,
-//     }).isRequired
-// }
+export default Circuit;
 
+
+
+
+//this displays the circuit to read more information 
 
 
 const CircuitWrapper = styled.div`
