@@ -12,6 +12,8 @@ values
 select * from circuit;
 
 
+
+
 /*Inserting into the moves table below********************************************************/
 
 

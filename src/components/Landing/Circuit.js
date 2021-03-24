@@ -7,24 +7,31 @@ import PropTypes from 'prop-types'
 const Circuit = (props) => {
     let title, subtitle, info, mainimg
 
-    //If statement fixes the render problems (rendering the circuit before the props, not sure why - but this fixes that)
     if(props.circuit){
-        console.log(props, "props")
+        console.log(props.circuit.circuit_id, "circuit_id props")
         title = props.circuit.title
         mainimg = props.circuit.mainimg
         subtitle = props.circuit.subtitle
         info = props.circuit.info
+        
     }
 
 
     return <CircuitWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+
+        
        
-        <div className="card" onClick={()=>props.setCircuit(props.circuit.circuit_id)}>
+      <div className="card" onClick={()=>props.setCircuit(props.circuit.circuit_id)}>  
 
             <section className="img-container p-5">
-                <img alt={title} src={mainimg} />
+                {title}
+                <br></br>
+                {subtitle}
+                <img alt={title} src={mainimg} height='auto' width='250px'/>
+                {info}
             </section>
         </div>
+   
     </CircuitWrapper>
 }
 
@@ -40,6 +47,8 @@ const CircuitWrapper = styled.div`
 .card{
     border-color: transparent;
     transition: all 0.5s linear;
+    width: 350px;
+    height: auto;
 }
 .card-footer{
     background: transparent;
@@ -54,14 +63,14 @@ const CircuitWrapper = styled.div`
         background: rgba(247, 247, 247, 247);
     }
 }
-.img-container {
+.img-container p-5 {
     position: relative;
     overflow: hidden;
+
 }
 .card-img-top {
     margin-left: -75px;
-    width: 275px;
-    height: 325px;
+ 
     transition: all 0.5s linear;
 }
 .img-container:hover .card-img-top{
