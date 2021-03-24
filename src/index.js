@@ -4,12 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom'
+import { CircuitProvider } from './context/circuitContext';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <CircuitProvider>
+        
     <App />
+    </CircuitProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

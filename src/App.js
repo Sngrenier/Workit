@@ -28,7 +28,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
           <Route path="/circuitselection" component={SelectCircuit} />
-          <Route path="/movecarousel" component={MoveCarousel} />
+          <Route path="/movecarousel"><MoveCarousel time={405}/></Route>
           <Route path="/movedetail" component={MoveDetail} />
           <Route path="/quitcircuit" component={QuitCircuit} />
           <Route path="/completedcircuit" component={CompletedCircuit} />
