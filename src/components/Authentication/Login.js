@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import App from '../../App'
 import {AuthContext} from '../../context/AuthContext'
 import {useHistory} from 'react-router-dom'
+import {ButtonContainer} from '../NavButton'
+import './Login.css'
 
 
 const Login = ()=>{
@@ -28,31 +30,37 @@ const handleLogin =()=>{
 }
 
     return (
-        <div>This is the login page
-         <form>
+        <section>
+        <div className="login-container">
+            <div className="container-fluid">
+         <form className="login">
 
             <input 
-            className='emailInput'
+            className='emailInput input-btn'
             type='text'
             placeholder='email'
             onChange={(e)=>setEmail(e.target.value)}
             />
 
             <input 
-             className='passwordInput'
+             className='passwordInput input-btn'
              type='password'
              placeholder='password'
              onChange={(e)=>setPassword(e.target.value)}
 
             
             />
-            <button
-            className='signInBtn'
-            onClick={(e)=>handleLogin(e)}
-            >Sign In</button>
 
+            <Link to="/landing">
+            <ButtonContainer
+            className='signin-btn'
+            onClick={(e)=>handleLogin(e)}
+            >Sign In</ButtonContainer>
+            </Link>
         </form>   
         </div>
+        </div>
+        </section>
     )
 
 }

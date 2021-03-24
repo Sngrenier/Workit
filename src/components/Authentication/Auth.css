@@ -28,87 +28,332 @@
         
 }
 
-@media screen and (min-width: 200px) and (max-width: 880px) {
-    .auth{
-      width: 80vw;
-      height: 55vh;
-      padding: 10%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-      padding: 20px;
-      position: relative;
-    }
-  }
+.auth-title {
+  font-family: 'Righteous';
+  font-size: 4rem;
+  font-weight: 700;
+  color: #65d6ce !important;
+  opacity: 1;
+}
 
-  .auth-title {
-    font-family: 'Righteous';
-    font-size: 4rem;
-    font-weight: 700;
-    color: #65d6ce !important;
-    opacity: 1;
-  }
-  
-  @media screen and (min-width: 200px) and (max-width: 1080px) {
-    .title-row {
-      display: flex;
-      padding-bottom: 60%;
-      flex-direction: row;
-      align-items: left;
-      justify-content: space-around;
-      position: relative;
-      background-color: transparent;
-    }
-    .auth-title{
-        font-size: 3.5rem;
-        padding-left:25%;
-    }
-    .login-btn{
-        text-decoration: none !important;
-        color: var(--mainWhite) !important;
-    }
-    .auth-subtitle{
-        margin-top: 60%;
-        color: var(--mainWhite);
-        padding-bottom: 3%;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.7rem;
-        font-weight: 700;
-    }
-    .subtitle-msg{
-        color: var(--mainWhite);
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1rem;
-        line-height: 1.4rem;
-        font-weight: 400;
-        padding-bottom: 15%;
 
-    }
+@media screen and (min-width: 310px) and (max-width: 600px) {
+  .title-row {
+    display: flex;
+    padding-bottom: 60%;
+    flex-direction: row;
+    align-items: left;
+    justify-content: space-around;
+    position: relative;
+    background-color: transparent;
+  }
+  .auth-title{
+      font-size: 3rem;
+      width: 60%;
+  }
+  .login-btn{
+      text-decoration: none !important;
+      color: var(--mainWhite) !important;
+  }
+  .auth-subtitle{
+      margin-top: 60%;
+      color: var(--mainWhite);
+      padding-bottom: 3%;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2rem !important;
+      font-weight: 700;
+  }
+  .subtitle-msg{
+      color: var(--mainWhite);
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: .8rem !important;
+      line-height: 1.4rem;
+      font-weight: 400;
+      padding-bottom: 15%;
   }
   .apple-btn{
-      background-color: var(--darkGray) !important;
-      border-color: var(--darkGray) !important;
-  }
-
+    background-color: var(--darkGray) !important;
+    border-color: var(--darkGray) !important;
+    font-size: .8rem !important;
+    }
   .fb-btn{
     background-color: #4267B2 !important;
     border-color:#4267B2 !important;
+    font-size: .8rem !important;
+  }
+  .email-btn{
+    font-size: .8rem !important;
+  }
+  .fb-icon{
+      margin-right: 30%;
+      margin-left: -40%;
+      width: 10%;
+  }
+  .apple-icon{
+      width: 8%;
+      margin-right: 35%;
+      margin-left: -45%;
+  }
+  .email-icon{
+      width: 8%;
+      margin-right: 35%;
+      margin-left: -45%;
+  }
 }
 
-.fb-icon{
-    margin-right: 30%;
-    margin-left: -40%;
-    width: 10%;
+@media screen and (min-width: 200px) and (max-width: 310px) {
+  .title-row {
+    display: flex;
+    padding-bottom: 60%;
+    flex-direction: row;
+    align-items: left;
+    justify-content: space-around;
+    position: relative;
+    background-color: transparent;
+  }
+  .auth-title{
+      font-size: 3rem;
+      width: 60%;
+  }
+  .login-btn{
+      text-decoration: none !important;
+      color: var(--mainWhite) !important;
+  }
+  .auth-subtitle{
+      margin-top: 60%;
+      color: var(--mainWhite);
+      padding-bottom: 3%;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2rem !important;
+      font-weight: 700;
+  }
+  .subtitle-msg{
+      color: var(--mainWhite);
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: .8rem !important;
+      line-height: 1.4rem;
+      font-weight: 400;
+      padding-bottom: 15%;
+  }
+  .apple-btn{
+    background-color: var(--darkGray) !important;
+    border-color: var(--darkGray) !important;
+    font-size: .6rem !important;
+    }
+  .fb-btn{
+    background-color: #4267B2 !important;
+    border-color:#4267B2 !important;
+    font-size: .6rem !important;
+  }
+  .email-btn{
+    font-size: .6rem !important;
+  }
+  .fb-icon{
+      margin-right: 30%;
+      margin-left: -40%;
+      width: 10%;
+  }
+  .apple-icon{
+      width: 8%;
+      margin-right: 35%;
+      margin-left: -45%;
+  }
+  .email-icon{
+      width: 8%;
+      margin-right: 35%;
+      margin-left: -45%;
+  }
 }
-.apple-icon{
-    width: 8%;
-    margin-right: 35%;
-    margin-left: -45%;
+
+
+@media screen and (min-width: 520px) and (max-width: 900px) {
+  .auth-container{
+    width: 100vw;
+    height: 120vh;
+    background-image: url("https://media1.popsugar-assets.com/files/thumbor/WIz5K_8bhuLeR9ICaKLj9H9tslc/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/01/18/906/n/1922729/50597c1c5c423ad3cb77f1.51981452_/i/How-Do-I-Work-My-Arms-Dumbbells.jpg");
+    backdrop-filter: grayscale(70);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.email-icon{
-    width: 8%;
-    margin-right: 35%;
-    margin-left: -45%;
+.auth-btns {
+  height: 55vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+  margin: auto;
+  background-color: transparent;
+  padding: 5%;
+  
+}
+  .title-row {
+    display: flex;
+    padding-bottom: 60%;
+    flex-direction: row;
+    align-items: left;
+    justify-content: space-around;
+    position: relative;
+    background-color: transparent;
+  }
+  .auth-title{
+      font-size: 3.5rem;
+      width: 60%;
+      /* padding-top:20%; */
+  }
+  .login-btn{
+      text-decoration: none !important;
+      color: var(--mainWhite) !important;
+  }
+  .auth-subtitle{
+      /* margin-top: 40%; */
+      color: var(--mainWhite);
+      padding-bottom: 3%;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.7rem !important;
+      font-weight: 700;
+  }
+  .subtitle-msg{
+      color: var(--mainWhite);
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem !important;
+      line-height: 1.4rem;
+      font-weight: 400;
+      padding-bottom: 15%;
+  }
+  .apple-btn{
+    background-color: var(--darkGray) !important;
+    border-color: var(--darkGray) !important;
+    font-size: .9rem !important;
+    }
+  .fb-btn{
+    background-color: #4267B2 !important;
+    border-color:#4267B2 !important;
+    font-size: .9rem !important;
+  }
+  .email-btn{
+    font-size: .9rem !important;
+  }
+  .fb-icon{
+      margin-right: 30%;
+      margin-left: -40%;
+      width: 10%;
+  }
+  .apple-icon{
+      width: 8%;
+      margin-right: 35%;
+      margin-left: -45%;
+  }
+  .email-icon{
+      width: 8%;
+      margin-right: 35%;
+      margin-left: -45%;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1800px) {
+  .auth-container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://media1.popsugar-assets.com/files/thumbor/WIz5K_8bhuLeR9ICaKLj9H9tslc/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2019/01/18/906/n/1922729/50597c1c5c423ad3cb77f1.51981452_/i/How-Do-I-Work-My-Arms-Dumbbells.jpg");
+    backdrop-filter: grayscale(70);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.auth-btns {
+  height: 40vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: flex-start;
+  margin: auto;
+  background-color: transparent;
+  padding: 5%;
+  
+}
+  .title-row {
+    display: flex;
+    padding-bottom: 30%;
+    flex-direction: row;
+    align-items: left;
+    justify-content: space-around;
+    position: relative;
+    background-color: transparent;
+    padding-top: 3%;
+  }
+  .auth-title{
+      font-size: 5rem;
+      width: 60%;
+      /* padding-top:3%; */
+  }
+  .login-btn{
+      text-decoration: none !important;
+      color: var(--mainWhite) !important;
+  }
+  .auth-subtitle{
+      /* margin-top: 40%; */
+      color: var(--mainWhite);
+      padding-bottom: 3%;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.7rem !important;
+      font-weight: 700;
+  }
+  .subtitle-msg{
+      color: var(--mainWhite);
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem !important;
+      line-height: 1.4rem;
+      font-weight: 400;
+      padding-bottom: 15%;
+  }
+  .apple-btn{
+    width: 60vw !important;
+    background-color: var(--darkGray) !important;
+    border-color: var(--darkGray) !important;
+    font-size: .9rem !important;
+    }
+  .fb-btn{
+    width: 60vw !important;
+    background-color: #4267B2 !important;
+    border-color:#4267B2 !important;
+    font-size: .9rem !important;
+  }
+  .email-btn{
+    width: 60vw !important;
+    font-size: .9rem !important;
+  }
+  .fb-icon{
+      margin-right: 35%;
+      margin-left: -45%;
+      width: 5%;
+  }
+  .apple-icon{
+      width: 5%;
+      margin-right: 35%;
+      margin-left: -45%;
+  }
+  .email-icon{
+      width: 5%;
+      margin-right: 35%;
+      margin-left: -45%;
+  }
 }

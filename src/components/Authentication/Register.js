@@ -50,96 +50,94 @@ console.log(membership_type, membership_price, 'state after onClick')
 
     return (
         <section>
-            <div className="register-container">
-                    <div className="row main-row">
+        <div className="register-container">
+            <div className = "container-fluid">
+                <div className="row header-row">
+
                 <Link to="/">
-                <img className="close-box" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
+                <img className="close-icon" src="https://img.icons8.com/ios-glyphs/30/4a90e2/macos-close.png"/>
                 </Link>
                 <h3 className="prof-title">Create your account</h3>
-                    </div>
+                    
+            </div>
 
-                <div className="container-fluid reg-container">
-                <div className="profile-img"><img className="profile-icon" src="https://img.icons8.com/color/100/000000/test-account.png"/>
+            <div className="membership-btns">
 
-                </div>
-                <div className="membership-btns">
-                    Select a membership plan to continue
+                    <div className="profile-icon">
+                    <img className="profile-pic" 
+                    src="https://img.icons8.com/color/100/000000/test-account.png"/>
+                     </div>
+                    
+                    
+                    <h4 className="info-msg">Select a membership plan to continue </h4>
+                    <ButtonContainer className='month-btn' onClick={()=>membership('monthly', 19.99)}>$19.99/ Monthly</ButtonContainer>
+                    <ButtonContainer className='qtr-btn' onClick={()=>membership('quarterly', 83.99)}> $83.99 / Quarterly </ButtonContainer>
+                    <h4 className="info-msg">$13.99 / month. Save 30%</h4>
+                    <ButtonContainer className='yr-btn' onClick={()=>membership('annual', 119.99)}>$119.99 / Annually</ButtonContainer>
+                    <h4 className="info-msg">$9.99 / month. Save 50%, our most popular plan for good reason!</h4>
+                    
 
-                    <ButtonContainer
-                    className='monthlyPlan'
-                    onClick={()=>membership('monthly', 19.99)}>
-                    $19.99/ Monthly
-                    </ButtonContainer>
+                {/* <div className="member-info"> */}
 
-
-                    <ButtonContainer
-                    className='quarterlyPlan'
-                    onClick={()=>membership('quarterly', 83.99)}> 
-                    $83.99 / Quarterly 
-                    </ButtonContainer>
-                    $13.99 / month. Save 30%
-
-
-                    <ButtonContainer
-                    className='annualPlan'
-                    onClick={()=>membership('annual', 119.99)}>
-                    $119.99 / Annually
-                    </ButtonContainer>
-
-                    $9.99 / month. Save 50%, our most popular plan for good reason!
-                    </div>
                     <input
                     className='termsofuse'
                     type='checkbox'
-                    /> by continuing you accept our Privacy Policy and Terms of Use
+                    /> 
+                    <h4 className="info-msg">by continuing you accept our Privacy Policy and Terms of Use</h4>
 
                     <form
-                    className='registrationForm'
+                    className='reg-form'
                     onSubmit={onSignUp}>
 
                         <input 
-                        className='emailInput'
+                        className='emailInput inputs'
                         type='text'
                         placeholder='email'
                         onChange={(e)=>setEmail(e.target.value)}
                         />
 
                         <input 
-                        className='passwordInput'
+                        className='passwordInput inputs'
                         type='password'
                         placeholder='password'
                         onChange={(e)=>setPassword(e.target.value)}
                         />
 
                         <input
-                        className='first_nameInput'
+                        className='first_nameInput inputs'
                         type='text'
                         placeholder='First Name'
                         onChange={(e)=>setfirst_name(e.target.value)}
                         />
 
                         <input
-                        className='last_nameInput'
+                        className='last_nameInput inputs'
                         type='text'
                         placeholder='Last Name'
                         onChange={(e)=>setlast_name(e.target.value)}
                         />
 
                         <input
-                        className='birthdayInput'
-                        type='text'
+                        className='birthdayInput inputs'
+                        type='date'
                         placeholder='Birthday'
                         onChange={(e)=>setBirthday(e.target.value)}
                         />
                         
                 </form>
 
-            {/* <Link to="/landing">
-                Go to landing page
-            </Link> */}
+               <Link to='/landing'>
+                <ButtonContainer 
+                className="email-btn">
+                Submit
+                </ButtonContainer>
+                </Link>
+                    
+                    {/* </div> */}
+                    </div>
                 </div>
             </div>
-            </section>
+        </section>
         )
 
     
