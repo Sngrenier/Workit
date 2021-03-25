@@ -1,4 +1,4 @@
-select * from moves;
+select * from moves where circuit_id = $1;
 
 /*This query is setup this way right now because 
 the moves are either assigned to circuit1 or circuit2
