@@ -51,10 +51,12 @@ const SelectCircuit =()=> {
             <li key={index} onClick={()=>readMoveDetails(elem.move_id)}> 
                 
                 <Link to={`/movesteps/${elem.move_id}`}>
-                
                 <img src={elem.image} height='auto' width='200px'/>
-               
-                </Link> {elem.move_title}</li> )}</ul>
+                </Link> 
+                {elem.move_title}
+                {elem.reps}
+                </li>)}
+                </ul>
            
             <ButtonContainer className='startWorkout' onClick={startWorkout}> Start Workout </ButtonContainer>
 

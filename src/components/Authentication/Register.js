@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Link} from 'react-router-dom'
 // import {AuthContext} from '../../context/AuthContext'
 import {useContext, useState} from 'react'
@@ -7,7 +7,10 @@ import axios from 'axios'
 import {ButtonContainer} from '../NavButton'
 import './Register.css'
 import PayPalButton from './PayPalButton'
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 
 
 const Register =()=>{
@@ -83,15 +86,19 @@ console.log(membership_type, membership_price, 'state after onClick')
                     
 
                 {/* <div className="member-info"> */}
+<<<<<<< HEAD
+                    <PayPalButton/>
+=======
 
                 <PayPalButton/>
 
+>>>>>>> main
                     <input
                     className='termsofuse'
                     type='checkbox'
                     /> 
                     <h4 className="info-msg">by continuing you accept our Privacy Policy and Terms of Use</h4>
-
+                    {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
                     <form
                     className='reg-form'
                     onSubmit={onSignUp}>
@@ -142,7 +149,9 @@ console.log(membership_type, membership_price, 'state after onClick')
 
                {/* <Link to='/landing'>
                 <ButtonContainer 
-                className="email-btn">
+                className="email-btn"
+                onClick = {() => values.register(email, password, first_name, last_name, birthday)}
+                >
                 Submit
                 </ButtonContainer>
                 </Link> */}
@@ -152,9 +161,7 @@ console.log(membership_type, membership_price, 'state after onClick')
                 </div>
             </div>
         </section>
-        )
-
-    
+    )
 
 }
 

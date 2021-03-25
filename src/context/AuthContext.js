@@ -14,7 +14,7 @@ const register = (email, password, first_name, last_name, birthday, setErrorMsg)
     .post('/auth/register', {email, password, first_name, last_name, birthday})
     .then((res)=> {
         setUser(res.data)
-        push('/landing')
+        // push('/landing')
     })
     .catch((error) => setErrorMsg('email already in use, please use a different email address to register or reset your password'))
 
