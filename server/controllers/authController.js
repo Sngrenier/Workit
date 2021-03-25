@@ -1,5 +1,7 @@
 const bcrypt = require('bcryptjs')
-
+const nodemailer= require('nodemailer')
+const {EMAIL, PASSWORD} = process.env
+ 
 module.exports = {
 
    
@@ -9,11 +11,7 @@ module.exports = {
 
         try{
             const {email, password, first_name, last_name, birthday, membership_type, membership_price} = req.body
-<<<<<<< HEAD
-            console.log(req.body)
-=======
             console.log(req.body, 'register controller function data')
->>>>>>> main
             const db = req.app.get('db')
             const date = new Date
             const alreadyExist = await db.user.find_user_by_email([email])
@@ -33,15 +31,13 @@ module.exports = {
             const user = registeredUser[0]
             delete user.password
             req.session.user = user
-            return res.status(201).send(req.session.user)
+            // return res.status(201).send(req.session.user)
             
-        } 
-        catch(err) {
-            console.log(err, 'this is a registration error')
-        }
+        
+      
             let transporter = nodemailer.createTransport({
                 service: "gmail",
-                auth: { user: EMAIL_ADDRESS, pass: PASSWORD },
+                auth: { user: EMAIL, pass: PASSWORD },
               });
               let emailMessage = {
                 from: "workit.dailyfitness@gmail.com",
@@ -58,6 +54,13 @@ module.exports = {
                   return res.status(200).send(req.session.user);
                 }
               });
+
+            }
+
+              catch(err) {
+                console.log(err, 'this is a registration error')
+            }
+
             },
 
     login: async(req, res)=>{
