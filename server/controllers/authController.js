@@ -9,11 +9,7 @@ module.exports = {
 
         try{
             const {email, password, first_name, last_name, birthday, membership_type, membership_price} = req.body
-<<<<<<< HEAD
-            console.log(req.body)
-=======
             console.log(req.body, 'register controller function data')
->>>>>>> main
             const db = req.app.get('db')
             const date = new Date
             const alreadyExist = await db.user.find_user_by_email([email])

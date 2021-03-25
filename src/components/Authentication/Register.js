@@ -86,13 +86,9 @@ console.log(membership_type, membership_price, 'state after onClick')
                     
 
                 {/* <div className="member-info"> */}
-<<<<<<< HEAD
-                    <PayPalButton/>
-=======
 
                 <PayPalButton/>
 
->>>>>>> main
                     <input
                     className='termsofuse'
                     type='checkbox'
