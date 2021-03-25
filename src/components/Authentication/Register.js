@@ -7,10 +7,6 @@ import axios from 'axios'
 import {ButtonContainer} from '../NavButton'
 import './Register.css'
 import PayPalButton from './PayPalButton'
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 
 
 const Register =()=>{

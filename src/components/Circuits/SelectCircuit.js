@@ -50,7 +50,7 @@ const SelectCircuit =()=> {
             <ul>{moves.map((elem, index)=> 
             <li key={index} onClick={()=>readMoveDetails(elem.move_id)}> 
                 
-                <Link to={`/movesteps/${elem.move_id}`}>
+                <Link to={`/${elem.move_id}`}>
                 <img src={elem.image} height='auto' width='200px'/>
                 </Link> 
                 {elem.move_title}

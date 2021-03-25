@@ -8,7 +8,6 @@ const Circuit = (props) => {
     let title, subtitle, info, mainimg
 
     if(props.circuit){
-        console.log(props.circuit.circuit_id, "circuit_id props")
         title = props.circuit.title
         mainimg = props.circuit.mainimg
         subtitle = props.circuit.subtitle
