@@ -10,7 +10,7 @@ import EditProfile from './EditProfile'
 const Profile =()=>{
     const [user, setUser] = useState([])
     const [errorMsg, setErrorMsg] = useState('')
-    const [toggleEdit, setToggleEdit] =useState(false)
+    const [editing, setEditing] =useState(false)
     
     
     const closeErrorMessage =()=> {
@@ -25,17 +25,14 @@ const Profile =()=>{
     }, [])
 
 
-    const handleEdit = () => {
-        setToggleEdit(!toggleEdit)
-
-        // if(toggleEdit === true){
-
-        // }
+    const toggleEdit = () => {
+        setEditing(true)
+        console.log(editing, 'toggleEditFunction')
        
     } 
 
-    console.log(user, 'this is the user array')
-    console.log(toggleEdit)
+ 
+
   
     
         return (
@@ -68,7 +65,8 @@ const Profile =()=>{
                             
               
                     <ul className='profileBtnContainer'>
-                        <ButtonContainer className='profileBtn' onClick={(e)=>handleEdit(e)}> Name: {user.first_name} {user.last_name} <EditProfile/></ButtonContainer> 
+          
+                        <ButtonContainer editing={editing} toggleEdit={toggleEdit} className='profileBtn'> Name: {user.first_name} {user.last_name}</ButtonContainer>
                         <ButtonContainer className='profileBtn'>Email: {user.email}</ButtonContainer>
                         <ButtonContainer className='profileBtn'>Birthday: {moment(user.birthday).format('MM-Do-YYYY')}</ButtonContainer>
                         <ButtonContainer className='profileBtn'>  Membership Id:   {user.membership_id}</ButtonContainer>
@@ -77,13 +75,17 @@ const Profile =()=>{
                     </ul>
             
     
-        }
+        
                  
 
-                    {/* <ButtonContainer 
-                    className="profileBtn">
-                    Submit
-                    </ButtonContainer> */}
+                    <ButtonContainer 
+                    className="editBtn"
+                    onClick={toggleEdit}
+                    >
+                    
+                    Edit
+                    <EditProfile editing={editing} toggleEdit={toggleEdit}/> 
+                    </ButtonContainer>
                     </section>
             )
     
@@ -92,3 +94,6 @@ const Profile =()=>{
     }
     
     export default Profile
+
+
+    //<ButtonContainer> Edit<EditProfile toggleEdit={toggleEdit} handleEdit={handleEdit}/></ButtonContainer> 
