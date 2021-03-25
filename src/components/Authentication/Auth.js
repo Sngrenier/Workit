@@ -16,7 +16,7 @@ return (
     href=""
     className='login-btn'>Login</a></Link>
 
-</div>
+    </div>
     
 
     <div className="auth-btns">
