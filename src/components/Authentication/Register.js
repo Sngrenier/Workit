@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import {AuthContext} from '../../context/AuthContext'
+// import {AuthContext} from '../../context/AuthContext'
 import {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from 'axios'
 import {ButtonContainer} from '../NavButton'
 import './Register.css'
+import PayPalButton from './PayPalButton'
+
 
 
 const Register =()=>{
@@ -19,7 +21,7 @@ const [membership_price, setmembership_price] = useState(0)
 const [last_name, setlast_name] = useState('')
 const [errorMsg, setErrorMsg] = useState('')
 
-const values = useContext(AuthContext)
+// const values = useContext(AuthContext)
 const {push} = useHistory()
 
 
@@ -46,6 +48,9 @@ const onSignUp = (formSubmit) => {
         push('/landing')
     }).catch(error=> setErrorMsg(error))
 } 
+
+
+
 console.log(membership_type, membership_price, 'state after onClick')
 
     return (
@@ -78,6 +83,8 @@ console.log(membership_type, membership_price, 'state after onClick')
                     
 
                 {/* <div className="member-info"> */}
+
+                <PayPalButton/>
 
                     <input
                     className='termsofuse'
@@ -123,15 +130,22 @@ console.log(membership_type, membership_price, 'state after onClick')
                         placeholder='Birthday'
                         onChange={(e)=>setBirthday(e.target.value)}
                         />
+
+                    
+                        <ButtonContainer 
+                        className="email-btn">
+                        Submit
+                        </ButtonContainer>
+                      
                         
                 </form>
 
-               <Link to='/landing'>
+               {/* <Link to='/landing'>
                 <ButtonContainer 
                 className="email-btn">
                 Submit
                 </ButtonContainer>
-                </Link>
+                </Link> */}
                     
                     {/* </div> */}
                     </div>
