@@ -1,7 +1,13 @@
 const bcrypt = require('bcryptjs')
+<<<<<<< HEAD
+const nodemailer = require("nodemailer")
+const { EMAIL, PASSWORD } = process.env
+
+=======
 const nodemailer= require('nodemailer')
 const {EMAIL, PASSWORD} = process.env
  
+>>>>>>> main
 module.exports = {
 
    
@@ -33,6 +39,15 @@ module.exports = {
             req.session.user = user
             // return res.status(201).send(req.session.user)
             
+<<<<<<< HEAD
+            let transporter = nodemailer.createTransport({
+                service: "gmail",
+                auth: { user: EMAIL, pass: PASSWORD },
+        });
+        let emailMessage = {
+            from: "workit.dailyfitness@gmail.com",
+            to: req.session.user.email,
+=======
         
       
             let transporter = nodemailer.createTransport({
@@ -42,17 +57,25 @@ module.exports = {
               let emailMessage = {
                 from: "workit.dailyfitness@gmail.com",
                 to: req.session.user.email,
+>>>>>>> main
                 subject: "Welcome to Workit!",
                 text: `Welcome ${req.session.user.first_name} to Workit!`,
-              };
-              transporter.sendMail(emailMessage, function (err) {
+            };
+            transporter.sendMail(emailMessage, function (err) {
                 if (err) {
-                  console.log("email failed",err);
-                  res.sendStatus(405);
+                    console.log("email failed",err);
+                    res.sendStatus(405);
                 } else {
-                  console.log("success");
-                  return res.status(200).send(req.session.user);
+                    console.log("success");
+                    return res.status(200).send(req.session.user);
                 }
+<<<<<<< HEAD
+            });
+        } 
+            catch(err) {
+                console.log(err, 'this is a registration error')
+            }
+=======
               });
 
             }
@@ -61,6 +84,7 @@ module.exports = {
                 console.log(err, 'this is a registration error')
             }
 
+>>>>>>> main
             },
 
     login: async(req, res)=>{

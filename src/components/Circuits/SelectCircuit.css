@@ -1,5 +1,140 @@
 .close-box{
-    
     margin-left: 0;
+}
 
+/* .move-item{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-between;
+} */
+
+.image{
+    width: 100vw;
+    height: 30vh;
+    background-image: url("https://cdn.statically.io/img/wallpapercart.com/wp-content/uploads/2019/09/fitness-desktop-wallpaper-scaled.jpg?quality=100&f=auto");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 50%;
+}
+
+
+.cir-landing{
+    width: 100vw;
+    height: 80vh;
+    margin-top: 80%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: flex-start;
+    /* margin: auto; */
+    /* background-color: salmon; */
+    padding: 5%;
+}
+
+.move-info{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: center;
+    background-color:transparent;
+    padding-left:5%;
+    /* padding-right:8%; */
+    padding-bottom:5%;
+    font-size: .8rem;
+}
+
+.move-details {
+    width: 80vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: center;
+    padding-left: 10%;
+    background-color:transparent;
+}
+
+.move-deet{
+    margin-bottom: -8%;
+    padding:5%;
+    font-size: .8rem;
+}
+
+
+
+@media screen and (min-width: 310px) and (max-width: 520px) {
+    .image{
+        width: 100vw;
+        height: 30vh;
+        background-image: url("https://cdn.statically.io/img/wallpapercart.com/wp-content/uploads/2019/09/fitness-desktop-wallpaper-scaled.jpg?quality=100&f=auto");
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-bottom: 50%;
+    }
+    .cir-landing{
+        width: 100vw;
+        height: 80vh;
+        margin-top: 80%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: flex-start;
+        /* margin: auto; */
+        /* background-color: salmon; */
+        padding: 5%;
+    }
+    .move-info{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: center;
+        background-color:transparent;
+        /* padding-right:8%; */
+        padding-bottom:5%;
+        font-size: .8rem;
+    }
+    .move-img{
+        margin-left: -10%;
+    }
+    
+    .move-details {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: center;
+        padding-left: 5%;
+        margin-left: -10%;
+        background-color:transparent;
+    }
+    .move-deet{
+        margin-bottom: -8%;
+        padding:5%;
+        font-size: .6rem;
+    }
+    .spotify-btn {
+        width: 80vw !important;
+        height: 5vh !important;
+        line-height: .5rem;
+        background-color: #a5ecd7 !important;
+    }
+    .start-btn {
+        width: 80vw !important;
+    }
 }
