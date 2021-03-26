@@ -19,6 +19,7 @@ const [membership_type, setmembership_type] = useState('')
 const [membership_price, setmembership_price] = useState(0)
 const [last_name, setlast_name] = useState('')
 const [errorMsg, setErrorMsg] = useState('')
+// const [picFileSelected, setPicFileSelected] = useState('')
 
 // const values = useContext(AuthContext)
 const {push} = useHistory()
@@ -33,25 +34,35 @@ const membership = (type, price)=>{
     setmembership_price(price)
 }
 
+// const picFileSelected = (event) => {
+//     state = {
+//         selectedFile=null
+//     }
+//     console.log(event.target.files[0])
+// }
+
+// const picUploadHandler = () => {
+//     setPicFileSelected(picFileSelected)
+// }
+
 const onSignUp = (formSubmit) => {
     formSubmit.preventDefault()
     // let confirm
-
+    
     // if(!membership_type){
-    //     let confirm = window.confirm('please select a membership plan to continue')
-    // }
+        //     let confirm = window.confirm('please select a membership plan to continue')
+        // }
 
-    axios.post(`/auth/register`, {email, password, first_name, last_name, birthday, membership_type, membership_price})
-    .then((res)=> {
-        console.log(res.data, 'this is the response back from register')
-        push('/landing')
-    }).catch(error=> setErrorMsg(error))
-} 
+        axios.post(`/auth/register`, {email, password, first_name, last_name, birthday, membership_type, membership_price})
+        .then((res)=> {
+            console.log(res.data, 'this is the response back from register')
+            push('/landing')
+        }).catch(error=> setErrorMsg(error))
+    } 
+    console.log(membership_type, membership_price, 'state after onClick')
 
-
-
-console.log(membership_type, membership_price, 'state after onClick')
-
+    
+    
     return (
         <section>
         <div className="register-container">
@@ -70,6 +81,8 @@ console.log(membership_type, membership_price, 'state after onClick')
                     <div className="profile-icon">
                     <img className="profile-pic" 
                     src="https://img.icons8.com/color/100/000000/test-account.png"/>
+                    {/* <input type="file" onChange={picFileSelected}/>
+                    <button onClick = {picUploadHandler}>Upload</button> */}
                      </div>
                     
                     
