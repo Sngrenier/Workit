@@ -49,12 +49,21 @@
         
     }
     .input-btn {
-        width: 80vw;
+        width: 70vw;
         padding: 5%;
         margin: 5%;
+        border: none;
+        background: var(--mainWhite);
+        opacity: 50%;
+    }
+    .input-btn:hover{
+        opacity: 80%;
+        border-color: var(--mainBlue) !important;
     }
     .signin-btn{
-        width: 30vw !important;
+        width: 60vw !important;
+        height: 4vh !important;
+        padding: 0 !important;
     }
 }
 
@@ -77,6 +86,13 @@
         width: 60vw;
         padding: 5%;
         margin: 5%;
+        border: none;
+        background: var(--mainWhite);
+        opacity: 50%;
+    }
+    .input-btn:hover{
+        opacity: 80%;
+        border-color: var(--mainBlue) !important;
     }
     .signin-btn{
         width: 40vw !important;
