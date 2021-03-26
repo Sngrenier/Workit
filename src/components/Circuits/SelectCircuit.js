@@ -8,6 +8,7 @@ import './SelectCircuit.css'
 import {useHistory, useParams} from 'react-router-dom'
 import MoveSteps from '../MoveStepsModal/MoveStepsModal'
 import Circuit from '../Landing/Circuit'
+import Spotify from '../Spotify/SpotifyModal'
 
 
 //this selects the circuit for the user to start the workout
@@ -46,7 +47,7 @@ const SelectCircuit =(props)=> {
                 <h5 className="subtitle-line">{circuitContext.individualCircuit.subtitle}</h5>
                 <h5 className="title-line">{circuitContext.individualCircuit.title}</h5>
                 <h5 className="info-line">{circuitContext.individualCircuit.info}</h5>
-           <ButtonContainer className='spotify-btn'>Pick a playlist</ButtonContainer>
+         <Link to='/spotify'><ButtonContainer className='spotify-btn'>Pick a playlist</ButtonContainer></Link>
            <h3 className="staging">what you'll need</h3>
                 <img className="equip-icon" src={circuitContext.individualCircuit.equipment} height='100px' width='100px'/>
             <h3 className="staging">what you'll do</h3>
@@ -56,17 +57,11 @@ const SelectCircuit =(props)=> {
                     return <>
                         {index === 0 ? <h4 className="circuit-title">Circuit 1</h4> : index === 4 ? <h4 className="circuit-title">Circuit 2</h4> : null} 
             <li className="move-info" key={index} onClick={()=>readMoveDetails(elem.move_id)}> 
-<<<<<<< HEAD
-                
-                <Link to={`/movesteps/${elem.move_id}`}>
-                <img className="move-img" src={elem.image} height='auto' width='200px'/>
-=======
 
             
                 <Link to={`/${elem.move_id}`}>
                 <img className="move-img" src={elem.image} height='auto' width='200px'/>
 
->>>>>>> main
                 </Link> 
                 <div className="move-details">
                 <h3 className="move-deet">{elem.move_title}</h3>

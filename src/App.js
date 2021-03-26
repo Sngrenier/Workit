@@ -15,6 +15,7 @@ import MoveCarousel from './components/Circuits/MoveCarousel'
 import MoveStepsModal from './components/MoveStepsModal/MoveStepsModal'
 import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
+import Spotify from './components/Spotify/SpotifyModal'
 
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
           <Route path="/circuitselection/:id" component={SelectCircuit} />
+          <Route path='/spotify' component={Spotify} />
           <Route path="/movecarousel"><MoveCarousel time={405}/></Route>
           <Route path="/movesteps/:id" component={MoveStepsModal} />
           <Route path="/quitcircuit" component={QuitCircuit} />
