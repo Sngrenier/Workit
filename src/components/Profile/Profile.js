@@ -1,11 +1,10 @@
 import {Link} from 'react-router-dom'
-import {useContext, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import axios from 'axios'
 import {ButtonContainer} from '../NavButton'
 import './Profile.css'
 import {useHistory} from 'react-router-dom'
 import moment from 'moment'
-// import EditProfile from './EditProfile'
 
 const Profile =()=>{
     const [user, setUser] = useState([])
@@ -28,30 +27,24 @@ const Profile =()=>{
     }, [])
 
 
-    
-
     const updateProfile = ()=>{
         axios.post(`/updateprofile`, {current_weight, goal_weight, goal_date, height})
         .then((res)=> console.log(res.data, 'update profile data'))
     }
 
-  
-    
-        return (
-                       
-                        <section className='profileContainer'>
-                        <div className="register-container">
+        return (   
+                    <section className='profileContainer'>
+                        <div className="profile-container">
                             <div className = "container-fluid">
                                 <div className="row header-row">
                 
                                 <Link to="/landing">
                                 <img className="close-icon" src="https://img.icons8.com/ios-glyphs/30/4a90e2/macos-close.png"/>
                                 </Link>
-                                {/* <h3 className="prof-title">Create your account</h3> */}
                                     
                             </div>
                 
-                            <div className="membership-btns">
+                            <div className="profile-btns">
                 
                                     <div className="profile-icon">
                                     <img className="profile-pic" 
@@ -60,26 +53,19 @@ const Profile =()=>{
                                 </div>
                             </div>
                         </div>
-         
-                   
-                   
-  
-                            
-              
+
                     <ul className='profileBtnContainer'>
-          
                         <ButtonContainer className='profileBtn'> Name: {user.first_name} {user.last_name}</ButtonContainer>
                         <ButtonContainer className='profileBtn'>Email: {user.email}</ButtonContainer>
                         <ButtonContainer className='profileBtn'>Birthday: {moment(user.birthday).format('MM-Do-YYYY')}</ButtonContainer>
-                        <ButtonContainer className='profileBtn'>  Membership Id:   {user.membership_id}</ButtonContainer>
-                    
-        
+                        <ButtonContainer className='profileBtn'>  Membership Id: {user.membership_id}</ButtonContainer>
                     </ul>
 
 
                 <form
                 className='form' 
-                onSubmit={()=>updateProfile()}> 
+                onSubmit={()=>updateProfile()}
+                > 
 
                 <input
                 className='profileInputs'
@@ -118,12 +104,6 @@ const Profile =()=>{
                     </ButtonContainer>
             
                 </form>    
-            
-    
-        
-                 
-
-                   
                     </section>
             )
     

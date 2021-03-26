@@ -81,8 +81,6 @@ const onSignUp = (formSubmit) => {
                     <div className="profile-icon">
                     <img className="profile-pic" 
                     src="https://img.icons8.com/color/100/000000/test-account.png"/>
-                    {/* <input type="file" onChange={picFileSelected}/>
-                    <button onClick = {picUploadHandler}>Upload</button> */}
                      </div>
                     
                     
