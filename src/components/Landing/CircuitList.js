@@ -6,6 +6,7 @@ import {useHistory} from 'react-router-dom'
 
 
 
+
 const CircuitList = (props) => {
     const circuitContext = useContext(CircuitContext);
     const {push} = useHistory()
@@ -16,7 +17,7 @@ const CircuitList = (props) => {
 
     }
 
-    return <div className='circuitImg'>
+    return <div className='circuitList'>
         {circuitContext.circuits.map((el, i) => <Circuit key={i} circuit={el} setCircuit={selectCircuit}/>)}
     </div>
 }
