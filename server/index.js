@@ -54,4 +54,4 @@ app.post(`/quitreasons`, circuitCtrl.quit_reasons)
 
 //Profile Endpoints ------------------------------
 
-app.put(`/editbirthday`, profileCtrl.edit_birthday)
+app.post(`/updateprofile`, profileCtrl.update_profile)
