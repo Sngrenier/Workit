@@ -1,4 +1,184 @@
-.circuitListCard {
-    height: 200px;
-    width: 200px;
+@media screen and (min-width: 200px) and (max-width: 520px) {
+.img-container{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: flex-start;
+    margin: auto;
+    background-color: transparent;  
+}
+.circuit-list{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: flex-start;
+    margin: auto;
+    background-color: transparent;  
+}
+.circuit-img{
+    border-radius:10%;
+}
+.heading-row{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: center;
+    background-color: transparent;
+}
+.profile-info{
+    display: flex;
+    flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+    background-color: transparent;
+    margin-top: 16%;
+}
+.brand {
+    font-family: 'Righteous';
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--mainBlue) !important;
+    padding: 5%;
+  }
+.profile-icon{
+    width: 50%;
+    margin-bottom:-10%;
+}
+.greeting-msg{
+    font-family: roboto;
+    font-size: .6rem;
+    font-weight: 600;
+    color: (var--mainDark);
+}
+.nav-btns{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+    background-color: transparent;
+}
+.nav-btn{
+    font-family: roboto !important;
+    width: 45vw !important;
+    height: 3vh !important;
+    padding: 0 !important;
+    font-size: .7rem !important;
+}
+.nav-btn:hover{
+    background-color: var(--lightBlue);
+}
+.nav-info{
+    height: 10vh;
+    width:100vw;
+    background-color: var(--mainBlue);
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+.cir-tab{
+    font-family: roboto;
+    font-size: .6rem;
+    font-weight: 600;
+    color: var(--mainWhite) !important;
+    padding-top:5%;
+}
+}
+
+@media screen and (min-width: 520px) and (max-width: 1800px) {
+    .img-container{
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: flex-start;
+        margin: auto;
+        background-color: transparent;  
+    }
+    .circuit-list{
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: flex-start;
+        margin: auto;
+        background-color: transparent;  
+    }
+    .circuit-img{
+        border-radius:10%;
+    }
+    .heading-row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-content: center;
+        background-color: transparent;
+    }
+    .profile-info{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        background-color: transparent;
+        margin-top: 5%;
+        padding: 5%;
+    }
+    .brand {
+        font-family: 'Righteous';
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--mainBlue) !important;
+        padding: 15%;
+      }
+    .profile-icon{
+        width: 70%;
+        /* margin-bottom:-10%; */
+    }
+    .greeting-msg{
+        font-family: roboto;
+        font-size: 1rem;
+        font-weight: 600;
+        color: (var--mainDark);
+    }
+    .nav-btns{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        align-content: center;
+        background-color: transparent;
+    }
+    .nav-btn{
+        font-family: roboto !important;
+        width: 45vw !important;
+        height: 3vh !important;
+        padding: 0 !important;
+        font-size: .7rem !important;
+    }
+    .nav-btn:hover{
+        background-color: var(--lightBlue);
+    }
 }
