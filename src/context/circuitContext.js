@@ -11,7 +11,7 @@ const CircuitContext = React.createContext();
 class CircuitProvidertest extends Component {
   state = {
     circuits: [],
-    individualCircuit: [],
+    individualCircuit: {},
     moves: [],
     userInput: "",
     modalOpen: false,
@@ -47,7 +47,8 @@ class CircuitProvidertest extends Component {
     axios.get(`/moves/${circuit_id}`)
     .then((res)=>{
       console.log(res.data, 'setMoves function')
-      this.setState({moves: res.data})
+      this.setState({moves: res.data.moves, individualCircuit: res.data.circuit})
+      console.log(res.data)
       
   }).catch(err=>console.log(err))
   }
@@ -57,6 +58,8 @@ class CircuitProvidertest extends Component {
     const circuitMove = this.state.circuits.find((move) => move.moves_id === id);
     return circuitMove;
   };
+
+  
 
   handleDetail = (moves_id) => {
     axios.get(`/detailMove/${moves_id}`).then((res) => {
