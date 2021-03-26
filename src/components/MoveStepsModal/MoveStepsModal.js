@@ -44,8 +44,8 @@ console.log(moves, 'moves after useEffect')
 
          
          <ul>
-            <li>{moves.gif}</li>
-            <li>{moves.title}</li>
+            {/* <li>{moves.gif}</li>
+            <li>{moves.title}</li> */}
             <li>{moves.step1}</li>
             <li>{moves.step2}</li>
             <li>{moves.step3}</li>
