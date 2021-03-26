@@ -5,6 +5,7 @@ import NavButton, { ButtonContainer } from '../NavButton'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 import {Link} from 'react-router-dom'
+import './landingpage.css'
 
 
 
@@ -30,32 +31,58 @@ const logout=()=>{
     })
 }
 
-
 console.log(user, 'this is user array on the landing page')
 
     return (
-        <div>
-            <h1>WORKit</h1>
-            <h2> Welcome {user.first_name}!</h2>
-           
-            <Link to='/'><ButtonContainer onClick={logout}>Logout</ButtonContainer></Link> 
-            <Link to='/profile'><ButtonContainer>Profile</ButtonContainer></Link> 
-            <section className='circuitListCard'>
-            
+        <section>
+        <div className="landing-container">
+            <div className="container-fluid">
+                
+                <div className="row heading-row">
+                    
+                    <div className="brand-name">
+                        <h1 className="brand">WORKit</h1>
+                    </div>
+                    <div className="profile-info">             
+                        <img className="profile-icon" 
+                        src="https://img.icons8.com/color/100/000000/test-account.png"/>
+                        <h4 className="greeting-msg"> Welcome {user.first_name}!</h4>
+                    </div>
+                </div>
+            <div className="nav-btns">
+            <Link to='/'><ButtonContainer className="nav-btn" onClick={logout}>Logout</ButtonContainer></Link> 
+            <Link to='/profile'><ButtonContainer className="nav-btn">Profile</ButtonContainer></Link> 
+            </div>
+            <div className='circuit-list'>
             <CircuitList/>
             <Circuit/>
+            </div>
     
-            </section>
-    
-            <footer className='navBar'>
-            Workouts
-            Planner
-            progress
-            food
+
+
+
+
+            <footer className="nav-info">
+                <div>
+                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/weight-1.png"/>
+                    <h4 className="cir-tab">Workouts</h4>
+                </div>
+                <div>
+                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/calendar.png"/>
+                    <h4 className="cir-tab">Planner</h4>
+                </div>
+                <div>
+                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/trophy.png"/>
+                    <h4 className="cir-tab">progress</h4>
+                </div>
+                <div>
+                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/restaurant.png"/>
+                    <h4 className="cir-tab">food</h4>
+                </div>
             </footer>
-      
-        
+      </div>
         </div>
+        </section>
     )
     
 }

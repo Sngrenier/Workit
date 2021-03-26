@@ -31,7 +31,9 @@ module.exports = {
             const date = new Date 
             const db = req.app.get('db')
             const moves = await db.circuits.read_moves([circuit_id]) 
-            res.status(200).send(moves)
+            const [circuit] = await db.circuits.read_circuit_selection([circuit_id])
+            console.log(circuit)
+            res.status(200).send({moves, circuit})
     
             }
             catch(error){
