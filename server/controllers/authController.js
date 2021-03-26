@@ -53,18 +53,14 @@ module.exports = {
                     console.log("success");
                     return res.status(200).send(req.session.user);
                 }
-              });
-
-            }
-
-              catch(err) {
-                console.log(err, 'this is a registration error')
-            }
-
+            });
+        }
+        catch(err) {
+            console.log(err, 'this is a registration error')
+        }
             },
 
     login: async(req, res)=>{
-
         try{
          const {email, password} = req.body 
          const db = req.app.get('db')

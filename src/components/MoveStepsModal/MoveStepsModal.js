@@ -40,7 +40,7 @@ console.log(moves, 'moves after useEffect')
                 <img className="close-box" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
                 </Link>
 
-       { moves ?  
+       { moves &&  
 
          
          <ul>
@@ -52,7 +52,7 @@ console.log(moves, 'moves after useEffect')
             <li>{moves.step6}</li>
          </ul>
 
-      : <h1>This is null</h1>   
+      
 
       }  
           
