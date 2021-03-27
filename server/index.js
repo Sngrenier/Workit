@@ -14,6 +14,7 @@ const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 app.use(express.json());
 
 
+
 massive({
     connectionString: CONNECTION_STRING,
     ssl:{rejectUnauthorized: false}, 
@@ -32,6 +33,20 @@ massive({
         cookie: {maxAge: 30 * 24 * 60 * 60 * 1000}
 
     }))
+
+
+// fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
+//   method: "GET",
+//   headers: {
+//     Authorization: `Bearer ${userAccessToken}`
+//   }
+// })
+// .then(response => response.json())
+// .then(({beats}) => {
+//   beats.forEach((beat, index) => {
+//     console.log(`Beat ${index} starts at ${beat.start}`);
+//   })
+// })
 
 
 //User Endpoints---------------------------
