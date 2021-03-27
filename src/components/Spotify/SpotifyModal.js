@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import Dropdown from './Dropdown'
 import axios from 'axios'
 import {Credentials} from './Credentials'
-import ListBox from './Listbox'
+// import ListBox from './Listbox'
 
 const SpotifyModal =()=> {
 
@@ -120,7 +120,7 @@ const SpotifyModal =()=> {
         <Dropdown options={genres.listOfGenresFromAPI} slectedValue={genres.selectedGenre} changed={genreChanged} />
         <Dropdown options={playlist.listOfPlaylistFromAPI} selectedValue={playlist.selectedPlaylist} changed={playlistChanged}/>
         <button type='submit'>Search</button>
-        <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked}/>
+        {/* <Listbox items={tracks.listOfTracksFromAPI} clicked={listboxClicked}/> */}
 
         </div>
         </form>

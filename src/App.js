@@ -29,12 +29,8 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
           <Route path="/circuitselection/:id" component={SelectCircuit} />
-<<<<<<< HEAD
-          <Route path="/movecarousel"><MoveCarousel time={20} rounds={2}/></Route>
-=======
           <Route path='/spotify' component={Spotify} />
-          <Route path="/movecarousel"><MoveCarousel time={405}/></Route>
->>>>>>> main
+          <Route path="/movecarousel"><MoveCarousel time={20} rounds={2}/></Route>
           <Route path="/movesteps/:id" component={MoveStepsModal} />
           <Route path="/quitcircuit" component={QuitCircuit} />
           <Route path="/completedcircuit" component={CompletedCircuit} />

@@ -1,0 +1,53 @@
+
+
+.complete-container{
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url("https://media2.giphy.com/media/3ohhwznSVuwXu6RnEY/giphy.gif"); */
+    background-image:url("https://media4.giphy.com/media/1lC9IBNi0sZE7qqkNY/giphy.gif");
+    background-color: var(--mainBlue);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.congrats-container{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-start;
+}
+
+.sub-title-line{
+    font-family: roboto;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--mainWhite);
+    letter-spacing: .1rem;
+    margin-top: 2%;
+}
+.cir-title-line{
+    font-family: roboto;
+    font-weight: 900;
+    padding: 4%;
+    font-size: 4rem;
+    color: var(--mainWhite);
+}
+
+
+@media screen and (min-width: 310px) and (max-width: 600px) {
+.trophy{
+    z-index: 1;
+}
+.glitter{
+    z-index:2;
+}
+}
