@@ -22,9 +22,11 @@
     "react-paypal-express-checkout": "^1.0.5",
     "react-responsive-carousel": "^3.2.15",
     "react-router-dom": "^5.2.0",
+    "react-router-redirect": "^1.0.1",
     "react-scripts": "4.0.3",
     "react-strap": "0.0.1",
     "reactstrap": "^8.9.0",
+    "redirect": "^0.2.0",
     "styled-components": "^5.2.1",
     "web-vitals": "^1.1.1"
   },

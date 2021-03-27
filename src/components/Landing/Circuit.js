@@ -12,24 +12,19 @@ const Circuit = (props) => {
         mainimg = props.circuit.mainimg
         subtitle = props.circuit.subtitle
         info = props.circuit.info
-        
     }
-
 
     return <CircuitWrapper className="container-fluid">
 
-        
-       
-      <div className="card" onClick={()=>props.setCircuit(props.circuit.circuit_id)}>  
-
-            <section className="img-container p-5">
-                <img className="circuit-img" alt={title} src={mainimg} height='auto' width='250px'/>
-                <div className="cir-info">
-                    <h4 className="subtitle-text">{subtitle}</h4>
-                    <h4 className="title-text">{title}</h4>
-                    <h4 className="info-text">{info}</h4>
-                </div>
-            </section>
+            <div className="card" onClick={()=>props.setCircuit(props.circuit.circuit_id)}>  
+                <section className="img-container p-5">
+                    <img className="circuit-img" alt={title} src={mainimg} height='auto' width='250px'/>
+                    <div className="cir-info">
+                        <h4 className="subtitle-text">{subtitle}</h4>
+                        <h4 className="title-text">{title}</h4>
+                        <h4 className="info-text">{info}</h4>
+                    </div>
+                </section>
         </div>
    
     </CircuitWrapper>
