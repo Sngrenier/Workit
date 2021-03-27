@@ -113,9 +113,7 @@ useEffect(()=>{
 
         </div> 
         
-        {
-           moves.length && index < moves.length && <video loop ref={videoRef}><source src={moves[index].gif} type='video/mp4'/></video>
-        }
+        {moves.length && index < moves.length && <video loop ref={videoRef}><source src={moves[index].gif} type='video/mp4'/></video>}
        
         <ButtonContainer 
         onClick={()=>{if(index <= moves.length - (rounds * 4)) {setIndex(moves.length - (rounds * 4) + 3)}
