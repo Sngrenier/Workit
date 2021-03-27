@@ -1,10 +1,6 @@
 import {Link} from 'react-router-dom'
-<<<<<<< HEAD
-import {useEffect, useState} from 'react'
-=======
 import {useContext, useEffect, useState} from 'react'
 // import { useForm } from "react-hook-form"
->>>>>>> main
 import axios from 'axios'
 import {ButtonContainer} from '../NavButton'
 import './Profile.css'
@@ -32,32 +28,22 @@ const Profile =()=>{
     }, [])
 
 
-<<<<<<< HEAD
-    const updateProfile = ()=>{
-=======
     
 
     const updateProfile = (formSubmit)=>{
         formSubmit.preventDefault()
 
->>>>>>> main
         axios.post(`/updateprofile`, {current_weight, goal_weight, goal_date, height})
         .then((res)=> console.log(res.data, 'update profile data'))
         .catch((error)=> console.log(error))
     }
 
-<<<<<<< HEAD
-        return (   
-                    <section className='profileContainer'>
-                        <div className="profile-container">
-=======
   
     
         return (
                        
                         <section className='profileContainer'>
                         <div className='profile-container'>
->>>>>>> main
                             <div className = "container-fluid">
                                 <div className="row header-row">
                 
@@ -67,11 +53,7 @@ const Profile =()=>{
                                     
                             </div>
                 
-<<<<<<< HEAD
-                            <div className="profile-btns">
-=======
                             <div className='profile-btns'>
->>>>>>> main
                 
                                     <div className="profile-icon">
                                     <img className="profile-pic" 
@@ -91,13 +73,8 @@ const Profile =()=>{
 
                 <form
                 className='form' 
-<<<<<<< HEAD
-                onSubmit={()=>updateProfile()}
-                > 
-=======
                 onSubmit={updateProfile}> 
             
->>>>>>> main
 
                 <input
                 className='profileInputs'
