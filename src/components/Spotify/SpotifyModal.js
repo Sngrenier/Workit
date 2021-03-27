@@ -2,12 +2,12 @@
 import {useState, useEffect} from 'react'
 import Dropdown from './Dropdown'
 import axios from 'axios'
-import {Credentials} from './Credentials'
-import ListBox from './Listbox'
+import Listbox from './Listbox'
 
 const SpotifyModal =()=> {
 
-    const spotify = Credentials()
+
+    const {CLIENT_ID, CLIENT_SECRET} = process.env
 
     const data = [
         
@@ -20,14 +20,14 @@ const SpotifyModal =()=> {
     const [genres, setGenres] = useState({selectedGenre: '', listOfGenresFromAPI: []})
     const [playlist, setPlaylist] = useState({selectedPlaylist: '', listOfPlaylistFromAPI: []})
     const [tracks, setTracks] = useState({selectedTrack: '', listOfTracksFromAPI: []})
-    const [trackDetail, setTrackDetail] = useState([])
+    const [trackDetail, setTrackDetail] = useState(null)
 
 
     useEffect(()=>{
         axios(`https://accounts.spotify.com/api/token`, {
         headers: {
             'Content-Type' : 'application/x-www-form-urlencoded',
-            'Authorization' : 'Basic' +btoa(spotify.ClientId + ':' + spotify.ClientSecret)
+            'Authorization' : 'Basic' +btoa(CLIENT_ID + ':' + CLIENT_SECRET)
         
         },
 
@@ -52,7 +52,7 @@ const SpotifyModal =()=> {
         
         })
 
-        }, [genres.selectedGenre, spotify.ClientId, spotify.ClientSecret])
+        }, [genres.selectedGenre, CLIENT_ID, CLIENT_SECRET])
 
 
         const genreChanged = val =>{

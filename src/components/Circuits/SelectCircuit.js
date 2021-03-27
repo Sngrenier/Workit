@@ -69,7 +69,7 @@ const SelectCircuit =(props)=> {
                 </li> </>})}
                 </ul>
 
-                <Link to={`/moveCarousel`}>
+                <Link to={`/movecarousel`}>
             <ButtonContainer className='start-btn' onClick={startWorkout}> Start Workout </ButtonContainer>
             </Link>
                 </div>
