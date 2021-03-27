@@ -1,0 +1,14 @@
+.go{
+    animation: grow 1s 1s;
+}
+@keyframes grow{
+    from{
+        transform: scale(1);
+        font-size: 1rem;
+    }
+    to{
+        transform: scale(4);
+        font-size: 3rem;
+    }
+}
+

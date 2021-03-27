@@ -14,7 +14,6 @@ const CircuitList = (props) => {
     const selectCircuit = (id)=>{
         circuitContext.setMoves(id)
         push(`/circuitselection/${id}`)
-
     }
 
     return <div className='circuitList'>

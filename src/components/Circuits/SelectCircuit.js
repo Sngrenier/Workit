@@ -57,7 +57,6 @@ const SelectCircuit =(props)=> {
                     return <>
                         {index === 0 ? <h4 className="circuit-title">Circuit 1</h4> : index === 4 ? <h4 className="circuit-title">Circuit 2</h4> : null} 
             <li className="move-info" key={index} onClick={()=>readMoveDetails(elem.move_id)}> 
-
             
                 <Link to={`/${elem.move_id}`}>
                 <img className="move-img" src={elem.image} height='auto' width='200px'/>
