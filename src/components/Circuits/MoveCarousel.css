@@ -1,14 +1,201 @@
 .go{
     animation: grow 1s 1s;
+    /* transition: ease-in-out;
+    visibility: hidden; */
 }
 @keyframes grow{
     from{
+        visibility:visible;
         transform: scale(1);
         font-size: 1rem;
     }
     to{
         transform: scale(4);
         font-size: 3rem;
+        visibility:hidden;
     }
 }
 
+.carousel-container{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-end;
+    margin: auto;
+}
+.content-container{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: flex-end;
+    margin: auto;
+}
+/* .move-gifs{
+    width: 80vw;
+    height: auto;
+    margin-left: -15%;
+} */
+.timer-header{
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.heading-timer{
+    width: 100vw;
+    height:20vh;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-start;
+}
+.timer{
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 4rem;
+    color: var(--mainDark);
+    padding: 10%;
+}
+.move-heading{
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    color: var(--mainDark);
+    padding: 2%;
+}
+.reps-line{
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    color: var(--mainDark);
+    padding: 2%;
+}
+
+.play-btn{
+    font-family: Roboto;
+    font-size: .6rem;
+    font-weight: 600;
+    letter-spacing: .13rem;
+    color: var(--mainWhite);
+}
+
+
+@media screen and (min-width: 310px) and (max-width: 600px) {
+.carousel-container{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-end;
+    margin: auto;
+    background-color: transparent;
+}
+.content-container{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: flex-end;
+    margin: auto;
+}
+.move-gifs{
+    width: 80vw;
+    height: 40vh;
+    margin-left: -21%;
+    margin-bottom: 20%;
+    background-color: transparent;
+}
+.move-nav-btns{
+    width: 80vw;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: flex-start;
+    margin-bottom: -30%;
+    padding:0;
+    background-color: transparent;
+}
+.timer-header{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: flex-start;
+    background-color: transparent;
+}
+.heading-timer{
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: flex-start;
+    background-color: transparent;
+    padding-top: 10%;
+}
+.countdown{
+    height: 10vh;
+    padding-top: 10%;
+}
+.timer{
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 4rem;
+    color: var(--mainDark);
+    padding: 10%;
+}
+.move-heading{
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    color: var(--mainDark);
+    padding: 2%;
+}
+.reps-line{
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    color: var(--mainDark);
+    padding: 2%;
+}
+.play-btn{
+    font-family: Roboto;
+    font-size: .6rem;
+    font-weight: 600;
+    letter-spacing: .13rem;
+    color: var(--mainWhite);
+}
+
+}

@@ -27,7 +27,7 @@ const SelectCircuit =(props)=> {
 
     
     const startWorkout=(id)=>{
-        // push(`/movecarousel${id}`)
+        push(`/movecarousel${id}`)
     }
     // console.log(moves, 'moves on state in SelectCircuit')
     

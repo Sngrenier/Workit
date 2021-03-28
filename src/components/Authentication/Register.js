@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-// import {AuthContext} from '../../context/AuthContext'
 import {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from 'axios'
@@ -87,25 +86,13 @@ const onSignUp = (formSubmit) => {
                     
             </div>
 
-            <div className="membership-btns">
+            <div className="register-btns">
 
                     <div className="profile-icon">
                     <img className="profile-pic" 
                     src="https://img.icons8.com/color/100/000000/test-account.png"/>
                      </div>
                     
-                    
-                    <h4 className="info-msg">Select a membership plan to continue </h4>
-                    <ButtonContainer className='month-btn' onClick={()=>membership('monthly', 19.99)}>$19.99/ Monthly</ButtonContainer>
-                    <ButtonContainer className='qtr-btn' onClick={()=>membership('quarterly', 83.99)}> $83.99 / Quarterly </ButtonContainer>
-                    <h4 className="info-msg">$13.99 / month. Save 30%</h4>
-                    <ButtonContainer className='yr-btn' onClick={()=>membership('annual', 119.99)}>$119.99 / Annually</ButtonContainer>
-                    <h4 className="info-msg">$9.99 / month. Save 50%, our most popular plan for good reason!</h4>
-                    
-
-                {/* <div className="member-info"> */}
-
-                <PayPalButton/>
 
                     <input
                     className='termsofuse'

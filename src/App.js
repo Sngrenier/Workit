@@ -16,6 +16,7 @@ import MoveStepsModal from './components/MoveStepsModal/MoveStepsModal'
 import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
 import Spotify from './components/Spotify/SpotifyModal'
+import Membership from './components/Authentication/Membership'
 
 
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Auth} />
+          <Route path="/membership" component={Membership}/>
           <Route path="/landing" component={LandingPage} />
           <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
