@@ -9,7 +9,6 @@ import './MoveStepsModal.css'
 
 
 const MoveStepsModal =(props)=> {
-
    const circuitContext = useContext(CircuitContext);
    const videoRef = useRef()
    const [moves, setMoves] =useState([]) 
@@ -42,7 +41,7 @@ console.log(moves, 'moves after useEffect')
     <section>
     <div className="details-container">
        <div className="container-fluid">
-               <Link to="/landing">
+               <Link to="/circuitSelection/:id">
                 <img className="close-box" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
                 </Link>
 
@@ -95,8 +94,8 @@ console.log(moves, 'moves after useEffect')
             </div>
          </ul>
          } 
-          </div>
-          </div>
+         </div>
+      </div>
    </div>
    </section>
  )   

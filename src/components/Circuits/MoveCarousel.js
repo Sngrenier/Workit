@@ -126,16 +126,16 @@ return (
        {/* <ModalContainer> */}
         <div className="countdown">
             <div id="modal">
-            {countdown < 4 && countdown > 0 ? <p>{countdown}...</p> : countdown === 0 ? <p className="go" onAnimationEnd={_ => setCountdown(0)}>GO!</p> : null}
+            {countdown < 4 && countdown > 0 ? 
+            <p className="count">{countdown}...</p> : countdown === 0 ? 
+            <p className="go" onAnimationEnd={_ => setCountdown(0)}>GO!</p> : null}
             </div>
             </div>
         {/* </ModalContainer> */}
                
             <div className="timer-header">
                 <div className="space-1"></div>
-                <div className="timer">
-                    {timer}
-                </div>
+                <div className="timer">{timer}</div>
             </div>
 
         <div className="heading-timer">
@@ -151,29 +151,18 @@ return (
             <div className="move-gifs">
                 {moves.length && index < moves.length && <video loop ref={videoRef} width={400} height={400}><source src={moves[index].gif} type='video/mp4'/></video>}
             </div>
-           
+            
             <div className="move-nav-btns">
-            <img className="back-btn" src="https://img.icons8.com/ios-glyphs/40/000000/double-left.png"
+                <img className="back-btn" src="https://img.icons8.com/ios-glyphs/40/000000/double-left.png"
                     onClick = { () => {
                     if(index <= moves.length - (rounds * 4)) {
                         setIndex(moves.length - (rounds * 4) + 3)
                     } else{
                         setIndex(index-1)
                     }}}></img>
-
-                {/* <ButtonContainer onClick = { () => {
-                    if(index <= moves.length - (rounds * 4)) {
-                        setIndex(moves.length - (rounds * 4) + 3)
-                    } else{
-                        setIndex(index-1)
-                    }}}>
-                        Back</ButtonContainer>  */}
                         
-                
-
                 <ButtonContainer className="play-btn" onClick = {() => {playTimer()}}> {play ? 'pause' : 'play'} </ButtonContainer>  
-                
-                
+                                
                 <img className="forward-btn" src="https://img.icons8.com/ios-glyphs/40/000000/double-right.png" 
                     onClick = { () => {
                     if(index >= moves.length - (rounds * 4) + 3) {
@@ -181,13 +170,28 @@ return (
                     }else{
                         setIndex(index+1)
                     }}}></img>
-                {/* <ButtonContainer onClick = { () => {
-                    if(index >= moves.length - (rounds * 4) + 3) {
-                        setIndex(moves.length - (rounds * 4))
-                    }else{
-                        setIndex(index+1)
-                    }}}>
-                        Forward</ButtonContainer> */}
+            </div>
+
+            <div className="quit-btn">
+
+                <div className="spotify-icon">
+                    <img className="spot-icon" src="https://img.icons8.com/ultraviolet/30/000000/spotify.png"/>
+                    </div>
+
+                <div>
+                    <ButtonContainer className="quit">Quit Curcuit</ButtonContainer>
+                    </div>
+
+                <div className="move-next">
+                    <div className="up-next">
+                    <h4>up next</h4>
+                    </div>
+
+                    <div className="move-name">
+                    {moves.length && index < moves.length && <h4>{moves[index +1].move_title}</h4>}
+                    </div>
+                </div>
+
             </div>
         </div>
 

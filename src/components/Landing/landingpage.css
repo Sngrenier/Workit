@@ -97,6 +97,14 @@
     color: var(--mainWhite) !important;
     padding-top:5%;
 }
+.nav-cols{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
 }
 
 @media screen and (min-width: 520px) and (max-width: 1800px) {
@@ -180,5 +188,31 @@
     }
     .nav-btn:hover{
         background-color: var(--lightBlue);
+    }
+    .nav-info{
+        height: 10vh;
+        width:100vw;
+        background-color: var(--mainBlue);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+    }
+    .cir-tab{
+        font-family: roboto;
+        font-size: .6rem;
+        font-weight: 600;
+        color: var(--mainWhite) !important;
+        padding-top:25%;
+    }
+    .nav-cols{
+        display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    align-content: center;
     }
 }
