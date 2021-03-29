@@ -115,7 +115,6 @@ const closeModal = () => {
 //         if(!show) setRender(false)
 //     }
 
-
 return (
     <>
     {rounds > 0 ?

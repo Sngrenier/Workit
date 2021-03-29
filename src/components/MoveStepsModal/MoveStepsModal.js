@@ -4,65 +4,101 @@ import {CircuitContext} from '../../context/circuitContext'
 import SelectCircuit from '../Circuits/SelectCircuit'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import {useRef} from 'react'
+import './MoveStepsModal.css'
 
 
 const MoveStepsModal =(props)=> {
 
    const circuitContext = useContext(CircuitContext);
-   // const {move_id} = useParams()
+   const videoRef = useRef()
    const [moves, setMoves] =useState([]) 
-   const [steps, setSteps] = useState([])
+   const [play, setPlay] = useState(true)
+   const [index, setIndex] = useState(0)
+   // const [steps, setSteps] = useState([])
+   // const {move_id} = useParams()
 
+
+//    useEffect(()=>{
+//       if(videoRef.current && moves[index].gif){
+//           videoRef.current.load()
+//           videoRef.current.play()
+//       }
+//   }, [index])
 
       useEffect(()=>{
          console.log(circuitContext.moves, 'this is context')
       let selectedMove = circuitContext.moves.find(move => move.move_id === +props.match.params.id)   
       setMoves(selectedMove)
-    
-   
-
       }, [circuitContext])
-
-
       console.log(moves, 'moves data')
 
 
 const displaySteps = ()=>{
-
 }
-
 console.log(moves, 'moves after useEffect')
 
  return (
-
-    <div>
+    <section>
+    <div className="details-container">
+       <div className="container-fluid">
                <Link to="/landing">
                 <img className="close-box" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
                 </Link>
 
+         <div className="move-content-container">
+
        { moves &&  
-
-         
-         <ul>
-            {/* <li>{moves.gif}</li>
-            <li>{moves.title}</li> */}
-            <li>{moves.step1}</li>
-            <li>{moves.step2}</li>
-            <li>{moves.step3}</li>
-            <li>{moves.step4}</li>
-            <li>{moves.step5}</li>
-            <li>{moves.step6}</li>
+         <ul className="move-content">
+            <div className="video-space">
+            <li>{<video loop ref={videoRef} width={400} height={400}><source src={moves.gif} type='video/mp4'/></video>}</li>
+            </div>
+            <div className="title-space">
+            <li>{moves.move_title}</li>
+            </div>
+            <div className="step-space">
+            <li>{moves.equipment}</li>
+            </div>
+            <div className="step-row">
+            <img className="check-icon" src="https://img.icons8.com/flat-round/30/000000/checkmark.png"/>
+            <h4 className="step-header">Step 1</h4>
+            </div>
+            <div className="step-space">
+            <li className="step">{moves.step1}</li>
+            </div>
+            <div className="step-row">
+            <img className="check-icon" src="https://img.icons8.com/flat-round/30/000000/checkmark.png"/>
+            <h4 className="step-header">Step 2</h4>
+            </div>
+            <div className="step-space">
+            <li className="step">{moves.step2}</li>
+            </div>
+            <div className="step-row">
+            <img className="check-icon" src="https://img.icons8.com/flat-round/30/000000/checkmark.png"/>
+            <h4 className="step-header">Step 3</h4>
+            </div>
+            <div className="step-space">
+            <li className="step">{moves.step3}</li>
+            </div>
+            <div className="step-row">
+            <img className="check-icon" src="https://img.icons8.com/flat-round/30/000000/checkmark.png"/>
+            <h4 className="step-header">Step 4</h4>
+            </div>
+            <div className="step-space">
+            <li className="step">{moves.step4}</li>
+            </div>
+            <div className="step-space">
+            <li className="step">{moves.step5}</li>
+            </div>
+            <div className="step-space">
+            <li className="step">{moves.step6}</li>
+            </div>
          </ul>
-
-      
-
-      }  
-          
-      
-
-      {/* <ul> { moves.map((elem, index)=>{<li key={index}> {elem.step1} {elem.step2} </li>}) }</ul> */}
-        
+         } 
+          </div>
+          </div>
    </div>
+   </section>
  )   
 
 }
