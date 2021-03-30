@@ -8,7 +8,6 @@ module.exports = {
 
     register: async(req, res) => {
         
-
         try{
             const {email, password, first_name, last_name, birthday, profile_pic, membership_type, membership_price} = req.body
             console.log(req.body, 'register controller function data')

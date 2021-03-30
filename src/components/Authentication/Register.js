@@ -45,8 +45,7 @@ const onFileUpload = () => {
       "myFile",
       profile_pic,
     );
-    console.log(profile_pic);
-    axios.post("api/uploadfile", formData);
+    axios.post(`/auth/register`, formData);
   };
 
   const fileData = () => {

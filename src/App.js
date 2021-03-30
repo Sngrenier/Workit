@@ -18,6 +18,7 @@ import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
 import SpotifyModal from './components/Spotify/SpotifyModal'
 import Membership from './components/Authentication/Membership'
+import ProfilePic from './components/ProfilePic/ProfilePic'
 
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
           <Route path="/trainers" component={Trainers} />
           <Route path="/profile" component={Profile} />
           <Route path="/circuithistory" component={CircuitHistory} />
+          <Route path="/ProfilePic" component={ProfilePic} />
         </Switch>
       </React.Fragment>
     );
