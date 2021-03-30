@@ -1,14 +1,342 @@
+@media screen and (min-width: 210px) and (max-width: 600px) {
+.count{
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    color: var(--mainWhite);
+    padding: 2%;
+}
 .go{
     animation: grow 1s 1s;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    color: transparent;
+    padding: 2%;
+    /* transition: ease-in-out;
+    visibility: hidden; */
 }
 @keyframes grow{
     from{
+        visibility:visible;
         transform: scale(1);
         font-size: 1rem;
     }
     to{
         transform: scale(4);
         font-size: 3rem;
+        color: var(--mainDark);
     }
 }
+.content-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	align-content: flex-end;
+    margin: auto;
+    background-color: transparent;
+}
+.move-scroll{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: flex-start;
+    background-color: transparent;
+}
+.move-gifs{
+    width: 80vw;
+    height: auto;
+    margin-left: -30%;
+}
+.move-nav-btns{
+    width: 80vw;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: flex-start;
+    margin-bottom:0;
+    background-color: transparent;
+}
+.timer-header{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+.heading-timer{
+    width: 100vw;
+    height:30vh;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+    background-color: transparent;
+}
+.countdown{
+    height: 10vh;
+    padding-top: 10%;
+    margin-bottom: -10%;
+}
+.timer{
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 4rem;
+    color: var(--mainDark);
+    padding: 10%;
+}
+.move-heading{
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    color: var(--mainDark);
+    padding: 2%;
+    /* display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center; */
+}
+.reps-line{
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    color: var(--mainDark);
+    padding: 2%;
+}
+.play-btn{
+    width: 50vw !important;
+    font-family: Roboto;
+    font-size: .6rem;
+    font-weight: 600;
+    letter-spacing: .13rem;
+    color: var(--mainWhite);
+}
+.quit-btn{
+    width: 100vw;
+    padding-top: 5%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+}
+.spotify-icon{
+    width: 25vw;
+    padding-left: 5%;
+}
+.quit{
+    width: 50vw !important;
+    background-color: var(--lightBlue);
+    font-family: Roboto;
+    font-size: .6rem !important;
+    padding: 4%!important;
+    font-weight: 400;
+    letter-spacing: .13rem;
+    color: var(--mainWhite);
+    /* margin-bottom: -50%; */
+}
+.move-next{
+    width: 25vw;
+    height: 5vh;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+    width: 20vw;
+    height: 5vh;
+    font-family: Roboto;
+    color: var(--mainDark);
+    font-size: .7rem;
+    font-weight: 600;
+    margin-left: 5%;
+}
+.move-name{
+    font-family: Roboto;
+    color: var(--mainDark);
+    font-size: .7rem;
+    font-weight: 600;
+    background-color: transparent;
+}
+.up-next{
+    font-family: Roboto;
+    color: var(--mainDark);
+    font-size: .4rem;
+    font-weight: 400;
+    background-color: transparent;
+}
+}
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+    .count{
+        font-family: Roboto;
+        font-weight: 400;
+        font-size: 1rem;
+        letter-spacing: .1rem;
+        color: var(--mainWhite);
+        padding: 2%;
+    }
+    .go{
+        animation: grow 1s 1s;
+        font-family: Roboto;
+        font-weight: 600;
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        color: transparent;
+        padding: 2%;
+        /* transition: ease-in-out;
+        visibility: hidden; */
+    }
+    @keyframes grow{
+        from{
+            visibility:visible;
+            transform: scale(1);
+            font-size: 1rem;
+        }
+        to{
+            transform: scale(4);
+            font-size: 3rem;
+            color: var(--mainDark);
+        }
+    }
+    .content-container{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: flex-end;
+        margin: auto;
+        background-color: transparent;
+    }
+    .move-scroll{
+        height: 80vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: flex-start;
+        background-color: skyblue;
+    }
+    .move-gifs{
+        width: 55vw;
+        height: auto;
+    }
+    .move-nav-btns{
+        width: 80vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: flex-start;
+        margin-bottom:0;
+        background-color: transparent;
+    }
+    .timer-header{
+        width: 100vw;
+        height: 20vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-content: flex-start;
+    }
+    .heading-timer{
+        width: 100vw;
+        height:30vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        background-color: salmon;
+    }
+    .countdown{
+        height: 10vh;
+        padding-top: 10%;
+        margin-bottom: -10%;
+    }
+    .timer{
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: 4rem;
+        color: var(--mainDark);
+        padding: 10%;
+    }
+    .move-heading{
+        font-family: Roboto;
+        font-weight: 600;
+        font-size: 2.2rem;
+        letter-spacing: .1rem;
+        color: var(--mainDark);
+        padding: 2%;
+        /* display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center; */
+    }
+    .reps-line{
+        font-family: Roboto;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: .2rem;
+        color: var(--mainDark);
+        padding: 2%;
+    }
+    .play-btn{
+        width: 50vw !important;
+        font-family: Roboto;
+        font-size: .6rem;
+        font-weight: 600;
+        letter-spacing: .13rem;
+        color: var(--mainWhite);
+    }
+    .quit-btn{
+        padding-top: 5%;
+    }
+    .quit{
+        width: 50vw !important;
+        background-color: var(--lightBlue);
+        font-family: Roboto;
+        font-size: .6rem !important;
+        padding: 4%!important;
+        font-weight: 400;
+        letter-spacing: .13rem;
+        color: var(--mainWhite);
+        /* margin-bottom: -50%; */
+    }
+    }
+
 

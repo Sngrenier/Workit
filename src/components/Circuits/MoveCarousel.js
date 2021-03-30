@@ -3,7 +3,13 @@ import {CircuitContext} from '../../context/circuitContext'
 import {useRef} from 'react'
 import { ButtonContainer } from '../NavButton'
 import './MoveCarousel.css'
+<<<<<<< HEAD
+import {Redirect, Link} from 'react-router-dom'
+import styled, {keyframes} from "styled-components"
+
+=======
 import {Redirect} from 'react-router-dom'
+>>>>>>> main
 
 
 const MoveCarousel = (props)=>{
@@ -15,13 +21,12 @@ const [countdown, setCountdown] = useState(5)
 const timerRef = useRef() //keeps track of the context when it updates, keeps track of the same object
 const [moves, setMoves] = useState([])
 const [rounds, setRounds] = useState(props.rounds)
+const [modal, setModal] = useState(true)
 console.log(props, 'move carousel props')
-
 
 
 const circuitContext = useContext(CircuitContext)
 const videoRef = useRef()
-
 
 
 
@@ -85,54 +90,120 @@ useEffect(()=>{
 
 
 
-    const playTimer = ()=> {
-        if(!play){
-            setPlay(true)
-            videoRef.current.play()
-            timerRef.current = setInterval(()=> {
-                if(timer-1 > 0) {
-                setTimer(t=> t-1)
-                }else { //stop video display time is up
-                } 
-            }, 1000)
-        } else {
-            setPlay(false)
-            videoRef.current.pause()
-            clearInterval(timerRef.current)
+const playTimer = ()=> {
+    if(!play){
+        setPlay(true)
+        videoRef.current.play()
+        timerRef.current = setInterval(()=> {
+            if(timer-1 > 0) {
+            setTimer(t=> t-1)
+            }else { //stop video display time is up
+            } 
+        }, 1000)
+    } else {
+        setPlay(false)
+        videoRef.current.pause()
+        clearInterval(timerRef.current)
+    }
+}
+
+const closeModal = () => {
+    if(countdown===0){
+        setModal(false)
         }
     }
+// useEffect(()=> {
+//     if(show) setRender(true)
+//     }, [show])
+//     const onAnimationEnd =()=> {
+//         if(!show) setRender(false)
+//     }
 
-    return (
-        <>
-        {rounds > 0 ?
-        <div>
-            {countdown < 4 && countdown > 0 ? <p>{countdown}...</p> : countdown === 0 ? <p className="go" onAnimationEnd={_ => setCountdown(-1)}>GO!</p> : null}
-        <div className='timerContainer'>
-         <p>Exercise </p>   
-         {timer}
+return (
+    <>
+    {rounds > 0 ?
+    <section>
+        <div className="carousel-container">
+        <div className="container-fluid content-container">
 
+      
+       {/* <ModalContainer> */}
+        <div className="countdown">
+            <div id="modal">
+            {countdown < 4 && countdown > 0 ? 
+            <p className="count">{countdown}...</p> : countdown === 0 ? 
+            <p className="go" onAnimationEnd={_ => setCountdown(0)}>GO!</p> : null}
+            </div>
+            </div>
+        {/* </ModalContainer> */}
+               
+            <div className="timer-header">
+                <div className="space-1"></div>
+                <div className="timer">{timer}</div>
+            </div>
+
+        <div className="heading-timer">
+            <div className="move-heading">
+        {moves.length && index < moves.length && <h4>{moves[index].move_title}</h4>}
+            </div>
+            <div className="reps-line">
+        {moves.length && index < moves.length && <h4>{moves[index].reps}</h4>}
+            </div>
         </div> 
-        
-        {moves.length && index < moves.length && <video loop ref={videoRef}><source src={moves[index].gif} type='video/mp4'/></video>}
-       
-        <ButtonContainer 
-        onClick={()=>{if(index <= moves.length - (rounds * 4)) {setIndex(moves.length - (rounds * 4) + 3)}
-        else{
-            setIndex(index-1)
-        } 
-        
-    }}>Back</ButtonContainer> 
-        <ButtonContainer 
-        onClick={()=> playTimer()}>{play ? 'pause' : 'play'}</ButtonContainer>  
-        <ButtonContainer
-        onClick={()=>{if(index >= moves.length - (rounds * 4) + 3) {setIndex(moves.length - (rounds * 4))}
-                    else{
+
+        <div className="move-scroll">
+            <div className="move-gifs">
+                {moves.length && index < moves.length && <video loop ref={videoRef} width={400} height={400}><source src={moves[index].gif} type='video/mp4'/></video>}
+            </div>
+            
+            <div className="move-nav-btns">
+                <img className="back-btn" src="https://img.icons8.com/ios-glyphs/40/000000/double-left.png"
+                    onClick = { () => {
+                    if(index <= moves.length - (rounds * 4)) {
+                        setIndex(moves.length - (rounds * 4) + 3)
+                    } else{
+                        setIndex(index-1)
+                    }}}></img>
+                        
+                <ButtonContainer className="play-btn" onClick = {() => {playTimer()}}> {play ? 'pause' : 'play'} </ButtonContainer>  
+                                
+                <img className="forward-btn" src="https://img.icons8.com/ios-glyphs/40/000000/double-right.png" 
+                    onClick = { () => {
+                    if(index >= moves.length - (rounds * 4) + 3) {
+                        setIndex(moves.length - (rounds * 4))
+                    }else{
                         setIndex(index+1)
-        }}}>
-        
-        Forward</ButtonContainer>
+                    }}}></img>
+            </div>
+
+            <div className="quit-btn">
+
+                <div className="spotify-icon">
+                    <img className="spot-icon" src="https://img.icons8.com/ultraviolet/30/000000/spotify.png"/>
+                    </div>
+
+                <div>
+                    <Link to="/quitCircuit">
+                    <ButtonContainer className="quit">Quit Curcuit</ButtonContainer>
+                    </Link>
+                    </div>
+
+                <div className="move-next">
+                    <div className="up-next">
+                    <h4>up next</h4>
+                    </div>
+
+                    <div className="move-name">
+                    {moves.length && index < moves.length && <h4>{moves[index +1].move_title}</h4>}
+                    </div>
+                </div>
+
+            </div>
         </div>
 
+        </div>
+        </div>
+        </section>
           : <div> 
               <Redirect to='/CompletedCircuit'>
               </Redirect> You've completed the Circuit!!</div>  }
@@ -141,3 +212,32 @@ useEffect(()=>{
 
 }
 export default MoveCarousel
+
+const fadeIn=keyframes `
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+`
+
+const ModalContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  #modal {
+    background: var(--mainWhite);
+  }
+  .img-fluid {
+    margin-bottom: 10%;
+  }
+  animation: 4s ${fadeIn} ease-out;
+`
+

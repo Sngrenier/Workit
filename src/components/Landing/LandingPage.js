@@ -63,19 +63,19 @@ console.log(user, 'this is user array on the landing page')
 
 
             <footer className="nav-info">
-                <div>
+                <div className="nav-cols">
                     <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/weight-1.png"/>
                     <h4 className="cir-tab">Workouts</h4>
                 </div>
-                <div>
+                <div className="nav-cols">
                     <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/calendar.png"/>
                     <h4 className="cir-tab">Planner</h4>
                 </div>
-                <div>
+                <div className="nav-cols">
                     <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/trophy.png"/>
                     <h4 className="cir-tab">progress</h4>
                 </div>
-                <div>
+                <div className="nav-cols">
                     <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/restaurant.png"/>
                     <h4 className="cir-tab">food</h4>
                 </div>
