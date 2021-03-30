@@ -4,7 +4,7 @@ import {useContext, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from 'axios'
 import {ButtonContainer} from '../NavButton'
-import './Register.css'
+// import './Register.css'
 
 
 const Register =()=>{
@@ -16,7 +16,7 @@ const [membership_type, setmembership_type] = useState('')
 const [membership_price, setmembership_price] = useState(0)
 const [last_name, setlast_name] = useState('')
 const [errorMsg, setErrorMsg] = useState('')
-const [selectedFile, setSelectedFile] = useState(null)
+// const [selectedFile, setSelectedFile] = useState(null)
 const [profile_pic, setprofile_pic] = useState(null)
 
 const {push} = useHistory()
@@ -36,34 +36,26 @@ const membership = (type, price)=>{
 // }
 
 const onFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+    setprofile_pic(event.target.files[0]);
   };
   
 const onFileUpload = () => {
     const formData = new FormData();
     formData.append(
       "myFile",
-      selectedFile,
-      selectedFile.name
+      profile_pic,
     );
-    console.log(selectedFile);
+    console.log(profile_pic);
     axios.post("api/uploadfile", formData);
   };
 
   const fileData = () => {
-    if(selectedFile) {
+    if(profile_pic) {
         return(
-            <div>
-                {/* <h2>File Details:</h2> 
-                <p>File Name: {selectedFile.name}</p>
-                <p>File Type: {selectedFile.type}</p>
-                <p>Last Modified:{" "}{selectedFile.lastModifiedDate.toDateString()}</p>    */}
-            </div>
-        )
-    } else {
+            <div>{profile_pic}</div>
+        )} else {
         return (
             <div>
-                <br />
                 <h4>Choose before Pressing the Upload button</h4>
             </div>
             )

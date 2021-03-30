@@ -18,7 +18,7 @@ const timerRef = useRef() //keeps track of the context when it updates, keeps tr
 const [moves, setMoves] = useState([])
 const [rounds, setRounds] = useState(props.rounds)
 const [modal, setModal] = useState(true)
-console.log(props, 'move carousel props')
+// console.log(props, 'move carousel props')
 
 
 const circuitContext = useContext(CircuitContext)
@@ -63,12 +63,13 @@ useEffect(()=> {
 useEffect(()=> {
     if(timer === 0){
         clearInterval(timerRef.current)
+        setModal(false)
         setRounds(r=> r-1)
         if(rounds !== 0){
             setIndex(moves.length-((rounds-1) * 4))
         }
-        videoRef.current.pause()
         setCountdown(5)
+        videoRef.current.pause()
         timerRef.current = setInterval(()=> {
             setCountdown(t=> t-1)
         }, 1000)
@@ -108,12 +109,6 @@ const closeModal = () => {
         setModal(false)
         }
     }
-// useEffect(()=> {
-//     if(show) setRender(true)
-//     }, [show])
-//     const onAnimationEnd =()=> {
-//         if(!show) setRender(false)
-//     }
 
 return (
     <>
