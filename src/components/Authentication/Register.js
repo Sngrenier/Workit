@@ -5,11 +5,9 @@ import {useHistory} from 'react-router-dom'
 import axios from 'axios'
 import {ButtonContainer} from '../NavButton'
 import './Register.css'
-import PayPalButton from './PayPalButton'
 
 
 const Register =()=>{
-        
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const [first_name, setfirst_name] = useState('')
@@ -20,7 +18,6 @@ const [last_name, setlast_name] = useState('')
 const [errorMsg, setErrorMsg] = useState('')
 // const [picFileSelected, setPicFileSelected] = useState('')
 
-// const values = useContext(AuthContext)
 const {push} = useHistory()
 
 
@@ -49,20 +46,20 @@ const onSignUp = (formSubmit) => {
     // let confirm
     
     // if(!membership_type){
-        //     let confirm = window.confirm('please select a membership plan to continue')
-        // }
+    //         let confirm = window.confirm('please select a membership plan to continue')
+    //     }
 
     // const checkEmail = () => {         
     //     var pattern = new RegExp(/^[0-9a-zA-Z]+([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$/);         
     //     return pattern.test(loginInfo.email);     
     // }    
-    // //must start with a letter or number containing as many as it wants can also have a - . _ or + but ending with a letter or number before the @ symbol, then will start with a letter or number can have a - or . eventually followed by a . with a letter at the end between 2 to 6 characters in length         
+    //must start with a letter or number containing as many as it wants can also have a - . _ or + but ending with a letter or number before the @ symbol, then will start with a letter or number can have a - or . eventually followed by a . with a letter at the end between 2 to 6 characters in length         
         
     // const checkPassword = () => {        
     //     var reg = new RegExp(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/);         
     //     return reg.test(loginInfo.password);     
     // }
-    //     //must contain at least 1 number, 1 capital letter, 1 lower case letter and one special character         
+    //must contain at least 1 number, 1 capital letter, 1 lower case letter and one special character         
     
 
         axios.post(`/auth/register`, {email, password, first_name, last_name, birthday, membership_type, membership_price})
@@ -91,7 +88,7 @@ const onSignUp = (formSubmit) => {
                     <div className="profile-icon">
                     <img className="profile-pic" 
                     src="https://img.icons8.com/color/100/000000/test-account.png"/>
-                     </div>
+                    </div>
                     
 
                     <input

@@ -5,9 +5,9 @@ import { ButtonContainer } from '../NavButton'
 
 const QuitCircuit = () => {
 
-    // const feedbackClick = () => {
-    //     alert("Thank you for your feedback!")
-    //     }
+    const feedbackClick = () => {
+       let confirm = window.confirm("Thank you for your feedback!")
+        } 
 
         return (
             <section>
@@ -40,9 +40,11 @@ const QuitCircuit = () => {
                     </div>
 
                     <div>
-                        <Link to="/landing">
-                    <ButtonContainer className="feedback-btn" onclick={()=> alert('Thank you for your feedback!')}>PROVIDE US FEEDBACK</ButtonContainer>  
-                        </Link>
+                        {/* <Link to="/landing"> */}
+                    <ButtonContainer 
+                    className="feedback-btn" 
+                    onclick={feedbackClick}>PROVIDE US FEEDBACK</ButtonContainer>  
+                        {/* </Link> */}
                     </div>
 
 
