@@ -4,6 +4,16 @@ const {EMAIL, PASSWORD} = process.env
  
 module.exports = {
 
+    // membership: (req, res)=> {
+    //     const {membership_type, membership_price} = req.body
+    //     console.log(req.body, 'membership controller function')
+    //     const db = req.app.get('db')
+    //     const date = new Date
+    //     const 
+
+
+    // },
+
    
 
     register: async(req, res) => {

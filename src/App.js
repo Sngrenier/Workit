@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { Switch, Route } from "react-router-dom"
-import axios from 'axios'
 import "./reset.css"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -16,9 +15,11 @@ import MoveCarousel from './components/Circuits/MoveCarousel'
 import MoveStepsModal from './components/MoveStepsModal/MoveStepsModal'
 import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
-import SpotifyModal from './components/Spotify/SpotifyModal'
-import Membership from './components/Authentication/Membership'
 import ProfilePic from './components/ProfilePic/ProfilePic'
+import Dashboard from './components/Spotify/Dashboard'
+import Membership from '././components/Authentication/Membership'
+import SpotifyWidget from './components/Spotify/SpotifyWidget'
+import SpotifyLogin from './components/Spotify/SpotifyLogin'
 
 
 class App extends Component {
@@ -34,7 +35,8 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
           <Route path="/circuitselection/:id" component={SelectCircuit} />
-          <Route path='/spotify/' component={SpotifyModal} />
+          <Route path='/spotify/' component={Dashboard} />
+          <Route path='/spotifylogin/' component={SpotifyWidget} />
           <Route path="/movecarousel"><MoveCarousel time={20} rounds={2} /></Route>
           <Route path="/movesteps/:id" component={MoveStepsModal} />
           <Route path="/quitcircuit" component={QuitCircuit} />
