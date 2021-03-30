@@ -9,21 +9,13 @@ import './MoveStepsModal.css'
 
 
 const MoveStepsModal =(props)=> {
-   const circuitContext = useContext(CircuitContext);
-   const videoRef = useRef()
    const [moves, setMoves] =useState([]) 
    const [play, setPlay] = useState(true)
    const [index, setIndex] = useState(0)
-   // const [steps, setSteps] = useState([])
-   // const {move_id} = useParams()
+   
+   const circuitContext = useContext(CircuitContext);
+   const videoRef = useRef()
 
-
-//    useEffect(()=>{
-//       if(videoRef.current && moves[index].gif){
-//           videoRef.current.load()
-//           videoRef.current.play()
-//       }
-//   }, [index])
 
       useEffect(()=>{
          console.log(circuitContext.moves, 'this is context')
@@ -50,7 +42,7 @@ console.log(moves, 'moves after useEffect')
        { moves &&  
          <ul className="move-content">
             <div className="video-space">
-            <li>{<video loop ref={videoRef} width={400} height={400}><source src={moves.gif} type='video/mp4'/></video>}</li>
+            <li>{<video autoPlay loop ref={videoRef} width={400} height={400}><source src={moves.gif} type='video/mp4'/></video>}</li>
             </div>
             <div className="title-space">
             <li>{moves.move_title}</li>

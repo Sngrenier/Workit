@@ -9,12 +9,10 @@ import styled, {keyframes} from "styled-components"
 
 
 const MoveCarousel = (props)=>{
-
-const[index, setIndex] = useState(0)
+const [index, setIndex] = useState(0)
 const [play, setPlay] = useState(true)
 const [timer, setTimer] = useState(20) 
 const [countdown, setCountdown] = useState(5)
-const timerRef = useRef() //keeps track of the context when it updates, keeps track of the same object
 const [moves, setMoves] = useState([])
 const [rounds, setRounds] = useState(props.rounds)
 const [modal, setModal] = useState(true)
@@ -23,13 +21,14 @@ const [modal, setModal] = useState(true)
 
 const circuitContext = useContext(CircuitContext)
 const videoRef = useRef()
+const timerRef = useRef() //keeps track of the context when it updates, keeps track of the same object
+
 
 
 
 useEffect(()=>{
     setMoves(circuitContext.moves)
 }, [circuitContext])
-
 
 
 
