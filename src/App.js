@@ -15,8 +15,12 @@ import MoveCarousel from './components/Circuits/MoveCarousel'
 import MoveStepsModal from './components/MoveStepsModal/MoveStepsModal'
 import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
+<<<<<<< HEAD
 import Spotify from './components/Spotify/SpotifyModal'
 import Membership from './components/Authentication/Membership'
+=======
+import SpotifyModal from './components/Spotify/SpotifyModal'
+>>>>>>> main
 
 
 class App extends Component {
@@ -31,8 +35,13 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
           <Route path="/circuitselection/:id" component={SelectCircuit} />
+<<<<<<< HEAD
           <Route path='/spotify' component={Spotify} />
           <Route path="/movecarousel"><MoveCarousel time={20} rounds={2}/></Route>
+=======
+          <Route path='/spotify/' component={SpotifyModal} />
+          <Route path="/movecarousel"><MoveCarousel time={20} rounds={2} /></Route>
+>>>>>>> main
           <Route path="/movesteps/:id" component={MoveStepsModal} />
           <Route path="/quitcircuit" component={QuitCircuit} />
           <Route path="/completedcircuit" component={CompletedCircuit} />

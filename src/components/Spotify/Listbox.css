@@ -1,0 +1,15 @@
+@media screen and (min-width: 310px) and (max-width: 520px) {
+    
+        .listbox{
+            height: 70%;
+            width: 100%;
+            background-color: azure;
+        }
+    }
+    
+    
+    @media screen and (min-width: 520px) and (max-width: 1100px) {
+    
+    
+    
+    }

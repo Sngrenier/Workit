@@ -3,9 +3,13 @@ import {CircuitContext} from '../../context/circuitContext'
 import {useRef} from 'react'
 import { ButtonContainer } from '../NavButton'
 import './MoveCarousel.css'
+<<<<<<< HEAD
 import {Redirect, Link} from 'react-router-dom'
 import styled, {keyframes} from "styled-components"
 
+=======
+import {Redirect} from 'react-router-dom'
+>>>>>>> main
 
 
 const MoveCarousel = (props)=>{
