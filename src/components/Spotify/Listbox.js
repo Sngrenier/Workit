@@ -1,12 +1,15 @@
+import './Listbox.css'
+
 const ListBox = props => {
 
 
     const clicked = e => {
         e.preventDefault()
+        props.clicked(e.target.id)
     }
 
     return (
-        <div>Listbox
+        <div className='listbox'>Listbox
 
             {props.items.map((item, index)=> 
                 <button key={index} 
