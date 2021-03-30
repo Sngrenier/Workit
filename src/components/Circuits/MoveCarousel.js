@@ -24,7 +24,11 @@ const videoRef = useRef()
 const timerRef = useRef() //keeps track of the context when it updates, keeps track of the same object
 
 
-
+// const timestamp = 402
+// const hours = Math.floor(timestamp/60/60)
+// const minutes = Math.floor(timestamp/60) - (hours * 60)
+// const seconds = timestamp % 60
+// const formatted = minutes + `:` + seconds
 
 useEffect(()=>{
     setMoves(circuitContext.moves)
@@ -130,7 +134,7 @@ return (
                
             <div className="timer-header">
                 <div className="space-1"></div>
-                <div className="timer">{timer}</div>
+                <div className="timer"><h4>0:{timer}</h4></div>
             </div>
 
         <div className="heading-timer">

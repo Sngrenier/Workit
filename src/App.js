@@ -21,27 +21,6 @@ import Membership from './components/Authentication/Membership'
 
 
 class App extends Component {
-  
-  // FOR PROFILE PIC:
-  state = {
-    selectedFile: null
-  };
-  
-  onFileChange = event => {
-    this.setState({ selectedFile: event.target.files[0] });
-  };
-  
-  onFileUpload = () => {
-    const formData = new FormData();
-  
-    formData.append(
-      "myFile",
-      this.state.selectedFile,
-      this.state.selectedFile.name
-    );
-    console.log(this.state.selectedFile);
-    axios.post("api/uploadfile", formData);
-  };
 
   render() {
     return (
