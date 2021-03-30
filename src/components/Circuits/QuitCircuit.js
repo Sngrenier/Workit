@@ -1,11 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-export default class QuitCircuit extends Component {
-    render() {
+const QuitCircuit = () => {
         return (
-            <div>
-               I'm the QuitCircuit Component
-            </div>
+            <section>
+                <div className="quit-container">
+                    <div className="container-fluid quit-content">
+                    <Link to="/landing">
+                     <img className="closing-btn" src="https://img.icons8.com/ios-glyphs/24/ffffff/cancel.png"/>
+                     </Link>
+                    <div>
+                    I'm the QuitCircuit Component
+                    </div>
+
+                    </div>
+                </div>
+            </section>
         )
     }
-}
+export default QuitCircuit

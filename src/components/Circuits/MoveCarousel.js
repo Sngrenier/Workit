@@ -3,7 +3,7 @@ import {CircuitContext} from '../../context/circuitContext'
 import {useRef} from 'react'
 import { ButtonContainer } from '../NavButton'
 import './MoveCarousel.css'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import styled, {keyframes} from "styled-components"
 
 
@@ -179,7 +179,9 @@ return (
                     </div>
 
                 <div>
+                    <Link to="/quitCircuit">
                     <ButtonContainer className="quit">Quit Curcuit</ButtonContainer>
+                    </Link>
                     </div>
 
                 <div className="move-next">
