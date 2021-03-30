@@ -3,16 +3,11 @@ import {useState, useEffect} from 'react'
 import './SpotifyModal.css'
 import Dropdown from './Dropdown'
 import axios from 'axios'
-<<<<<<< HEAD
-import {Credentials} from './Credentials'
-import Listbox from './Listbox'
-=======
 import Listbox from './Listbox'
 import Detail from './Detail'
 import './SpotifyModal.css'
 import { ButtonContainer } from '../NavButton'
 import Spotify from 'spotify-web-api-js'
->>>>>>> main
 
 
 const {REACT_APP_CLIENT_ID, REACT_APP_CLIENT_SECRET, REACT_APP_REDIRECT_URI} = process.env

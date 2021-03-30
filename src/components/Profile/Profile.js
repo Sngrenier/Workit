@@ -53,11 +53,7 @@ const Profile =()=>{
                                     
                             </div>
                 
-<<<<<<< HEAD
                             <div className="profile-btns">
-=======
-                            <div className='profile-btns'>
->>>>>>> main
                 
                                     <div className="profile-icon">
                                     <img className="profile-pic" 
