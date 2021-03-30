@@ -8,12 +8,17 @@ profileCtrl = require(`./controllers/profileController`)
 const massive = require('massive')
 const session = require('express-session')
 const app = express();
+const SpotifyWebApi = require('spotify-web-api-node')
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
 
-const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
+const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET, REACT_APP_REDIRECT_URI, REACT_APP_CLIENT_ID, REACT_APP_CLIENT_SECRET} = process.env
 
 app.use(express.json());
-
+app.use(cors())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 
 massive({
@@ -36,18 +41,54 @@ massive({
     }))
 
 
-// fetch("https://api.spotify.com/v1/audio-analysis/6EJiVf7U0p1BBfs0qqeb1f", {
-//   method: "GET",
-//   headers: {
-//     Authorization: `Bearer ${userAccessToken}`
-//   }
-// })
-// .then(response => response.json())
-// .then(({beats}) => {
-//   beats.forEach((beat, index) => {
-//     console.log(`Beat ${index} starts at ${beat.start}`);
-//   })
-// })
+app.post('/refresh', (req, res) => {
+    const refreshToken = req.body.refreshToken
+    const spotifyApi = new SpotifyWebApi({
+    
+        redirect_uri: REACT_APP_REDIRECT_URI,
+        client_id: REACT_APP_CLIENT_ID,
+        client_secret: REACT_APP_CLIENT_SECRET,
+        refreshToken, 
+    })
+
+    spotifyApi.refreshAccessToken().then(
+        (data)=>{
+            res.json({
+                accessToken: data.body.accessToken,
+                expiresIn: data.body.expiresIn,
+            })
+            console.log(data.body)
+        }).catch(()=>{
+            console.log('Could not refresh access token', err)
+            res.sendStatus(400)
+        })
+})
+
+app.post('/spotifylogin/', (req, res) =>{
+    const code = req.body.code
+    console.log(req.body.code, 'req.body.code')
+    const spotifyApi = new SpotifyWebApi({
+    
+        redirectUri: REACT_APP_REDIRECT_URI,
+        clientId: REACT_APP_CLIENT_ID,
+        clientSecret: REACT_APP_CLIENT_SECRET
+    })
+
+    console.log(REACT_APP_REDIRECT_URI, REACT_APP_CLIENT_ID)
+    spotifyApi.authorizationCodeGrant(code).then(data => {
+        res.json({
+            accessToken: data.body.access_token,
+            refreshToken: data.body.refresh_token,
+            expiresIn: data.body.expires_in
+        })
+    }).catch((err)=>{
+        console.log(err, '/spotifylogin from index.js')
+        
+        res.sendStatus(400)
+    })
+})
+
+
 
 
 //User Endpoints---------------------------
