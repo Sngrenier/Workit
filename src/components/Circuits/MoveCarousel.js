@@ -9,27 +9,30 @@ import styled, {keyframes} from "styled-components"
 
 
 const MoveCarousel = (props)=>{
-
-const[index, setIndex] = useState(0)
+const [index, setIndex] = useState(0)
 const [play, setPlay] = useState(true)
 const [timer, setTimer] = useState(20) 
 const [countdown, setCountdown] = useState(5)
-const timerRef = useRef() //keeps track of the context when it updates, keeps track of the same object
 const [moves, setMoves] = useState([])
 const [rounds, setRounds] = useState(props.rounds)
 const [modal, setModal] = useState(true)
-console.log(props, 'move carousel props')
+// console.log(props, 'move carousel props')
 
 
 const circuitContext = useContext(CircuitContext)
 const videoRef = useRef()
+const timerRef = useRef() //keeps track of the context when it updates, keeps track of the same object
 
 
+// const timestamp = 402
+// const hours = Math.floor(timestamp/60/60)
+// const minutes = Math.floor(timestamp/60) - (hours * 60)
+// const seconds = timestamp % 60
+// const formatted = minutes + `:` + seconds
 
 useEffect(()=>{
     setMoves(circuitContext.moves)
 }, [circuitContext])
-
 
 
 
@@ -50,10 +53,10 @@ useEffect(()=> {
         if(rounds !== 0){
             if(videoRef.current){
                 videoRef.current.play()
+                timerRef.current = setInterval(()=> {
+                    setTimer(t=> t-1)
+                }, 1000)
             }
-            timerRef.current = setInterval(()=> {
-                setTimer(t=> t-1)
-            }, 1000)
         }
     }
 }, [countdown])
@@ -63,12 +66,13 @@ useEffect(()=> {
 useEffect(()=> {
     if(timer === 0){
         clearInterval(timerRef.current)
+        setModal(false)
         setRounds(r=> r-1)
         if(rounds !== 0){
             setIndex(moves.length-((rounds-1) * 4))
         }
-        videoRef.current.pause()
         setCountdown(5)
+        videoRef.current.pause()
         timerRef.current = setInterval(()=> {
             setCountdown(t=> t-1)
         }, 1000)
@@ -81,6 +85,7 @@ useEffect(()=>{
     if(videoRef.current && moves[index].gif){
         videoRef.current.load()
         videoRef.current.play()
+        videoRef.current.pause()
     }
 }, [index])
 
@@ -104,16 +109,8 @@ const playTimer = ()=> {
 }
 
 const closeModal = () => {
-    if(countdown===0){
         setModal(false)
-        }
     }
-// useEffect(()=> {
-//     if(show) setRender(true)
-//     }, [show])
-//     const onAnimationEnd =()=> {
-//         if(!show) setRender(false)
-//     }
 
 return (
     <>
@@ -123,7 +120,7 @@ return (
         <div className="container-fluid content-container">
 
       
-       {/* <ModalContainer> */}
+       {/* <ModalContainer onClick = {closeModal}> */}
         <div className="countdown">
             <div id="modal">
             {countdown < 4 && countdown > 0 ? 
@@ -135,7 +132,7 @@ return (
                
             <div className="timer-header">
                 <div className="space-1"></div>
-                <div className="timer">{timer}</div>
+                <div className="timer"><h4>0:{timer}</h4></div>
             </div>
 
         <div className="heading-timer">
@@ -209,14 +206,6 @@ return (
 }
 export default MoveCarousel
 
-const fadeIn=keyframes `
-0% {
-    opacity: 0;
-}
-100% {
-    opacity: 1;
-}
-`
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -234,6 +223,5 @@ const ModalContainer = styled.div`
   .img-fluid {
     margin-bottom: 10%;
   }
-  animation: 4s ${fadeIn} ease-out;
 `
 

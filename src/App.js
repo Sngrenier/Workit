@@ -15,6 +15,7 @@ import MoveCarousel from './components/Circuits/MoveCarousel'
 import MoveStepsModal from './components/MoveStepsModal/MoveStepsModal'
 import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
+import ProfilePic from './components/ProfilePic/ProfilePic'
 import Dashboard from './components/Spotify/Dashboard'
 import Membership from '././components/Authentication/Membership'
 import SpotifyWidget from './components/Spotify/SpotifyWidget'
@@ -22,6 +23,7 @@ import SpotifyLogin from './components/Spotify/SpotifyLogin'
 
 
 class App extends Component {
+
   render() {
     return (
       <React.Fragment>
@@ -42,6 +44,7 @@ class App extends Component {
           <Route path="/trainers" component={Trainers} />
           <Route path="/profile" component={Profile} />
           <Route path="/circuithistory" component={CircuitHistory} />
+          <Route path="/ProfilePic" component={ProfilePic} />
         </Switch>
       </React.Fragment>
     );

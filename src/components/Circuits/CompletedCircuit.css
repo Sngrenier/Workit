@@ -32,13 +32,13 @@
     line-height: 2rem;
     color: var(--mainWhite);
     letter-spacing: .1rem;
-    margin-top: 2%;
+    margin-top: 3%;
 }
 .cir-title-line{
     font-family: roboto;
     font-weight: 900;
-    padding: 4%;
-    font-size: 4rem;
+    font-size: 3.5rem;
+    padding-top: 4%;
     color: var(--mainWhite);
 }
 

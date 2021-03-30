@@ -1,0 +1,5 @@
+.playerProfilePic_home_tile{
+    border-radius: 50%;
+    border-color: var(--mainDark);
+    background-color: var(--mainBlue);
+}

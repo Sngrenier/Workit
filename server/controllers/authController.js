@@ -18,9 +18,8 @@ module.exports = {
 
     register: async(req, res) => {
         
-
         try{
-            const {email, password, first_name, last_name, birthday, membership_type, membership_price} = req.body
+            const {email, password, first_name, last_name, birthday, profile_pic, membership_type, membership_price} = req.body
             console.log(req.body, 'register controller function data')
             const db = req.app.get('db')
             const date = new Date
@@ -36,7 +35,7 @@ module.exports = {
 
             const salt = bcrypt.genSaltSync(10)
             const hash = bcrypt.hashSync(password, salt)
-            const registeredUser = await db.user.register_user([email, hash, first_name, last_name, birthday, membership_id.membership_id])
+            const registeredUser = await db.user.register_user([email, hash, first_name, last_name, birthday, profile_pic, membership_id.membership_id])
       
             const user = registeredUser[0]
             delete user.password

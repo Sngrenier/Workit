@@ -1,0 +1,109 @@
+.quit-container{
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+    margin:auto;
+}
+.quit-content{
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+    margin:auto;
+}
+/* .closing-btn{
+    padding-top:15%;
+} */
+/* .question{
+    font-family: roboto;
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding: 5%;
+    line-height: 1.7rem;
+    letter-spacing: .08rem;
+} */
+.resume-container{
+    width: 90vw;
+    height: 20vh;
+    margin-top: 10%;
+    margin-bottom: 15%;
+    font-family: roboto;
+    font-weight: 900;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    letter-spacing: .08rem;
+    background-color: transparent;
+}
+.q-1{
+    padding-left: 5%;
+    color: var(--mainBlue);
+}
+.q-2{
+    padding-left: 5%;
+    margin-bottom: 5%;
+}
+
+.resume{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: flex-start;
+    height:8% !important;
+    padding: 2% 5% 2% 5% !important;
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 1rem !important;
+    letter-spacing: .05rem;
+}
+
+.question{
+    font-family: roboto;
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding-top: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+    line-height: 1.7rem;
+    letter-spacing: .08rem;
+}
+.reason-btns{
+    height: 70vh;
+    width: 80vw;
+    background-color: transparent;
+    margin-right:-10%;
+    margin-top: 2vh;
+}
+.why-btn{
+    text-align: left;
+    font-family: roboto;
+    font-weight: 400;
+    font-size: 1rem !important;
+    letter-spacing: .05rem;
+    color: var(--mainDark)!important;
+    background-color: var(--lightBlue)!important;
+    height:10% !important;
+}
+.why-btn:hover{
+    color:var(--mainWhite)!important;
+    background-color: var(--mainBlue)!important;
+    border-color: var(--mainBlue)!important;
+}
+.feedback-btn{
+    font-family: roboto;
+    font-weight: 700;
+    font-size: .8rem !important;
+    letter-spacing: .05rem;
+}
