@@ -109,9 +109,7 @@ const playTimer = ()=> {
 }
 
 const closeModal = () => {
-    if(countdown===0){
         setModal(false)
-        }
     }
 
 return (
@@ -122,7 +120,7 @@ return (
         <div className="container-fluid content-container">
 
       
-       {/* <ModalContainer> */}
+       {/* <ModalContainer onClick = {closeModal}> */}
         <div className="countdown">
             <div id="modal">
             {countdown < 4 && countdown > 0 ? 
@@ -208,14 +206,6 @@ return (
 }
 export default MoveCarousel
 
-const fadeIn=keyframes `
-0% {
-    opacity: 0;
-}
-100% {
-    opacity: 1;
-}
-`
 
 const ModalContainer = styled.div`
   position: fixed;
@@ -233,6 +223,5 @@ const ModalContainer = styled.div`
   .img-fluid {
     margin-bottom: 10%;
   }
-  animation: 4s ${fadeIn} ease-out;
 `
 
