@@ -9,6 +9,7 @@ const massive = require('massive')
 const session = require('express-session')
 const app = express();
 
+
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
 app.use(express.json());

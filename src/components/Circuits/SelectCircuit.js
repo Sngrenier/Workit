@@ -47,7 +47,13 @@ const SelectCircuit =(props)=> {
                 <h5 className="subtitle-line">{circuitContext.individualCircuit.subtitle}</h5>
                 <h5 className="title-line">{circuitContext.individualCircuit.title}</h5>
                 <h5 className="info-line">{circuitContext.individualCircuit.info}</h5>
-         <Link to='/spotify'><ButtonContainer className='spotify-btn'>Pick a playlist</ButtonContainer></Link>
+         {/* <Link to='/spotify'> */}
+
+         <a href='http://localhost:8888/'>
+             <ButtonContainer className='spotify-btn'>Spotify</ButtonContainer>
+             
+        </a>   
+        {/* </Link> */}
            <h3 className="staging">what you'll need</h3>
                 <img className="equip-icon" src={circuitContext.individualCircuit.equipment} height='100px' width='100px'/>
             <h3 className="staging">what you'll do</h3>
@@ -69,7 +75,7 @@ const SelectCircuit =(props)=> {
                 </li> </>})}
                 </ul>
 
-                <Link to={`/moveCarousel`}>
+                <Link to={`/movecarousel`}>
             <ButtonContainer className='start-btn' onClick={startWorkout}> Start Workout </ButtonContainer>
             </Link>
                 </div>

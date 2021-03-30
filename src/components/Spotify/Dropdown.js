@@ -1,4 +1,4 @@
-
+import './Dropdown.css'
 
 
 const Dropdown = props => {
@@ -13,7 +13,7 @@ const dropdownChanged = e => {
     return (
         <div>
 
-            <select value={props.selectedValue} onChange={dropdownChanged}>
+            <select className='dropdownContainer' value={props.selectedValue} onChange={dropdownChanged}>
                 
                 {props.options.map((elem, index)=> <option key={index} value={elem.id}>{elem.name}</option>)}
             

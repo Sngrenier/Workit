@@ -3,7 +3,7 @@ import {CircuitContext} from '../../context/circuitContext'
 import {useRef} from 'react'
 import { ButtonContainer } from '../NavButton'
 import './MoveCarousel.css'
-import {Link, Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 
 
 const MoveCarousel = (props)=>{
