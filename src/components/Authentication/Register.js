@@ -16,7 +16,8 @@ const [membership_type, setmembership_type] = useState('')
 const [membership_price, setmembership_price] = useState(0)
 const [last_name, setlast_name] = useState('')
 const [errorMsg, setErrorMsg] = useState('')
-// const [picFileSelected, setPicFileSelected] = useState('')
+const [selectedFile, setSelectedFile] = useState(null)
+const [profile_pic, setprofile_pic] = useState(null)
 
 const {push} = useHistory()
 
@@ -30,17 +31,46 @@ const membership = (type, price)=>{
     setmembership_price(price)
 }
 
-// const picFileSelected = (event) => {
-//     state = {
-//         selectedFile=null
-//     }
-//     console.log(event.target.files[0])
+// const profile_pic = () => {
+//     setProfile_pic(null)
 // }
 
-// const picUploadHandler = () => {
-//     setPicFileSelected(picFileSelected)
-// }
+const onFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+  
+const onFileUpload = () => {
+    const formData = new FormData();
+    formData.append(
+      "myFile",
+      selectedFile,
+      selectedFile.name
+    );
+    console.log(selectedFile);
+    axios.post("api/uploadfile", formData);
+  };
 
+  const fileData = () => {
+    if(selectedFile) {
+        return(
+            <div>
+                {/* <h2>File Details:</h2> 
+                <p>File Name: {selectedFile.name}</p>
+                <p>File Type: {selectedFile.type}</p>
+                <p>Last Modified:{" "}{selectedFile.lastModifiedDate.toDateString()}</p>    */}
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <br />
+                <h4>Choose before Pressing the Upload button</h4>
+            </div>
+            )
+        }
+    }
+
+    
 const onSignUp = (formSubmit) => {
     formSubmit.preventDefault()
     // let confirm
@@ -61,8 +91,7 @@ const onSignUp = (formSubmit) => {
     // }
     //must contain at least 1 number, 1 capital letter, 1 lower case letter and one special character         
     
-
-        axios.post(`/auth/register`, {email, password, first_name, last_name, birthday, membership_type, membership_price})
+        axios.post(`/auth/register`, {email, password, first_name, last_name, birthday, profile_pic, membership_type, membership_price})
         .then((res)=> {
             console.log(res.data, 'this is the response back from register')
             push('/landing')
@@ -84,6 +113,12 @@ const onSignUp = (formSubmit) => {
             </div>
 
             <div className="register-btns">
+                <div>
+                    <input type="file" onChange={onFileChange} />
+                    <button onClick={onFileUpload}> Upload!</button>
+                </div>
+                    {fileData()}
+                    </div>
 
                     <div className="profile-icon">
                     <img className="profile-pic" 
@@ -147,19 +182,8 @@ const onSignUp = (formSubmit) => {
                         
                 </form>
 
-               {/* <Link to='/landing'>
-                <ButtonContainer 
-                className="email-btn"
-                onClick = {() => values.register(email, password, first_name, last_name, birthday)}
-                >
-                Submit
-                </ButtonContainer>
-                </Link> */}
-                    
-                    {/* </div> */}
                     </div>
                 </div>
-            </div>
         </section>
     )
 
