@@ -50,10 +50,10 @@ useEffect(()=> {
         if(rounds !== 0){
             if(videoRef.current){
                 videoRef.current.play()
+                timerRef.current = setInterval(()=> {
+                    setTimer(t=> t-1)
+                }, 1000)
             }
-            timerRef.current = setInterval(()=> {
-                setTimer(t=> t-1)
-            }, 1000)
         }
     }
 }, [countdown])
@@ -82,6 +82,7 @@ useEffect(()=>{
     if(videoRef.current && moves[index].gif){
         videoRef.current.load()
         videoRef.current.play()
+        videoRef.current.pause()
     }
 }, [index])
 

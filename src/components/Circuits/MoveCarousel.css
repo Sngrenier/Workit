@@ -4,7 +4,7 @@
     font-weight: 400;
     font-size: 1rem;
     letter-spacing: .1rem;
-    color: var(--mainWhite);
+    color: var(--lightBlue);
     padding: 2%;
 }
 .go{
@@ -26,8 +26,8 @@
     }
     to{
         transform: scale(4);
-        font-size: 3rem;
-        color: var(--mainDark);
+        font-size: 4rem;
+        color: var(--mainBlue);
     }
 }
 .content-container{
