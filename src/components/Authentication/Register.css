@@ -1,19 +1,14 @@
-
-.register-container{
+/* .register-container{
     width: 100vw;
     height: 100vh;
-    background-color: transparent;
-    backdrop-filter: grayscale(70);
-    background-size: cover;
-    position: absolute;
     top: 0;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-}
+} */
 .register-btns {
-    height: 72vh;
+    height: 50vh;
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -26,7 +21,7 @@
     padding: 5%;
     
 }
-.prof-title {
+/* .prof-title {
     font-family: 'Roboto';
     font-size: 1.6rem;
     font-weight: 500;
@@ -35,7 +30,6 @@
   @media screen and (min-width: 310px) and (max-width: 520px) {
     .header-row {
       display: flex;
-      padding-bottom: 35%;
       flex-direction: row;
       align-items: left;
       justify-content: space-between;
@@ -50,8 +44,6 @@
     }
     .profile-icon{
         background-color: transparent;
-        margin-top: -50%;
-        padding-bottom: 15%;
     }
     .info-msg{
         color: var(--mainDark);
@@ -61,11 +53,7 @@
         line-height: 1.4rem;
         font-weight: 400;
     }
-    .month-btn{
-        margin: 0 !important;
-    }
     .reg-form {
-        
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -251,4 +239,4 @@
         margin-left: -15%;
     }
 
-}
+} */

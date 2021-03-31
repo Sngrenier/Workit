@@ -77,6 +77,7 @@ const Membership =()=>{
                         <h4 className="info-msg">by continuing you accept our Privacy Policy and Terms of Use</h4>
                         {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
     
+                            </div>
                         
                        
                         <Link to="/register">
@@ -86,7 +87,6 @@ const Membership =()=>{
                             </ButtonContainer>
                             </Link>
                    
-                        </div>
                     </div>
                 </div>
             </section>

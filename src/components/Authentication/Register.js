@@ -1,10 +1,11 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {useContext, useState} from 'react'
-import {useHistory} from 'react-router-dom'
 import axios from 'axios'
+import {useContext, useState} from 'react'
+import ProfilePic from '../ProfilePic/ProfilePic'
+import {Link, useHistory} from 'react-router-dom'
 import {ButtonContainer} from '../NavButton'
-// import './Register.css'
+import PayPalButton from './PayPalButton'
+import './Register.css'
 
 
 const Register =()=>{
@@ -16,7 +17,6 @@ const [membership_type, setmembership_type] = useState('')
 const [membership_price, setmembership_price] = useState(0)
 const [last_name, setlast_name] = useState('')
 const [errorMsg, setErrorMsg] = useState('')
-// const [selectedFile, setSelectedFile] = useState(null)
 const [profile_pic, setprofile_pic] = useState(null)
 
 const {push} = useHistory()
@@ -31,40 +31,9 @@ const membership = (type, price)=>{
     setmembership_price(price)
 }
 
-// const profile_pic = () => {
-//     setProfile_pic(null)
-// }
-
-const onFileChange = (event) => {
-    setprofile_pic(event.target.files[0]);
-  };
-  
-const onFileUpload = () => {
-    const formData = new FormData();
-    formData.append(
-      "myFile",
-      profile_pic,
-    );
-    axios.post(`/auth/register`, formData);
-  };
-
-  const fileData = () => {
-    if(profile_pic) {
-        return(
-            <div>{profile_pic}</div>
-        )} else {
-        return (
-            <div>
-                <h4>Choose before Pressing the Upload button</h4>
-            </div>
-            )
-        }
-    }
-
     
 const onSignUp = (formSubmit) => {
     formSubmit.preventDefault()
-    // let confirm
     
     // if(!membership_type){
     //         let confirm = window.confirm('please select a membership plan to continue')
@@ -100,29 +69,33 @@ const onSignUp = (formSubmit) => {
                 <img className="close-icon" src="https://img.icons8.com/ios-glyphs/30/4a90e2/macos-close.png"/>
                 </Link>
                 <h3 className="prof-title">Create your account</h3>
+
+                <div className="profile-icon">
+                    <ProfilePic className="profile-pic"/>
+                    </div>
                     
             </div>
 
             <div className="register-btns">
-                <div>
-                    <input type="file" onChange={onFileChange} />
-                    <button onClick={onFileUpload}> Upload!</button>
-                </div>
-                    {fileData()}
-                    </div>
 
-                    <div className="profile-icon">
-                    <img className="profile-pic" 
-                    src="https://img.icons8.com/color/100/000000/test-account.png"/>
-                    </div>
-                    
+            <div className="membership-btns">
+                    <h4 className="info-msg">Select a membership plan to continue</h4>
+                <ButtonContainer className='month-btn' onClick={()=>membership('monthly', 19.99)}>$19.99/ Monthly</ButtonContainer>
+                <ButtonContainer className='qtr-btn' onClick={()=>membership('quarterly', 83.99)}> $83.99 / Quarterly</ButtonContainer>
+                    <h4 className="info-msg">$13.99 / month. Save 30%</h4>
+                <ButtonContainer className='yr-btn' onClick={()=>membership('annual', 119.99)}>$119.99 / Annually</ButtonContainer>
+                    <h4 className="info-msg">$9.99 / month. Save 50%, our most popular plan for good reason!</h4>
+            
+            <PayPalButton/>
 
-                    <input
-                    className='termsofuse'
-                    type='checkbox'
-                    /> 
-                    <h4 className="info-msg">by continuing you accept our Privacy Policy and Terms of Use</h4>
-                    {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
+            <input
+            className='termsofuse'
+            type='checkbox'
+            /> 
+            <h4 className="info-msg">by continuing you accept our Privacy Policy and Terms of Use</h4>
+            {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
+                </div>    
+            </div>
 
                     
                     <form
