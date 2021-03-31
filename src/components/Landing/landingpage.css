@@ -71,8 +71,8 @@
 }
 .nav-btn{
     font-family: roboto !important;
-    width: 45vw !important;
-    height: 3vh !important;
+    width: 100% !important;   /*changed from 45vw*/
+    height: 4vh !important;  /*changed from 3vh*/
     padding: 0 !important;
     font-size: .7rem !important;
 }

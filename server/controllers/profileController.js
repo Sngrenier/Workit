@@ -11,6 +11,13 @@ module.exports ={
         
     },
 
+    instructors: async (req, res) =>{
+        const db = req.app.get('db')
+        const instructors = await db.profile.get_instructors([])
+        console.log(instructors, 'instructors function')
+        res.status(200).send(instructors)
+    }
+
 }
 
 

@@ -1,20 +1,39 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import SpotifyLogin from './SpotifyLogin'
 import Dashboard from './Dashboard'
+import {SpotifyContext, SpotifyProvider} from '../../context/SpotifyContext'
 
 
 const code = new URLSearchParams(window.location.search).get('code')
-const SpotifyWidget = () => {
+console.log(code, 'codewidget')
 
- 
+export default function SpotifyWidget(){
+const spotify = useContext(SpotifyContext)
+
+    // useEffect(()=>{
+    //     // spotify.setAccessToken(code)
+    // },[])
+
     console.log(code, 'spotifyWidget code')
 
-return (
+    console.log('anything')
+    
+    return (
 
-    code? <Dashboard code={code}/> : <SpotifyLogin />
-)
+        <div>
+
+ 
+            {code? <Dashboard code={code}/> : <SpotifyLogin />}
 
 
-}
+        </div>
+    
+    )
 
-export default SpotifyWidget
+} 
+
+ 
+
+
+
+

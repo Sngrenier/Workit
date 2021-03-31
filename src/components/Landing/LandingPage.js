@@ -52,6 +52,7 @@ console.log(user, 'this is user array on the landing page')
             <div className="nav-btns">
             <Link to='/'><ButtonContainer className="nav-btn" onClick={logout}>Logout</ButtonContainer></Link> 
             <Link to='/profile'><ButtonContainer className="nav-btn">Profile</ButtonContainer></Link> 
+            <Link to='/instructors'><ButtonContainer className="nav-btn">Meet your Instructors!</ButtonContainer></Link> 
             </div>
             <div className='circuit-list'>
             <CircuitList/>
