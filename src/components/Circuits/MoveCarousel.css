@@ -211,7 +211,7 @@
 }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1200px) {
+@media screen and (min-width: 600px) and (max-width: 1600px) {
     .count{
         font-family: Roboto;
         font-weight: 400;

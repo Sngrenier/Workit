@@ -6,6 +6,9 @@ import {Link, useHistory} from 'react-router-dom'
 import {ButtonContainer} from '../NavButton'
 import PayPalButton from './PayPalButton'
 import Form from 'react-bootstrap/Form'
+// import FormControl from 'react-bootstrap/FormControl'
+// import FormFile from 'react-bootstrap/FormFile'
+// import FormCheck from 'react-bootstrap/FormCheck'
 import './Register.css'
 
 
@@ -19,8 +22,11 @@ const [membership_price, setmembership_price] = useState(0)
 const [last_name, setlast_name] = useState('')
 const [errorMsg, setErrorMsg] = useState('')
 const [profile_pic, setprofile_pic] = useState(null)
+// const [validated, setValidated] = useState(false);
 
 const {push} = useHistory()
+
+
 
 
 const closeErrorMessage =()=> {
@@ -33,24 +39,18 @@ const membership = (type, price)=>{
 }
 
     
+// const handleSubmit = (event) => {
+//     const form = event.currentTarget;
+//     if (form.checkValidity() === false) {
+//       event.preventDefault();
+//       event.stopPropagation();
+//     }
+  
+//     setValidated(true);
+// }
+
 const onSignUp = (formSubmit) => {
     formSubmit.preventDefault()
-    
-    // if(!membership_type){
-    //         let confirm = window.confirm('please select a membership plan to continue')
-    //     }
-
-    // const checkEmail = () => {         
-    //     var pattern = new RegExp(/^[0-9a-zA-Z]+([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$/);         
-    //     return pattern.test(loginInfo.email);     
-    // }    
-    //must start with a letter or number containing as many as it wants can also have a - . _ or + but ending with a letter or number before the @ symbol, then will start with a letter or number can have a - or . eventually followed by a . with a letter at the end between 2 to 6 characters in length         
-        
-    // const checkPassword = () => {        
-    //     var reg = new RegExp(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/);         
-    //     return reg.test(loginInfo.password);     
-    // }
-    //must contain at least 1 number, 1 capital letter, 1 lower case letter and one special character         
     
         axios.post(`/auth/register`, {email, password, first_name, last_name, birthday, profile_pic, membership_type, membership_price})
         .then((res)=> {
@@ -99,22 +99,8 @@ const onSignUp = (formSubmit) => {
                 </div>    
             </div>
             </div>
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>email</Form.Label>
-                    <Form.Control type ="email" placeholder="email"/>
-                    <Form.Text className="emailInput inputs text-muted">
-                    </Form.Text>
-                </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>password</Form.Label>
-                    <Form.Control type ="password" placeholder="password"/>
-                    <Form.Text className="emailInput inputs text-muted" />
-                </Form.Group>
-
-                    </Form>
-                    <form
+            <form
                     className='reg-form'
                     onSubmit={onSignUp}>
 
@@ -158,7 +144,6 @@ const onSignUp = (formSubmit) => {
                         className="email-btn">
                         Submit
                         </ButtonContainer>
-                      
                         
                 </form>
 
@@ -166,7 +151,73 @@ const onSignUp = (formSubmit) => {
                 </div>
         </section>
     )
-
 }
-
 export default Register 
+
+
+
+
+
+
+{/* <Form noValidate 
+validated={validated} 
+onSubmit={handleSubmit}
+onSubmit={onSignUp} >
+{if(validated === true  ?  {onSignUp  :  'Please complete all required fields to register.')}
+    <Form.Group controlId="validationCustom01">
+        <Form.Label>email</Form.Label>
+        <Form.Control 
+        required
+        type ="email" 
+        placeholder="email" />
+        <Form.Control.Feedback type="invalid">
+        Please complete email.
+        </Form.Control.Feedback>
+    </Form.Group>
+
+    <Form.Group controlId="validationCustom02">
+        <Form.Label>password</Form.Label>
+        <Form.Control 
+        required
+        type ="password" 
+        placeholder="password"/>
+        <Form.Control.Feedback type="invalid">
+        Please include a password.
+        </Form.Control.Feedback>
+    </Form.Group>
+
+    <Form.Group controlId="validationCustom03">
+        <Form.Label>first name</Form.Label>
+        <Form.Control 
+        required
+        type ="text" 
+        placeholder="first name"/>
+        <Form.Control.Feedback type="invalid" />
+    </Form.Group>
+
+    <Form.Group controlId="validationCustom04">
+        <Form.Label>last name</Form.Label>
+        <Form.Control 
+        required
+        type ="text" 
+        placeholder="last name"/>
+        <Form.Control.Feedback type="invalid" />
+    </Form.Group>
+
+    <Form.Group controlId="validationCustom05">
+        <Form.Label>birthday</Form.Label>
+        <Form.Control 
+        required
+        type ="birthday" 
+        placeholder="birthday"/>
+        <Form.Control.Feedback type="invalid" />
+    </Form.Group>
+
+
+    <ButtonContainer 
+    className="email-btn">
+    Submit
+    </ButtonContainer>
+
+
+    </Form> */}
