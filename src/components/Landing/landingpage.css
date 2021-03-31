@@ -33,6 +33,13 @@
 	align-content: center;
     background-color: transparent;
 }
+.brand {
+    font-family: 'Righteous';
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--mainBlue) !important;
+    padding: 20%;
+  }
 .profile-info{
     display: flex;
     flex-direction: column;
@@ -41,20 +48,16 @@
 	align-items: center;
 	align-content: center;
     background-color: transparent;
-    margin-top: 16%;
+    margin-top: -2%;
+    width: 40%;
+
 }
-.brand {
-    font-family: 'Righteous';
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--mainBlue) !important;
-    padding: 5%;
-  }
-.profile-icon{
-    width: 50%;
-    margin-bottom:-10%;
+.ProfilePic{
+    width: 50px;
+    height: 50px ;
 }
 .greeting-msg{
+    padding: 2%;
     font-family: roboto;
     font-size: .6rem;
     font-weight: 600;
@@ -68,10 +71,11 @@
 	align-items: flex-start;
 	align-content: center;
     background-color: transparent;
+    padding-top: 3vh;
 }
 .nav-btn{
     font-family: roboto !important;
-    width: 45vw !important;
+    width: 30vw !important;
     height: 3vh !important;
     padding: 0 !important;
     font-size: .7rem !important;
@@ -142,6 +146,13 @@
         align-content: center;
         background-color: transparent;
     }
+    .brand {
+        font-family: 'Righteous';
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--mainBlue) !important;
+        padding: 15%;
+      }
     .profile-info{
         display: flex;
         flex-direction: column;
@@ -150,21 +161,14 @@
         align-items: center;
         align-content: center;
         background-color: transparent;
-        margin-top: 5%;
         padding: 5%;
     }
-    .brand {
-        font-family: 'Righteous';
-        font-size: 3.5rem;
-        font-weight: 700;
-        color: var(--mainBlue) !important;
-        padding: 15%;
-      }
     .profile-icon{
-        width: 70%;
-        /* margin-bottom:-10%; */
+        margin-top: -2vh;
+        width: 80%;
     }
     .greeting-msg{
+        padding: 2%;
         font-family: roboto;
         font-size: 1rem;
         font-weight: 600;
@@ -181,7 +185,7 @@
     }
     .nav-btn{
         font-family: roboto !important;
-        width: 45vw !important;
+        width: 30vw !important;
         height: 3vh !important;
         padding: 0 !important;
         font-size: .7rem !important;
