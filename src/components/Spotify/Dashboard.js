@@ -1,9 +1,10 @@
 
 import {Container, Form} from 'react-bootstrap'
-import {useState, useEffect} from 'react'
-import SpotifyWebApi from 'spotify-web-api-node'
+import {useState, useEffect, useContext} from 'react'
+// import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
 import Player from './Player'
+<<<<<<< HEAD
 import UseSpotifyAuth from './UseSpotifyAuth'
 
 const {REACT_APP_CLIENT_ID} = process.env
@@ -11,25 +12,45 @@ const {REACT_APP_CLIENT_ID} = process.env
 const spotifyApi = new SpotifyWebApi({
     clientId: REACT_APP_CLIENT_ID
 })
+=======
+import useSpotifyAuth from './UseSpotifyAuth'
+import {SpotifyContext} from '../../context/SpotifyContext'
+import {useHistory} from 'react-router-dom'
 
-export default function Dashboard({code}){
-    const accessToken = UseSpotifyAuth(code)
+const {REACT_APP_CLIENT_ID} = process.env
+
+// const spotifyApi = new SpotifyWebApi({
+//     clientId: REACT_APP_CLIENT_ID
+// })
+>>>>>>> main
+
+
+
+export default function Dashboard(props){
+    const history = useHistory()
+    console.log(props, 'dashboardcode')
+    const {setUri, spotifyApi} = useContext(SpotifyContext)
+    const accessToken = useSpotifyAuth(props.code)
     const [search, setSearch] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [playingTrack, setPlayingTrack] = useState()
 
 
     const chooseTrack = (track)=>{
+        setUri(track.uri)
+        
+        history.push('/movecarousel')
+        console.log(track.uri)
         setPlayingTrack(track)
         setSearch('')
 
     }
 
-    useEffect(()=>{
-        if(!accessToken) return
+    // useEffect(()=>{
+    //     if(!accessToken) return
 
-        spotifyApi.setAccessToken(accessToken)
-    }, [accessToken])
+    //     spotifyApi.setAccessToken(accessToken)
+    // }, [accessToken])
 
     useEffect(()=>{
 

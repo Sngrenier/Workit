@@ -1,17 +1,22 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
+import {SpotifyContext} from '../../context/SpotifyContext'
 
-export default function UseSpotifyAuth (code){
+export default function useSpotifyAuth (code){
 
     const [accessToken, setAccessToken] = useState()
     const [refreshToken, setRefreshToken] = useState()
     const [expiresIn, setExpiresIn] = useState()    
+    const spotifyContext = useContext(SpotifyContext)
+
 
     useEffect(()=>{
+        console.log(code, 'code')
         axios.post('http://localhost:3333/spotifylogin/', {
         code,    
         }).then(res=>{
-
+            console.log(res.data, 'useeffect')
+            spotifyContext.setAccessToken(res.data.accessToken)
             setAccessToken(res.data.accessToken)
             setRefreshToken(res.data.refreshToken)
             setExpiresIn(res.data.expiresIn)
@@ -34,7 +39,7 @@ export default function UseSpotifyAuth (code){
             refreshToken,    
             }).then(res=>{
     
-                setAccessToken(res.data.accessToken)
+               spotifyContext.setAccessToken(res.data.accessToken)
                 // setRefreshToken(res.data.refreshToken)
                 setExpiresIn(res.data.expiresIn)
                 // window.history.pushState({}, null, '/')

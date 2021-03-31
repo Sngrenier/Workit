@@ -5,6 +5,9 @@ import { ButtonContainer } from '../NavButton'
 import './MoveCarousel.css'
 import {Redirect, Link} from 'react-router-dom'
 import styled, {keyframes} from "styled-components"
+import {SpotifyContext} from '../../context/SpotifyContext'
+import SpotifyPlayer from 'react-spotify-web-playback'
+import Player from '../Spotify/Player'
 
 
 
@@ -16,13 +19,13 @@ const [countdown, setCountdown] = useState(5)
 const [moves, setMoves] = useState([])
 const [rounds, setRounds] = useState(props.rounds)
 const [modal, setModal] = useState(true)
-// console.log(props, 'move carousel props')
+
 
 
 const circuitContext = useContext(CircuitContext)
 const videoRef = useRef()
 const timerRef = useRef() //keeps track of the context when it updates, keeps track of the same object
-
+const spotifyContext = useContext(SpotifyContext)
 
 // const timestamp = 402
 // const hours = Math.floor(timestamp/60/60)
@@ -94,6 +97,7 @@ useEffect(()=>{
 const playTimer = ()=> {
     if(!play){
         setPlay(true)
+        // spotifyContext.setPlay(true)
         videoRef.current.play()
         timerRef.current = setInterval(()=> {
             if(timer-1 > 0) {
@@ -103,6 +107,7 @@ const playTimer = ()=> {
         }, 1000)
     } else {
         setPlay(false)
+        // spotifyContext.setPlay(false)
         videoRef.current.pause()
         clearInterval(timerRef.current)
     }
@@ -111,6 +116,8 @@ const playTimer = ()=> {
 const closeModal = () => {
         setModal(false)
     }
+
+    console.log(spotifyContext, 'spotifycontext')
 
 return (
     <>
@@ -194,8 +201,24 @@ return (
             </div>
         </div>
 
-        </div>
-        </div>
+        </div> 
+        </div> 
+
+
+        { spotifyContext.accessToken && 
+                <Player accessToken={spotifyContext.accessToken} trackUri={spotifyContext.uri}/>
+
+                // <SpotifyPlayer 
+                // token={spotifyContext.accessToken}
+                // showSaveIcon
+                // callback={state=> {
+                //   if (!state.isPlaying) setPlay(false)
+                // }}
+                // play={spotifyContext.play}
+                // uris={spotifyContext.trackUri ? [spotifyContext.trackUri] : []}
+              
+                // />
+        }
         </section>
           : <div> 
               <Redirect to='/CompletedCircuit'>
