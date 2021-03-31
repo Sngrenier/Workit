@@ -18,29 +18,27 @@ module.exports ={
         res.status(200).send(instructors)
     },
 
+    getPicture: async (req, res)=>{
+    },
 
-getPicture: async (req, res)=>{
+    // submitPicture: async(req,res)=> {
+    //     try{
 
-},
+    //         const {picture} = req.body
+    //         const {user_id} = req.session.user
+    //         console.log(picture.name, 'picture.name controller function')
+    //         console.log(user_id, 'user_id controller function')
+    //         const db = req.app.get('db')
+    
+    //         const pic  = await db.profile.submit_picture([picture.name, user_id])
+    //         res.status(200).send(pic)
 
-submitPicture: async(req,res)=> {
-    try{
+    //     }
+    //     catch(err){
+    //         console.log(err)
+    //     }
 
-        const {picture} = req.body
-        const {user_id} = req.session.user
-        console.log(picture.name, 'picture.name controller function')
-        console.log(user_id, 'user_id controller function')
-        const db = req.app.get('db')
-
-        const pic  = await db.profile.submit_picture([picture.name, user_id])
-        res.status(200).send(pic)
-
-    }
-    catch(err){
-        console.log(err)
-    }
-
-},
+    // }
 
 }
 
