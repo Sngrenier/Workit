@@ -1,0 +1,1 @@
+insert into profile (profile_pic) where user_id = $1;

@@ -56,7 +56,7 @@ const onSignUp = (formSubmit) => {
         .then((res)=> {
             console.log(res.data, 'this is the response back from register')
             push('/landing')
-        }).catch(error=> setErrorMsg(error))
+        }).catch(error=> setErrorMsg(error.response.data))
     } 
     console.log(membership_type, membership_price, 'state after onClick')
 
@@ -74,7 +74,7 @@ const onSignUp = (formSubmit) => {
             </div>
 
                 <div className="profile-icon">
-                    <ProfilePic className="profile-pic"/>
+                    <ProfilePic profile_pic={profile_pic} className="profile-pic"/>
                     </div>
 
             <div className="register-btns">
@@ -95,7 +95,7 @@ const onSignUp = (formSubmit) => {
             type='checkbox'
             /> 
             <h4 className="info-msg">by continuing you accept our Privacy Policy and Terms of Use</h4>
-            {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
+            {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}></span></h3>}
                 </div>    
             </div>
             </div>
