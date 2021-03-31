@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 
 const Circuit = (props) => {
@@ -15,7 +13,7 @@ const Circuit = (props) => {
     }
 
     return <CircuitWrapper className="container-fluid">
-
+        
             <div className="card" onClick={()=>props.setCircuit(props.circuit.circuit_id)}>  
                 <section className="img-container p-5">
                     <img className="circuit-img" alt={title} src={mainimg} height='auto' width='250px'/>
@@ -24,18 +22,14 @@ const Circuit = (props) => {
                         <h4 className="title-text">{title}</h4>
                         <h4 className="info-text">{info}</h4>
                     </div>
-                </section>
+             </section>
         </div>
-   
     </CircuitWrapper>
 }
-
 export default Circuit;
 
 
 
-
-//this displays the circuit to read more information 
 
 
 const CircuitWrapper = styled.div`
@@ -91,7 +85,7 @@ const CircuitWrapper = styled.div`
         font-family: roboto;
             font-weight:900;
             font-size: .7rem;
-            color: #65d6ce;
+            color: var(--mainBlue);
             margin:.35%;
     }
     .title-text{
@@ -137,7 +131,7 @@ const CircuitWrapper = styled.div`
         font-family: roboto;
             font-weight:900;
             font-size: .7rem;
-            color: #65d6ce;
+            color: var(--mainBlue);
             margin:.35%;
     }
     .title-text{
