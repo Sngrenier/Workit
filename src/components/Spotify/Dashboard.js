@@ -6,11 +6,11 @@ import TrackSearchResult from './TrackSearchResult'
 import Player from './Player'
 import UseSpotifyAuth from './UseSpotifyAuth'
 
+const {REACT_APP_CLIENT_ID} = process.env
 
-
-// const spotifyApi = new SpotifyWebApi({
-//     clientId: 
-// })
+const spotifyApi = new SpotifyWebApi({
+    clientId: REACT_APP_CLIENT_ID
+})
 
 export default function Dashboard({code}){
     const accessToken = UseSpotifyAuth(code)

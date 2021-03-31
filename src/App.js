@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom"
 import "./reset.css"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+import 'mdbreact/dist/css/mdb.css'
 import Auth from './components/Authentication/Auth'
 import Register from './components/Authentication/Register'
 import Login from './components/Authentication/Login'

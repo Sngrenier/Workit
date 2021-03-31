@@ -18,9 +18,19 @@ export default () => {
   }
   return (
           <form className="myForm">
-              <div className="register_profile_image">
-                <input id="profilePic" type="file" onChange={onChangePicture} />
+              
+
+              <div className="image-upload">
+              <label for="file-input">
+              <img src="https://img.icons8.com/ios/20/000000/plus--v1.png" />
+              </label>
+              <input 
+              id="file-input" 
+              type="file" 
+              onChange={onChangePicture} 
+              />
               </div>
+
               <div className="previewProfilePic">
                 <img className="playerProfilePic_home_tile" src={imgData} width={100} height={100} />
               </div>
