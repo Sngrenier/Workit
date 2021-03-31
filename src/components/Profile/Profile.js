@@ -6,6 +6,7 @@ import {ButtonContainer} from '../NavButton'
 import './Profile.css'
 import {useHistory} from 'react-router-dom'
 import moment from 'moment'
+import ProfilePic from '../ProfilePic/ProfilePic'
 
 const Profile =()=>{
     const [user, setUser] = useState([])
@@ -48,7 +49,7 @@ const Profile =()=>{
                                 <div className="row header-row">
                 
                                 <Link to="/landing">
-                                <img className="close-icon" src="https://img.icons8.com/ios-glyphs/30/4a90e2/macos-close.png"/>
+                                <img className="close-icon" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
                                 </Link>
                                     
                             </div>
@@ -56,8 +57,7 @@ const Profile =()=>{
                             <div className='profile-btns'>
                 
                                     <div className="profile-icon">
-                                    <img className="profile-pic" 
-                                    src="https://img.icons8.com/color/100/000000/test-account.png"/>
+                                    <ProfilePic />
                                     </div>
                                 </div>
                             </div>

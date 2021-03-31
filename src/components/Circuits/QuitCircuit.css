@@ -107,3 +107,35 @@
     font-size: .8rem !important;
     letter-spacing: .05rem;
 }
+/* .fb-modal{
+    height: 40vh;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+} */
+
+.feedback-modal{
+    width:90vw;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 1%;
+    margin-top: -5%;
+}
+.close-alert-btn{
+    margin-left: -2% !important;
+    width: 80vw !important;
+}

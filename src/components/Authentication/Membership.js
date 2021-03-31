@@ -44,7 +44,7 @@ const Membership =()=>{
                     <div className="row header-row">
     
                     <Link to="/">
-                    <img className="close-icon" src="https://img.icons8.com/ios-glyphs/30/4a90e2/macos-close.png"/>
+                    <img className="close-icon" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
                     </Link>
                     <h3 className="prof-title">Create your account</h3>
                         
@@ -77,6 +77,7 @@ const Membership =()=>{
                         <h4 className="info-msg">by continuing you accept our Privacy Policy and Terms of Use</h4>
                         {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
     
+                            </div>
                         
                        
                         <Link to="/register">
@@ -86,7 +87,6 @@ const Membership =()=>{
                             </ButtonContainer>
                             </Link>
                    
-                        </div>
                     </div>
                 </div>
             </section>

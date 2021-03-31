@@ -24,6 +24,9 @@
     .profileBtn {
         width: 100% !important;
     }
+    .close-icon{
+        opacity: 50%!important;
+    }
 
 }
 
@@ -53,11 +56,13 @@
         width: 90%;
      
     }
+    .close-icon{
+        opacity: 50%!important;
+    }
 }
 
 
-@media screen and (min-width: 520px) and (max-width: 900px) {}
-
+@media screen and (min-width: 520px) and (max-width: 900px) {
 
 .profileInputs{
     border: 2px solid grey;
@@ -67,7 +72,6 @@
     padding: 0.9rem 4rem;
 
 }
-
 .profileBtnContainer{
     display: flex !important;
     flex-direction: column !important;
@@ -75,9 +79,12 @@
     width: 90%;
  
 }
-
 .form{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.close-icon{
+    opacity: 50%!important;
+}
 }

@@ -36,7 +36,7 @@ return (
     sign up with Facebook
     </ButtonContainer>
     
-    <Link to='/membership'>
+    <Link to='/register'>
     <ButtonContainer 
     className="email-btn">
     <img className="email-icon" src="https://img.icons8.com/ios/64/000000/email.png"/>

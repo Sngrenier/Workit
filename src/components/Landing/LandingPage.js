@@ -6,6 +6,7 @@ import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './landingpage.css'
+import ProfilePic from '../ProfilePic/ProfilePic'
 
 
 
@@ -44,15 +45,16 @@ console.log(user, 'this is user array on the landing page')
                         <h1 className="brand">WORKit</h1>
                     </div>
                     <div className="profile-info">             
-                        <img className="profile-icon" 
-                        src="https://img.icons8.com/color/100/000000/test-account.png"/>
+                        <ProfilePic className="profile-icon">{user.profile_pic}</ProfilePic>
+                        {/* <img className="profile-icon" 
+                        src="https://img.icons8.com/color/100/000000/test-account.png"/> */}
                         <h4 className="greeting-msg"> Welcome {user.first_name}!</h4>
                     </div>
                 </div>
             <div className="nav-btns">
-            <Link to='/'><ButtonContainer className="nav-btn" onClick={logout}>Logout</ButtonContainer></Link> 
             <Link to='/profile'><ButtonContainer className="nav-btn">Profile</ButtonContainer></Link> 
-            <Link to='/instructors'><ButtonContainer className="nav-btn">Meet your Instructors!</ButtonContainer></Link> 
+            <Link to='/meetTheTrainers'><ButtonContainer className="nav-btn">Meet The Trainers</ButtonContainer></Link>
+            <Link to='/'><ButtonContainer className="nav-btn" onClick={logout}>Logout</ButtonContainer></Link> 
             </div>
             <div className='circuit-list'>
             <CircuitList/>

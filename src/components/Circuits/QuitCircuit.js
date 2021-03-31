@@ -1,16 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './QuitCircuit.css'
+import Alert from 'react-bootstrap/Alert'
 import { ButtonContainer } from '../NavButton'
+import {useContext, useState} from 'react'
 
 const QuitCircuit = () => {
-
-    const feedbackClick = () => {
-       let confirm = window.confirm("Thank you for your feedback!")
-        } 
+    const [show, setShow] = useState(false);
+    // const feedbackClick = () => {
+    //    let confirm = window.confirm("Thank you for your feedback!")
+    //     } 
 
         return (
-            <section>
+            <>
+            <section>    
                 <div className="quit-container">
                     <div className="container-fluid quit-content">
 
@@ -39,18 +42,36 @@ const QuitCircuit = () => {
                     <ButtonContainer className="why-btn">Ran out of time</ButtonContainer>
                     </div>
 
+                    
                     <div>
-                        {/* <Link to="/landing"> */}
+                    <Alert show={show} variant="success" className="feedback-modal">
+                        <Alert.Heading>Thank you for your feedback</Alert.Heading>
+                        <p>
+                        It's great to hear from you! We love feedback so we can accomodate all skill levels and busy schedules. 
+                        </p>
+                        <hr />
+                        <div className="fb-modal">
+                            <Link to="/landing">
+                        <ButtonContainer className="close-alert-btn" onClick={() => setShow(false)} variant="outline-success">
+                            close
+                        </ButtonContainer>
+                            </Link>
+                        </div>
+                    </Alert>  
+                    {!show && <ButtonContainer onClick={() => setShow(true)}>PROVIDE US FEEDBACK</ButtonContainer>}
+
+                        {/* <Link to="/landing">
                     <ButtonContainer 
                     className="feedback-btn" 
-                    onclick={feedbackClick}>PROVIDE US FEEDBACK</ButtonContainer>  
-                        {/* </Link> */}
+                    onclick={()=> setShow(true)}>PROVIDE US FEEDBACK</ButtonContainer>  
+                        </Link> */}
                     </div>
 
 
                     </div>
                 </div>
             </section>
+            </>
         )
     }
 export default QuitCircuit

@@ -2,4 +2,24 @@
     border-radius: 50%;
     border-color: var(--mainDark);
     background-color: var(--mainBlue);
+    margin-top:-3vh;
+}
+
+.image-upload>input {
+    display:none;
+  }
+
+.image-upload img{
+    cursor:pointer;
+    padding-left: 24vw;
+    padding-top:2vh;
+    opacity:50%;
+}
+.myForm{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: flex-start;
 }

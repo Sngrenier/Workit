@@ -4,6 +4,15 @@ import {useState, useEffect, useContext} from 'react'
 // import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
 import Player from './Player'
+<<<<<<< HEAD
+import UseSpotifyAuth from './UseSpotifyAuth'
+
+const {REACT_APP_CLIENT_ID} = process.env
+
+const spotifyApi = new SpotifyWebApi({
+    clientId: REACT_APP_CLIENT_ID
+})
+=======
 import useSpotifyAuth from './UseSpotifyAuth'
 import {SpotifyContext} from '../../context/SpotifyContext'
 import {useHistory} from 'react-router-dom'
@@ -13,6 +22,7 @@ const {REACT_APP_CLIENT_ID} = process.env
 // const spotifyApi = new SpotifyWebApi({
 //     clientId: REACT_APP_CLIENT_ID
 // })
+>>>>>>> main
 
 
 
