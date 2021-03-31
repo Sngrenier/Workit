@@ -44,7 +44,7 @@ const Membership =()=>{
                     <div className="row header-row">
     
                     <Link to="/">
-                    <img className="close-icon" src="https://img.icons8.com/ios-glyphs/30/4a90e2/macos-close.png"/>
+                    <img className="close-icon" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
                     </Link>
                     <h3 className="prof-title">Create your account</h3>
                         

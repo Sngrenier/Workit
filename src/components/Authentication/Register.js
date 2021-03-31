@@ -5,6 +5,7 @@ import ProfilePic from '../ProfilePic/ProfilePic'
 import {Link, useHistory} from 'react-router-dom'
 import {ButtonContainer} from '../NavButton'
 import PayPalButton from './PayPalButton'
+import Form from 'react-bootstrap/Form'
 import './Register.css'
 
 
@@ -62,19 +63,19 @@ const onSignUp = (formSubmit) => {
     return (
         <section>
         <div className="register-container">
-            <div className = "container-fluid">
+            <div className = "container-fluid reg-container">
                 <div className="row header-row">
 
                 <Link to="/">
-                <img className="close-icon" src="https://img.icons8.com/ios-glyphs/30/4a90e2/macos-close.png"/>
+                <img className="close-icon" src="https://img.icons8.com/windows/32/000000/macos-close.png"/>
                 </Link>
                 <h3 className="prof-title">Create your account</h3>
+  
+            </div>
 
                 <div className="profile-icon">
                     <ProfilePic className="profile-pic"/>
                     </div>
-                    
-            </div>
 
             <div className="register-btns">
 
@@ -86,6 +87,7 @@ const onSignUp = (formSubmit) => {
                 <ButtonContainer className='yr-btn' onClick={()=>membership('annual', 119.99)}>$119.99 / Annually</ButtonContainer>
                     <h4 className="info-msg">$9.99 / month. Save 50%, our most popular plan for good reason!</h4>
             
+            <div className="pp-tou">
             <PayPalButton/>
 
             <input
@@ -96,8 +98,22 @@ const onSignUp = (formSubmit) => {
             {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
                 </div>    
             </div>
+            </div>
+            <Form>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>email</Form.Label>
+                    <Form.Control type ="email" placeholder="email"/>
+                    <Form.Text className="emailInput inputs text-muted">
+                    </Form.Text>
+                </Form.Group>
 
-                    
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>password</Form.Label>
+                    <Form.Control type ="password" placeholder="password"/>
+                    <Form.Text className="emailInput inputs text-muted" />
+                </Form.Group>
+
+                    </Form>
                     <form
                     className='reg-form'
                     onSubmit={onSignUp}>
