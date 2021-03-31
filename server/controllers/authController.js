@@ -41,8 +41,6 @@ module.exports = {
             delete user.password
             req.session.user = user
             // return res.status(201).send(req.session.user)
-            
-        
       
             let transporter = nodemailer.createTransport({
                 service: "gmail",

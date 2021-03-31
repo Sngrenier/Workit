@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import './ProfilePic.css'
+import axios from 'axios'
 
 export default () => {
 
@@ -15,6 +16,26 @@ export default () => {
       })
       reader.readAsDataURL(e.target.files[0])
     }
+
+    useEffect(()=>{
+
+      // if(!picture){
+      //   axios.get(/getpicture,)
+  
+      // }
+    if(picture){
+      axios.post(`/submitpicture`, picture)
+      .then(res=>{
+        console.log(res.data, 'res.data profile')
+      })
+    }
+  
+  
+    }, [picture])
+
+
+
+
   }
   return (
           <form className="myForm">
