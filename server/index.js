@@ -112,3 +112,4 @@ app.post(`/quitreasons`, circuitCtrl.quit_reasons)
 //Profile Endpoints ------------------------------
 
 app.post(`/updateprofile`, profileCtrl.update_profile)
+app.get(`/instructors`, profileCtrl.instructors)

@@ -49,7 +49,7 @@ const SelectCircuit =(props)=> {
                 <h5 className="info-line">{circuitContext.individualCircuit.info}</h5>
          {/* <Link to='/spotify'> */}
 
-         <a href='http://localhost:3000/spotifylogin'>
+         <a href='http://localhost:3000/spotify'>
              <ButtonContainer className='spotify-btn'>Spotify</ButtonContainer>
              
         </a>   

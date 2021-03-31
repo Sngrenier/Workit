@@ -20,6 +20,7 @@ import Dashboard from './components/Spotify/Dashboard'
 import Membership from '././components/Authentication/Membership'
 import SpotifyWidget from './components/Spotify/SpotifyWidget'
 import SpotifyLogin from './components/Spotify/SpotifyLogin'
+import MeetTrainers from './components/MeetInstructors/MeetInstructors'
 
 
 class App extends Component {
@@ -35,8 +36,8 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
           <Route path="/circuitselection/:id" component={SelectCircuit} />
-          <Route path='/spotify/' component={Dashboard} />
-          <Route path='/spotifylogin/' component={SpotifyWidget} />
+          <Route path='/spotify' component={SpotifyWidget} />
+          <Route path='/instructors' component={MeetTrainers}/>
           <Route path="/movecarousel"><MoveCarousel time={20} rounds={2} /></Route>
           <Route path="/movesteps/:id" component={MoveStepsModal} />
           <Route path="/quitcircuit" component={QuitCircuit} />
