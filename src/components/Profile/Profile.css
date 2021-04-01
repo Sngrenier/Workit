@@ -1,6 +1,50 @@
+.profileInputs{
+  
+
+    
+    width: 80vw;
+    padding: 5%;
+    margin: 5%;
+    margin-left: -5% !important;
+    border-top-color:transparent !important;
+    border-left-color:transparent !important;
+    border-right-color:transparent !important;
+    /* border-color: var(--lightBlue); */
+    border-bottom-color: var(--lightBlue);
+    color:#707070;
+    font-family: roboto;
+    font-size: .8rem;
+    font-weight: 500; 
+
+
+}
+
+
 
 
 @media screen and (min-width: 200px) and (max-width: 310px){
+
+    .profileInputs{
+  
+
+    
+        width: 80vw;
+        padding: 5%;
+        margin-left: 10% !important;
+        /* margin-left: -5% !important; */
+        border-top-color:transparent !important;
+        border-left-color:transparent !important;
+        border-right-color:transparent !important;
+        /* border-color: var(--lightBlue); */
+        border-bottom-color: var(--lightBlue);
+        color:#707070;
+        font-family: roboto;
+        font-size: .8rem;
+        font-weight: 500; 
+    
+
+}
+
     .profileContainer{
         display: flex;
         flex-direction: column;
@@ -36,11 +80,50 @@
 
 @media screen and (min-width: 310px) and (max-width: 600px) {
 
+    .profileInputs{
+  
+
+    
+        /* width: 80vw; */
+        padding: 5%;
+        margin: 5%;
+        /* margin-left: -5% !important; */
+        margin-left: 10% !important;
+        border-top-color:transparent !important;
+        border-left-color:transparent !important;
+        border-right-color:transparent !important;
+        /* border-color: var(--lightBlue); */
+        border-bottom-color: var(--lightBlue);
+        color:#707070;
+        font-family: roboto;
+        font-size: .8rem;
+        font-weight: 500; 
+    
+
+}
+
+    .profileBtn{
+        font-size: .80rem !important;
+    }
+
+    .profile-btns{
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        align-content: center;
+        width: 90vw;
+        height: 70vh;
+        /* background-color: blue; */
+    }
+
 
     .profileContainer{
         display: flex;
         flex-direction: column;
         height: 100vh;
+        /* background-color: aqua; */
     }
     .register-container{
         height: 30% important; 
@@ -53,7 +136,8 @@
         display: flex !important;
         flex-direction: column !important;
         margin: auto !important;
-        width: 90%;
+        /* width: 90%; */
+        /* background-color: pink; */
      
     }
     .close-icon{
@@ -65,11 +149,23 @@
 @media screen and (min-width: 520px) and (max-width: 900px) {
 
 .profileInputs{
-    border: 2px solid grey;
-    border-radius: 2.5rem;
-    font-size: 1rem;
-    width:90%;
-    padding: 0.9rem 4rem;
+  
+
+    
+        width: 80vw;
+        padding: 5%;
+        margin: 5%;
+        margin-left: -5% !important;
+        border-top-color:transparent !important;
+        border-left-color:transparent !important;
+        border-right-color:transparent !important;
+        /* border-color: var(--lightBlue); */
+        border-bottom-color: var(--lightBlue);
+        color:#707070;
+        font-family: roboto;
+        font-size: .8rem;
+        font-weight: 500; 
+    
 
 }
 .profileBtnContainer{

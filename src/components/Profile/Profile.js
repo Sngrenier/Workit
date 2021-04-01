@@ -46,7 +46,7 @@ const Profile =()=>{
     
         return (
                        
-                        <section className='profileContainer'>
+                        <div className='profileContainer'>
                         <div className='profile-container'>
                             <div className = "container-fluid">
                                 <div className="row header-row">
@@ -62,61 +62,64 @@ const Profile =()=>{
                                     <div className="profile-icon">
                                     <ProfilePic />
                                     </div>
+                                        <ul className='profileBtnContainer'>
+                                            <ButtonContainer className='profileBtn'> Name: {user.first_name} {user.last_name}</ButtonContainer>
+                                            <ButtonContainer className='profileBtn'>Email: {user.email}</ButtonContainer>
+                                            <ButtonContainer className='profileBtn'>Birthday: {moment(user.birthday).format('MM-Do-YYYY')}</ButtonContainer>
+                                            <ButtonContainer className='profileBtn'>  Membership Id: {user.membership_id}</ButtonContainer>
+                                        </ul>
+
+
+
+                                        <form
+                                        className='form' 
+                                        onSubmit={updateProfile}> 
+                                    
+
+                                        <input
+                                        className='profileInputs'
+                                        placeholder='current weight'
+                                        type='text'
+                                        // value={current_weight}
+                                        onChange={(e)=>setcurrent_weight(e.target.value)}
+                                        />
+                                    
+                                        <input
+                                        className='profileInputs'
+                                        placeholder='goal weight'
+                                        type='text'
+                                        // value={goal_weight}
+                                        onChange={(e)=>setgoal_weight(e.target.value)}
+                                        />
+                                        <input
+                                        className='profileInputs'
+                                        placeholder='goal date'
+                                        type='text'
+                                        // value={goal_date}
+                                        onChange={(e)=>setgoal_date(e.target.value)}
+                                        />
+                                        <input
+                                        className='profileInputs'
+                                        placeholder='height'
+                                        type='text'
+                                        // value={height}
+                                        onChange={(e)=>setHeight(e.target.value)}
+                                        />
+                                    
+                                            <ButtonContainer 
+                                            className="editBtn">
+                                            
+                                            Save
+                                            </ButtonContainer>
+                                    
+                                        </form>    
                                 </div>
                             </div>
                         </div>
 
-                    <ul className='profileBtnContainer'>
-                        <ButtonContainer className='profileBtn'> Name: {user.first_name} {user.last_name}</ButtonContainer>
-                        <ButtonContainer className='profileBtn'>Email: {user.email}</ButtonContainer>
-                        <ButtonContainer className='profileBtn'>Birthday: {moment(user.birthday).format('MM-Do-YYYY')}</ButtonContainer>
-                        <ButtonContainer className='profileBtn'>  Membership Id: {user.membership_id}</ButtonContainer>
-                    </ul>
 
 
-                <form
-                className='form' 
-                onSubmit={updateProfile}> 
-            
-
-                <input
-                className='profileInputs'
-                placeholder='current weight'
-                type='text'
-                // value={current_weight}
-                onChange={(e)=>setcurrent_weight(e.target.value)}
-                />
-               
-                 <input
-                className='profileInputs'
-                placeholder='goal weight'
-                type='text'
-                // value={goal_weight}
-                onChange={(e)=>setgoal_weight(e.target.value)}
-                />
-                <input
-                className='profileInputs'
-                placeholder='goal date'
-                type='text'
-                // value={goal_date}
-                onChange={(e)=>setgoal_date(e.target.value)}
-                />
-                <input
-                className='profileInputs'
-                placeholder='height'
-                type='text'
-                // value={height}
-                onChange={(e)=>setHeight(e.target.value)}
-                />
-             
-                    <ButtonContainer 
-                    className="editBtn">
-                    
-                    Save
-                    </ButtonContainer>
-            
-                </form>    
-                    </section>
+                    </div>
             )
     
         
