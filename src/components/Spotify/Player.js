@@ -1,18 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 // import PlayWidget from 'react-spotify-widgets';
 import SpotifyPlayer from 'react-spotify-web-playback'
-
+import {SpotifyContext} from '../../context/SpotifyContext'
 
 
  
-export default function Player({accessToken, trackUri}){
+export default function Player(){
 
-  const [play, setPlay] = useState(false)
+  // const [play, setPlay] = useState(false)
+  //accessToken, trackUri inside of player parameters
 
-  useEffect(()=>{
-    setPlay(true)
+  const {play, setPlay, accessToken, uri, chooseTrack} = useContext(SpotifyContext)
 
-  }, [trackUri])
+    useEffect(()=>{
+      if(accessToken){
+        setPlay(true)
+      }
+    },[accessToken])
+
+  // useEffect(()=>{
+  //   setPlay(true)
+
+  // }, [trackUri])
 
   if(!accessToken) return null
 
@@ -22,35 +31,13 @@ export default function Player({accessToken, trackUri}){
     token={accessToken}
     showSaveIcon
     callback={state=> {
-      if (!state.isPlaying) setPlay(false)
+      !state.isPlaying && setPlay(false)
     }}
     play={play}
-    uris={trackUri ? [trackUri] : []}
+    uris={uri ? [uri] : []}
   
     />
-    // <div className='App'>
-    //   <PlayWidget
-    //     width={300}
-    //     height={380}
-    //     uri={'spotify:album:6fyR4wBPwLHKcRtxgd4sGh'}
-    //     lightTheme={true}
-    //   />
-    //   <PlayWidget
-    //     width={300}
-    //     height={380}
-    //     uri={'spotify:album:6fyR4wBPwLHKcRtxgd4sGh'}
-    //   />
-    //   <PlayWidget
-    //     width={400}
-    //     height={500}
-    //     uri={'spotify:album:6fyR4wBPwLHKcRtxgd4sGh'}
-    //     viewCoverArt={true}
-    //   />
-    //   <PlayWidget
-    //     width={300}
-    //     height={80}
-    //     uri={'spotify:album:6fyR4wBPwLHKcRtxgd4sGh'}/>
-    // </div>
+  
   )
 }
 

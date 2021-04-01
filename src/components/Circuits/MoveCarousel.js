@@ -211,20 +211,7 @@ return (
         </div> 
 
 
-        { spotifyContext.accessToken && 
-                <Player accessToken={spotifyContext.accessToken} trackUri={spotifyContext.uri}/>
-
-                // <SpotifyPlayer 
-                // token={spotifyContext.accessToken}
-                // showSaveIcon
-                // callback={state=> {
-                //   if (!state.isPlaying) setPlay(false)
-                // }}
-                // play={spotifyContext.play}
-                // uris={spotifyContext.trackUri ? [spotifyContext.trackUri] : []}
-              
-                // />
-        }
+   
         </section>
           : <div> 
               <Redirect to='/CompletedCircuit'>
@@ -254,3 +241,9 @@ const ModalContainer = styled.div`
   }
 `
 
+
+// { spotifyContext.accessToken && 
+//     <Player accessToken={spotifyContext.accessToken} trackUri={spotifyContext.uri}/>
+
+
+// }
