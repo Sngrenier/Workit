@@ -2,6 +2,7 @@ import {useState, useContext, useEffect} from 'react'
 // import {SpotifyContext} from '../../context/SpotifyContext'
 import SpotifyPlayer from 'react-spotify-web-playback'
 import Player from './Player'
+import './SpotifyFooter.css'
 
 
 const SpotifyFooter = ()=>{
@@ -18,7 +19,7 @@ const SpotifyFooter = ()=>{
         <div>
                  {/* <Player/> */}
             {/* <div><h1>SPOTIFY FOOTER COMPONENT YOOOOOO</h1></div> */}
-            <footer>
+            <footer className="spot-footer">
 
                 <Player />
             </footer>

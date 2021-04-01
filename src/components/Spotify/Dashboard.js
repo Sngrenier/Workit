@@ -7,7 +7,7 @@ import Player from './Player'
 import useSpotifyAuth from './UseSpotifyAuth'
 import {SpotifyContext} from '../../context/SpotifyContext'
 import {useHistory, Link} from 'react-router-dom'
-import NavButton, { ButtonContainer } from '../NavButton'
+import { ButtonContainer } from '../NavButton'
 import styled from 'styled-components'
 import './Dashboard.css'
 

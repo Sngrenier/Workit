@@ -72,7 +72,7 @@ axios.post(`/quitreasons`, quit_reason)
                     </div>
 
                     
-                    <div>
+                    <div className="feedback">
                     <Alert show={show} variant="success" className="feedback-modal">
                         <Alert.Heading>Thank you for your feedback</Alert.Heading>
                         <p>
@@ -87,7 +87,7 @@ axios.post(`/quitreasons`, quit_reason)
                             </Link>
                         </div>
                     </Alert>  
-                    {!show && <ButtonContainer onClick={quitReason}>PROVIDE US FEEDBACK</ButtonContainer>}
+                    {!show && <ButtonContainer className="feedback-btn" onClick={quitReason}>PROVIDE US FEEDBACK</ButtonContainer>}
 
                         {/* <Link to="/landing">
                     <ButtonContainer 

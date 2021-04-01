@@ -94,6 +94,7 @@
 	justify-content: space-around;
 	align-items: center;
 	align-content: center;
+    margin-bottom: 15vh;
 }
 .cir-tab{
     font-family: roboto;

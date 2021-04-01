@@ -37,12 +37,14 @@ const SelectCircuit =(props)=> {
 
     return (
         <div className="container-fluid">
+            <div className="select-circuit">
             <div className="image-container">
                 <img className="image" src={circuitContext.individualCircuit.mainimg}></img>
             </div>
             <Link to="/landing">
                 <img className="close-icon" src="https://img.icons8.com/ios-glyphs/24/ffffff/cancel.png"/>
                 </Link>
+                
             <div className="cir-landing">
                 <h5 className="subtitle-line">{circuitContext.individualCircuit.subtitle}</h5>
                 <h5 className="title-line">{circuitContext.individualCircuit.title}</h5>
@@ -80,7 +82,7 @@ const SelectCircuit =(props)=> {
             <ButtonContainer className='start-btn' onClick={startWorkout}> Start Workout </ButtonContainer>
             </Link>
                 </div>
-
+                </div>
         </div>
     )
 
