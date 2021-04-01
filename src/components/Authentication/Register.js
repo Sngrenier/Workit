@@ -51,7 +51,6 @@ const membership = (type, price)=>{
 
 const onSignUp = (formSubmit) => {
     formSubmit.preventDefault()
-    
         axios.post(`/auth/register`, {email, password, first_name, last_name, birthday, profile_pic, membership_type, membership_price})
         .then((res)=> {
             console.log(res.data, 'this is the response back from register')
