@@ -19,7 +19,6 @@ module.exports ={
     },
 
     getPicture: async (req, res)=>{
-
     },
 
     // submitPicture: async(req,res)=> {
@@ -42,5 +41,4 @@ module.exports ={
     // }
 
 }
-
 
