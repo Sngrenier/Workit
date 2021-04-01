@@ -7,6 +7,7 @@ import './Profile.css'
 import {useHistory} from 'react-router-dom'
 import moment from 'moment'
 import ProfilePic from '../ProfilePic/ProfilePic'
+import {SpotifyContext} from '../../context/SpotifyContext'
 
 const Profile =()=>{
     const [user, setUser] = useState([])

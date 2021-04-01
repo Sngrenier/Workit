@@ -1,0 +1,16 @@
+.spotify-nav-btns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: center;
+    background-color: transparent;
+}
+.spotify-nav-btn{
+    font-family: roboto !important;
+    width: 25vw !important;
+    height: 3vh !important;
+    padding: 0 !important;
+    font-size: .7rem !important;
+}

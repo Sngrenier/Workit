@@ -25,7 +25,7 @@ const handleLogin =()=>{
     axios.post(`/auth/login`, {email, password})
     .then((res)=>{
         console.log(res.data)
-        push('/landing')
+        push('/spotify')
     })
 }
 
@@ -51,7 +51,7 @@ const handleLogin =()=>{
             
             />
 
-            <Link to="/landing">
+            <Link to="/spotify">
             <ButtonContainer
             className='signin-btn'
             onClick={(e)=>handleLogin(e)}
