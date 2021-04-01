@@ -99,9 +99,9 @@ const onSignUp = (formSubmit) => {
             </div>
             {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
 
-            <form
-                    className='reg-form'
-                    onSubmit={onSignUp}>
+                <form
+                className='reg-form'
+                onSubmit={onSignUp}>
 
                         <input 
                         className='emailInput inputs'
@@ -140,6 +140,7 @@ const onSignUp = (formSubmit) => {
 
                     
                         <ButtonContainer 
+                        id ="e-btn"
                         className="email-btn">
                         Submit
                         </ButtonContainer>

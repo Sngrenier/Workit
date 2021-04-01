@@ -33,6 +33,9 @@ const handleLogin =()=>{
         <section>
         <div className="login-container">
             <div className="container-fluid">
+            <Link to="/">
+                <img className="close-icon" src="https://img.icons8.com/ios-glyphs/24/ffffff/cancel.png"/>
+                </Link>
          <form className="login">
 
             <input 

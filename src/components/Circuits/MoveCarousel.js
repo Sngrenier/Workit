@@ -88,7 +88,13 @@ useEffect(()=>{
     if(videoRef.current && moves[index].gif){
         videoRef.current.load()
         videoRef.current.play()
-        videoRef.current.pause()
+        // videoRef.current.pause()
+        if(countdown > 0 ){
+            videoRef.current.pause()
+            setTimeout(()=> {
+                videoRef.current.play()
+            }, countdown * 1000)
+        }
     }
 }, [index])
 
