@@ -41,24 +41,6 @@ useEffect(()=>{
 
 
 
-// useEffect(()=>{
-//     console.log(code, 'code')
-//     axios.post('http://localhost:3333/spotifylogin/', {
-//     code,    
-//     }).then(res=>{
-//         console.log(res.data, 'useeffect')
-//         // spotifyContext.setAccessToken(res.data.accessToken)
-//         setAccessToken(res.data.accessToken)
-//         setRefreshToken(res.data.refreshToken)
-//         setExpiresIn(res.data.expiresIn)
-//         window.history.pushState({}, null, '/')
-//     }).catch(()=>{
-//         // window.location = '/'
-//     })
-
-// }, [code])
-
-
 
 const chooseTrack = (track)=>{
     setUri(track.uri)
@@ -69,6 +51,29 @@ const chooseTrack = (track)=>{
     setSearch('')
 
 }
+
+
+
+useEffect(()=>{
+
+    if(!refreshToken || !expiresIn) return 
+    const interval = setInterval(()=>{
+
+        axios.post('http://localhost:3000/refresh/', {
+        refreshToken,    
+        }).then(res=>{
+
+           setAccessToken(res.data.accessToken)
+            // setRefreshToken(res.data.refreshToken)
+            setExpiresIn(res.data.expiresIn)
+            // window.history.pushState({}, null, '/')
+        }).catch(()=>{
+            window.location = '/'
+        })
+    }, (expiresIn - 60) * 1000)
+
+    return ()=> clearInterval(interval)
+}, [refreshToken, expiresIn])
 
 
 useEffect(()=>{
@@ -101,7 +106,7 @@ useEffect(()=>{
 
 
 
-
+console.log(uri, 'this is the context uri.. is it setting everywhere?')
 
 
 return(
@@ -119,7 +124,8 @@ return(
             expiresIn,
             setExpiresIn,
             uri, 
-            setUri, 
+            setUri,
+            chooseTrack, 
             spotifyApi}}>
     
     

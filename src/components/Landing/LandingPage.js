@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState} from 'react'
+import { useEffect, useState, useContext} from 'react'
 import CircuitList from './CircuitList'
 import Circuit from './Circuit'
 import NavButton, { ButtonContainer } from '../NavButton'
@@ -7,13 +7,14 @@ import {useHistory} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './landingpage.css'
 import ProfilePic from '../ProfilePic/ProfilePic'
-
+import {SpotifyContext} from '../../context/SpotifyContext'
 
 
 const LandingPage=()=>{
     const [user, setUser] = useState([])
     const {push} = useHistory()
-
+    
+    const spotifyContext = useContext(SpotifyContext)
 
  useEffect(()=>{
   axios.get(`/myaccount`)  

@@ -9,6 +9,8 @@ import moment from 'moment'
 import ProfilePic from '../ProfilePic/ProfilePic'
 import {SpotifyContext} from '../../context/SpotifyContext'
 
+
+
 const Profile =()=>{
     const [user, setUser] = useState([])
     const [current_weight, setcurrent_weight] = useState('')
