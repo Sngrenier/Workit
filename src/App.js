@@ -17,7 +17,6 @@ import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
 import ProfilePic from './components/ProfilePic/ProfilePic'
 import Dashboard from './components/Spotify/Dashboard'
-import Membership from '././components/Authentication/Membership'
 import SpotifyWidget from './components/Spotify/SpotifyWidget'
 import SpotifyLogin from './components/Spotify/SpotifyLogin'
 import MeetTrainers from './components/MeetInstructors/MeetInstructors'
@@ -35,13 +34,12 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={Auth} />
-          <Route path="/membership" component={Membership}/>
-          <Route path="/landing" component={LandingPage} />
-          <Route path="/login" component={Login} />
           <Route path='/register' component={Register} />
+          <Route path="/login" component={Login} />
+          <Route path="/landing" component={LandingPage} />
           <Route path="/circuitselection/:id" component={SelectCircuit} />
           <Route path='/spotify' component={SpotifyWidget} />
-          <Route path='/instructors' component={MeetTrainers}/>
+          <Route path='/instructors' component={MeetTrainers} />
           <Route path="/movecarousel"><MoveCarousel time={20} rounds={2} /></Route>
           <Route path="/movesteps/:id" component={MoveStepsModal} />
           <Route path="/quitcircuit" component={QuitCircuit} />
@@ -52,7 +50,6 @@ function App() {
           <Route path="/ProfilePic" component={ProfilePic} /> 
         </Switch>
              {accessToken && <SpotifyFooter />}
-       
       </React.Fragment>
      
 

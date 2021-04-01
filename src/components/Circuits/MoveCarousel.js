@@ -21,11 +21,11 @@ const [rounds, setRounds] = useState(props.rounds)
 const [modal, setModal] = useState(true)
 
 
+const spotifyContext = useContext(SpotifyContext)
 
 const circuitContext = useContext(CircuitContext)
 const videoRef = useRef()
 const timerRef = useRef() //keeps track of the context when it updates, keeps track of the same object
-const spotifyContext = useContext(SpotifyContext)
 
 // const timestamp = 402
 // const hours = Math.floor(timestamp/60/60)

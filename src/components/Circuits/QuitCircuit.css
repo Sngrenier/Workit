@@ -20,7 +20,9 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	align-content: flex-start;
-    margin:auto;
+    /* margin:auto; */
+    margin-bottom: 15vh;
+
 }
 /* .closing-btn{
     padding-top:15%;
@@ -73,18 +75,19 @@
     font-family: roboto;
     font-weight: 900;
     font-size: 1.2rem;
-    padding-top: 15%;
+    padding-top: 5%;
     padding-left: 5%;
     padding-right: 5%;
     line-height: 1.7rem;
     letter-spacing: .08rem;
 }
 .reason-btns{
-    height: 70vh;
+    height: 40vh;
     width: 80vw;
     background-color: transparent;
     margin-right:-10%;
     margin-top: 2vh;
+    margin-bottom: 15vh;
 }
 .why-btn{
     text-align: left;
@@ -94,7 +97,8 @@
     letter-spacing: .05rem;
     color: var(--mainDark)!important;
     background-color: var(--lightBlue)!important;
-    height:10% !important;
+    height:12% !important;
+    
 }
 .why-btn:hover{
     color:var(--mainWhite)!important;
@@ -106,6 +110,11 @@
     font-weight: 700;
     font-size: .8rem !important;
     letter-spacing: .05rem;
+    margin-bottom: 15vh !important;
+}
+.feedback{
+    background-color: transparent;
+    margin-bottom: 15vh;
 }
 /* .fb-modal{
     height: 40vh;
@@ -134,8 +143,10 @@
     font-size: 1rem;
     padding: 1%;
     margin-top: -5%;
+    margin-bottom: 15vh;
 }
 .close-alert-btn{
     margin-left: -2% !important;
     width: 80vw !important;
+    margin-bottom: 15vh;
 }

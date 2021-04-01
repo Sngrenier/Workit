@@ -9,7 +9,7 @@ export default function useSpotifyAuth (code){
     const [expiresIn, setExpiresIn] = useState()    
     const spotifyContext = useContext(SpotifyContext)
 
-
+console.log(code)
     useEffect(()=>{
         console.log(code, 'code')
         axios.post('http://localhost:3333/spotifylogin/', {
