@@ -22,6 +22,7 @@ const {REACT_APP_CLIENT_ID} = process.env
 export default function Dashboard(props){
     const history = useHistory()
     console.log(props, 'dashboardcode')
+    // const spotifyContext = useContext(SpotifyContext)
     const {setUri, spotifyApi} = useContext(SpotifyContext)
     const accessToken = useSpotifyAuth(props.code)
     const [search, setSearch] = useState('')
@@ -31,7 +32,7 @@ export default function Dashboard(props){
 
     const chooseTrack = (track)=>{
         setUri(track.uri)
-        
+        // spotifyContext.setUri(track.uri)
         history.push('/landing')
         console.log(track.uri)
         setPlayingTrack(track)
@@ -106,7 +107,8 @@ export default function Dashboard(props){
              ))}
              
              </div>
-        <div><Player accessToken={accessToken} trackUri={playingTrack?.uri}/></div>
+        {/* <div><Player accessToken={accessToken} trackUri={playingTrack?.uri}/></div> */}
+
     </Container>
     </div>
 }

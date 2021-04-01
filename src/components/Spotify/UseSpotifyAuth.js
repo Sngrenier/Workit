@@ -30,26 +30,26 @@ export default function useSpotifyAuth (code){
  
   
 
-    useEffect(()=>{
+    // useEffect(()=>{
 
-        if(!refreshToken || !expiresIn) return 
-        const interval = setInterval(()=>{
+    //     if(!refreshToken || !expiresIn) return 
+    //     const interval = setInterval(()=>{
 
-            axios.post('http://localhost:3000/refresh/', {
-            refreshToken,    
-            }).then(res=>{
+    //         axios.post('http://localhost:3000/refresh/', {
+    //         refreshToken,    
+    //         }).then(res=>{
     
-               spotifyContext.setAccessToken(res.data.accessToken)
-                // setRefreshToken(res.data.refreshToken)
-                setExpiresIn(res.data.expiresIn)
-                // window.history.pushState({}, null, '/')
-            }).catch(()=>{
-                window.location = '/'
-            })
-        }, (expiresIn - 60) * 1000)
+    //            spotifyContext.setAccessToken(res.data.accessToken)
+    //             // setRefreshToken(res.data.refreshToken)
+    //             setExpiresIn(res.data.expiresIn)
+    //             // window.history.pushState({}, null, '/')
+    //         }).catch(()=>{
+    //             window.location = '/'
+    //         })
+    //     }, (expiresIn - 60) * 1000)
 
-        return ()=> clearInterval(interval)
-    }, [refreshToken, expiresIn])
+    //     return ()=> clearInterval(interval)
+    // }, [refreshToken, expiresIn])
 
 
     return accessToken
