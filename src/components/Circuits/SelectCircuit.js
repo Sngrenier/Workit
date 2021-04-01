@@ -50,6 +50,7 @@ const SelectCircuit =(props)=> {
          {/* <Link to='/spotify'> */}
 
          <a href='http://localhost:3000/spotify'>
+             {/* <a href='http://localhost:3000/dashboard'> */}
              <ButtonContainer className='spotify-btn'>Spotify</ButtonContainer>
              
         </a>   

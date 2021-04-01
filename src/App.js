@@ -21,11 +21,15 @@ import Membership from '././components/Authentication/Membership'
 import SpotifyWidget from './components/Spotify/SpotifyWidget'
 import SpotifyLogin from './components/Spotify/SpotifyLogin'
 import MeetTrainers from './components/MeetInstructors/MeetInstructors'
+import SpotifyFooter from './components/Spotify/SpotifyFooter'
+import {SpotifyContext} from './context/SpotifyContext'
+import {useContext} from 'react'
 
+function App() {
 
-class App extends Component {
+  const {accessToken} = useContext(SpotifyContext)
 
-  render() {
+ 
     return (
       <React.Fragment>
 
@@ -45,13 +49,17 @@ class App extends Component {
           <Route path="/trainers" component={Trainers} />
           <Route path="/profile" component={Profile} />
           <Route path="/circuithistory" component={CircuitHistory} />
-          <Route path="/ProfilePic" component={ProfilePic} />
+          <Route path="/ProfilePic" component={ProfilePic} /> 
         </Switch>
+             {accessToken && <SpotifyFooter />}
+       
       </React.Fragment>
+
+ 
     );
-  }
+  
 }
 
 export default App;
-
+// {accessToken &&   <SpotifyFooter/> }
 

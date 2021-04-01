@@ -4,6 +4,7 @@ const express = require('express')
 authCtrl = require('./controllers/authController')
 circuitCtrl= require(`./controllers/circuitController`)
 profileCtrl = require(`./controllers/profileController`)
+quitCtrl = require('./controllers/quitController')
 
 const massive = require('massive')
 const session = require('express-session')
@@ -115,3 +116,7 @@ app.post(`/updateprofile`, profileCtrl.update_profile)
 app.get(`/instructors`, profileCtrl.instructors)
 app.get(`/getpicture`, profileCtrl.getPicture)
 // app.post(`/submitpicture`, profileCtrl.submitPicture)
+
+//Feedback endpoints
+
+app.post(`/quitreasons`, quitCtrl.quit_reasons)

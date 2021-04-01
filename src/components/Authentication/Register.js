@@ -54,7 +54,7 @@ const onSignUp = (formSubmit) => {
         axios.post(`/auth/register`, {email, password, first_name, last_name, birthday, profile_pic, membership_type, membership_price})
         .then((res)=> {
             console.log(res.data, 'this is the response back from register')
-            push('/landing')
+            push('/spotify')
         }).catch(error=> setErrorMsg(error.response.data))
     } 
     console.log(membership_type, membership_price, 'state after onClick')
