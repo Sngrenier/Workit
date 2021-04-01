@@ -9,7 +9,13 @@
 	align-items: center;
 	align-content: flex-start;
 }
-
+.trainer-title{
+    font-family: roboto;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--mainDark);
+    padding-top: 8%;
+}
 /* .instructorsContainer {
  
     height: 30%;
