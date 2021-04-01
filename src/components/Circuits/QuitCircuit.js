@@ -4,12 +4,27 @@ import './QuitCircuit.css'
 import Alert from 'react-bootstrap/Alert'
 import { ButtonContainer } from '../NavButton'
 import {useContext, useState} from 'react'
+import axios from 'axios'
+// import {SpotifyContext} from '../../context/SpotifyContext'
 
 const QuitCircuit = () => {
     const [show, setShow] = useState(false);
+    const [quit_reason, setquit_reason] = useState('')
+
     // const feedbackClick = () => {
     //    let confirm = window.confirm("Thank you for your feedback!")
     //     } 
+
+    // setShow(true)  
+
+const quitReason = (quit_reason) =>{
+ setShow(true)  
+axios.post(`/quitreasons`, quit_reason)
+.then(res=>{
+    console.log(res.data)
+}).catch(err=> console.log(err))
+
+}    
 
         return (
             <>
@@ -36,10 +51,24 @@ const QuitCircuit = () => {
                      </div>
                     
                     <div className="reason-btns">
-                    <ButtonContainer className="why-btn">Too hard</ButtonContainer>
-                    <ButtonContainer className="why-btn">Too easy</ButtonContainer>
-                    <ButtonContainer className="why-btn">Didn't like it</ButtonContainer>
-                    <ButtonContainer className="why-btn">Ran out of time</ButtonContainer>
+                    <ButtonContainer className="why-btn"
+                                     onClick={()=>setquit_reason('Too hard')}   
+                    >Too hard</ButtonContainer>
+
+                    <ButtonContainer className="why-btn"
+                                     onClick={()=>setquit_reason('Too easy')}  
+                    >Too easy</ButtonContainer>
+
+
+                    <ButtonContainer className="why-btn"
+                                     onClick={()=>setquit_reason('Didn\'t like it')}  
+                    
+                    >Didn't like it</ButtonContainer>
+
+
+                    <ButtonContainer className="why-btn"
+                                     onClick={()=>setquit_reason('Ran out of time')}  
+                    >Ran out of time</ButtonContainer>
                     </div>
 
                     
@@ -58,7 +87,7 @@ const QuitCircuit = () => {
                             </Link>
                         </div>
                     </Alert>  
-                    {!show && <ButtonContainer onClick={() => setShow(true)}>PROVIDE US FEEDBACK</ButtonContainer>}
+                    {!show && <ButtonContainer onClick={quitReason}>PROVIDE US FEEDBACK</ButtonContainer>}
 
                         {/* <Link to="/landing">
                     <ButtonContainer 

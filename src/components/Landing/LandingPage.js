@@ -53,7 +53,7 @@ console.log(user, 'this is user array on the landing page')
                 </div>
             <div className="nav-btns">
             <Link to='/profile'><ButtonContainer className="nav-btn">Profile</ButtonContainer></Link> 
-            <Link to='/meetTheTrainers'><ButtonContainer className="nav-btn">Meet The Trainers</ButtonContainer></Link>
+            <Link to='/instructors'><ButtonContainer className="nav-btn">Meet The Trainers</ButtonContainer></Link>
             <Link to='/'><ButtonContainer className="nav-btn" onClick={logout}>Logout</ButtonContainer></Link> 
             </div>
             <div className='circuit-list'>
