@@ -11,6 +11,11 @@
     align-content: flex-start;
     margin: auto;
 }
+
+.membership-btns{
+    font-family: 'Roboto', sans-serif !important;
+}
+
 .register-btns {
     height: 50vh;
     width: 80vw;
@@ -72,6 +77,7 @@
         align-items: center !important;
         align-content: flex-start !important;
         background-color: transparent;
+        font-family: 'Roboto', sans-serif !important;
     }
     .inputs {
         width: 80vw;
