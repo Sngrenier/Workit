@@ -79,6 +79,7 @@
     height: 3vh !important;
     padding: 0 !important;
     font-size: .7rem !important;
+    /* margin-left:-10% !important; */
 }
 .nav-btn:hover{
     background-color: var(--lightBlue);

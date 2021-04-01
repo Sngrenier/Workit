@@ -94,10 +94,10 @@ const onSignUp = (formSubmit) => {
             type='checkbox'
             /> 
             <h4 className="info-msg">by continuing you accept our Privacy Policy and Terms of Use</h4>
-            {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}></span></h3>}
                 </div>    
             </div>
             </div>
+            {errorMsg && <h3 className='auth-error-msg'>{errorMsg} <span onClick={closeErrorMessage}>X</span></h3>}
 
             <form
                     className='reg-form'
