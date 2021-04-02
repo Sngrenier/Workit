@@ -94,7 +94,8 @@
 	justify-content: space-around;
 	align-items: center;
 	align-content: center;
-    margin-bottom: 15vh;
+    /* margin-bottom: 15vh; */
+    margin-left: -4%;
 }
 .cir-tab{
     font-family: roboto;

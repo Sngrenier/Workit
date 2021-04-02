@@ -1,3 +1,24 @@
+/* .dashboard-container{
+    width: 100vw;
+    height: 40vh;
+    background-image: url("https://static.onecms.io/wp-content/uploads/sites/35/2020/07/13/best-workout-headphones-tout.jpg");
+    background-size: cover;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    z-index: 1;
+} */
+.spot-content-container{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+}
+
 .spotify-nav-btns{
     display: flex;
     flex-direction: row;
@@ -6,11 +27,39 @@
     align-items: flex-start;
     align-content: center;
     background-color: transparent;
+    width: 100vw;
 }
 .spotify-nav-btn{
     font-family: roboto !important;
-    width: 25vw !important;
+    width: 30vw !important;
     height: 3vh !important;
     padding: 0 !important;
     font-size: .7rem !important;
+    margin:1% !important;
+}
+.spot-info-box{
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: space-around;
+    margin: auto;
+}
+.spotify-subtitle-text{
+    font-family: roboto !important;
+    font-weight: 700 !important;
+    font-size: 1.7rem !important;
+    color: var(--mainDark)!important;
+    margin:.35%;
+    padding-right:5%;
+    padding-left: 5%;
+}
+.spotify-title-text{
+    font-family: roboto !important;
+    font-weight: 400 !important;
+    font-size: 1rem !important;
+    color: var(--mainDark)!important;
+    padding: 5%;
+    text-align: center;
 }

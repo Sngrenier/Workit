@@ -4,6 +4,7 @@ import { ButtonContainer } from '../NavButton'
 import {Link, useHistory} from 'react-router-dom'
 // import {useState, useEffect} from 'react'
 // import axios from 'axios'
+import './SpotifyLogin.css'
 
 
 const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=fcbfe81201584b93ad98a0ddd2c421db&response_type=code&redirect_uri=http://localhost:3000/spotify&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state"
@@ -17,18 +18,22 @@ export default function SpotifyLogin(){
 
       return (
 
-        <div>
+        <div className="spot-login-container">
+          <div className="spot-login">
         <Container
-          className="d-flex justify-content-center align-items-center"
-          style={{ minHeight: "40vh" }}
+          className="spotify-login"
+          // style={{ minHeight: "20vh" }}
         >
-          <a className="btn btn-success btn-lg" href={AUTH_URL}>
+          <ButtonContainer className="btn-success"><a className="btn success" href={AUTH_URL}>
             Login With Spotify
           </a>
+          </ButtonContainer>
         </Container>
-          <Link to='/landing'><ButtonContainer className="no-Spotify-btn">I don't want to login to Spotify</ButtonContainer></Link> 
+          <Link to='/landing'>
+            <ButtonContainer className="no-Spotify-btn">No need - Pumping my own beats!</ButtonContainer>
+            </Link> 
 
-
+          </div>
         </div>
       )
     }

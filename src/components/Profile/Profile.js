@@ -105,12 +105,13 @@ const Profile =()=>{
                                         // value={height}
                                         onChange={(e)=>setHeight(e.target.value)}
                                         />
-                                    
+                                            <Link to ="/landing">
                                             <ButtonContainer 
                                             className="editBtn">
                                             
                                             Save
                                             </ButtonContainer>
+                                            </Link>
                                     
                                         </form>    
                                 </div>
