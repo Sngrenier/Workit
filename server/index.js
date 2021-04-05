@@ -4,7 +4,7 @@ authCtrl = require('./controllers/authController')
 circuitCtrl= require(`./controllers/circuitController`)
 profileCtrl = require(`./controllers/profileController`)
 quitCtrl = require('./controllers/quitController')
-// const path = require('path')
+const path = require('path')
 
 const massive = require('massive')
 const session = require('express-session')
@@ -124,8 +124,8 @@ app.get(`/getpicture`, profileCtrl.getPicture)
 
 
 
-// app.use( express.static( `${__dirname}/../build`));
+app.use( express.static( `${__dirname}/../build`));
 
-// app.get('*', (req,res)=> {
-// res.sendFile(path.join(__dirname, '../build/index.html'))
-// })
+app.get('*', (req,res)=> {
+res.sendFile(path.join(__dirname, '../build/index.html'))
+})
