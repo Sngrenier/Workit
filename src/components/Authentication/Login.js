@@ -26,7 +26,7 @@ const handleLogin =()=>{
     .then((res)=>{
         console.log(res.data)
         push('/spotify')
-    })
+    }).catch(error=> setErrorMsg(error.response.data))
 }
 
     return (

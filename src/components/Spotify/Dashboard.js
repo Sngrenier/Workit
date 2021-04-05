@@ -7,7 +7,7 @@ import Player from './Player'
 import useSpotifyAuth from './UseSpotifyAuth'
 import {SpotifyContext} from '../../context/SpotifyContext'
 import {useHistory, Link} from 'react-router-dom'
-import { ButtonContainer } from '../NavButton'
+import NavButton, { ButtonContainer } from '../NavButton'
 import styled from 'styled-components'
 import './Dashboard.css'
 
@@ -75,15 +75,17 @@ export default function Dashboard(props){
     }, [search, accessToken])
 
 
-    return  <div>
+    return  <div classname="dashboard-container">
 
-        <DashboardWrapper className='container-fluid'>
-            <div className='card'>
-            <div><h4 className='spotify-subtitle-text'>Queue up your jam!</h4></div>
-            <div className='spotify-title-text' > Select some music and head to the Circuits to start your workout!</div>
+        <DashboardWrapper className='spotify-content'>
+            <div className='spotify-info'>
             </div>
         </DashboardWrapper>
 
+            <div className="spot-info-box">
+                <h4 className='spotify-subtitle-text'>Queue up your jam!</h4>
+                <h4 className='spotify-title-text'>Select some music and head to the Circuits to start your workout!</h4>
+            </div>
 
             <Link to='/landing'><ButtonContainer className="spotify-nav-btn">Circuits</ButtonContainer></Link> 
             <Link to='/profile'><ButtonContainer className="spotify-nav-btn">Profile</ButtonContainer></Link> 
@@ -115,29 +117,33 @@ export default function Dashboard(props){
 
 
 const DashboardWrapper = styled.div`
-.card{
+.spotify-info{
     border-color: transparent;
-    border-radius: 15%;
+    border-radius-bottom: 15%;
     transition: all 0.5s linear;
-    width: 80vw;
-    height: auto;
+    height:25vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
-    align-content: flex-start;
+    align-content: center;
     margin: auto;
-    background-color: transparent;  
     margin-bottom: 10%;
+    background-image: url("https://besthqwallpapers.com/Uploads/3-12-2020/147986/thumb-music-neon-icon-4k-violet-background-neon-symbols-music.jpg");
+    background-size: cover;
+}
+.spotify-subtitle-text{
+    font-family: roboto !important;
+    font-weight: 700 !important;
+    font-size: 1.7rem !important;
+    color: var(--mainwhite)!important;
+    margin:.35%;
+}
+.spotify-title-text{
 
 }
-&:hover{
-    .card{
-        border: 0.04rem solid rgba(0,0,0,0.2);
-        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
-        border-radius: 15%;
-    }
 }
 @media screen and (min-width: 520px) and (max-width: 1800px) {
     .img-container{

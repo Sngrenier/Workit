@@ -12,9 +12,9 @@
         font-weight: 400;
         font-size: 2rem;
         letter-spacing: .1rem;
-        color: var(--mainBlue);
-        background-color: var(--lightBlue);
-        opacity: 30%;
+        color: var(--mainWhite);
+        background-color: var(--mainDark);
+        opacity: 40%;
         padding: 2%;
     }
     .go{
