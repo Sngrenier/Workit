@@ -130,7 +130,6 @@ const DashboardWrapper = styled.div`
     align-items: center;
     align-content: center;
     margin: auto;
-    background-color: lightpink;  
     margin-bottom: 10%;
     background-image: url("https://besthqwallpapers.com/Uploads/3-12-2020/147986/thumb-music-neon-icon-4k-violet-background-neon-symbols-music.jpg");
     background-size: cover;
