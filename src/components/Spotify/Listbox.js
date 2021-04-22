@@ -1,26 +1,30 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 86eccacc306ba044213987e8c54c7db53165ee0a
 
 
-const ListBox = props => {
+// const ListBox = props => {
 
 
-    const clicked = e => {
-        e.preventDefault()
-        props.clicked(e.target.id)
-    }
+//     const clicked = e => {
+//         e.preventDefault()
+//         props.clicked(e.target.id)
+//     }
 
-    return (
-        <div className='listbox'>Listbox
+//     return (
+//         <div className='listbox'>Listbox
 
-            {props.items.map((item, index)=> 
-                <button key={index} 
-                        onClick={clicked}
-                        id={item.track.id}>
-                        {item.track.name}
-               </button>
-            )}
-        </div>
-    )
+//             {props.items.map((item, index)=> 
+//                 <button key={index} 
+//                         onClick={clicked}
+//                         id={item.track.id}>
+//                         {item.track.name}
+//                </button>
+//             )}
+//         </div>
+//     )
 
-}
+// }
 
-export default ListBox
+// export default ListBox
