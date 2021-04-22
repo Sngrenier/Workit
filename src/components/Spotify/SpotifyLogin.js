@@ -2,8 +2,6 @@
 import {Container } from 'react-bootstrap'
 import { ButtonContainer } from '../NavButton'
 import {Link, useHistory} from 'react-router-dom'
-// import {useState, useEffect} from 'react'
-// import axios from 'axios'
 import './SpotifyLogin.css'
 
 
