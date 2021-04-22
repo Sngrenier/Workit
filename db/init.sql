@@ -19,7 +19,6 @@ end_date date
 
 
 CREATE TABLE profile (
-
 user_id serial primary key,
 email varchar(100) NOT NULL,
 password varchar (5000) NOT NULL,

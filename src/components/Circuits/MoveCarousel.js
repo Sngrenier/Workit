@@ -17,7 +17,7 @@ const [play, setPlay] = useState(true)
 const [timer, setTimer] = useState(20) 
 const [countdown, setCountdown] = useState(5)
 const [moves, setMoves] = useState([])
-const [rounds, setRounds] = useState(props.rounds)
+const [rounds, setRounds] = useState(2)
 const [modal, setModal] = useState(true)
 
 
@@ -51,7 +51,7 @@ useEffect(()=>{
 useEffect(()=> {
     console.log(countdown)
     if(countdown === 0){
-        setTimer(props.time)
+        setTimer(20)
         clearInterval(timerRef.current)
         if(rounds !== 0){
             if(videoRef.current){
