@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react'
 // import { useParams } from 'react-router'
-import './SpotifyModal.css'
 import Dropdown from './Dropdown'
 import axios from 'axios'
 import Listbox from './Listbox'
