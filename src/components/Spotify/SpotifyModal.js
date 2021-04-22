@@ -1,11 +1,9 @@
 import {useState, useEffect} from 'react'
 // import { useParams } from 'react-router'
-// import './SpotifyModal.css'
 import Dropdown from './Dropdown'
 import axios from 'axios'
 import Listbox from './Listbox'
 import Detail from './Detail'
-// import './SpotifyModal.css'
 import { ButtonContainer } from '../NavButton'
 import Spotify from 'spotify-web-api-js' //might need to comment this out. 
 import {Container, Form} from 'react-bootstrap'
