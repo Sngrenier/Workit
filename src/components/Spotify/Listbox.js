@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 86eccacc306ba044213987e8c54c7db53165ee0a
-
 
 // const ListBox = props => {
 
