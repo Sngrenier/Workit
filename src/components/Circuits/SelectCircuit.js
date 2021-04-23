@@ -68,8 +68,8 @@ const SelectCircuit =(props)=> {
 
                 </Link> 
                 <div className="move-details">
-                <h3 className="move-deet">{elem.move_title}</h3>
-                <h3 className="move-deet">{elem.reps}</h3>
+                <h3 className="move-deet-one">{elem.move_title}</h3>
+                <h3 className="move-deet-two">{elem.reps}</h3>
                 </div>
                 </li> </>})}
                 </ul>

@@ -55,6 +55,10 @@
   .login-btn{
       text-decoration: none !important;
       color: var(--mainWhite) !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: .8rem !important;
+      letter-spacing: .02rem;
+      font-weight: 700;
   }
   .auth-subtitle{
       margin-top: 60%;
@@ -120,6 +124,10 @@
   .login-btn{
       text-decoration: none !important;
       color: var(--mainWhite) !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: .8rem !important;
+      letter-spacing: .02rem;
+      font-weight: 700;
   }
   .auth-subtitle{
       margin-top: 60%;
@@ -214,6 +222,10 @@
   .login-btn{
       text-decoration: none !important;
       color: var(--mainWhite) !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem !important;
+      letter-spacing: .02rem;
+      font-weight: 700;
   }
   .auth-subtitle{
       /* margin-top: 40%; */
@@ -308,6 +320,10 @@
   .login-btn{
       text-decoration: none !important;
       color: var(--mainWhite) !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem !important;
+      letter-spacing: .02rem;
+      font-weight: 700;
   }
   .auth-subtitle{
       /* margin-top: 40%; */
