@@ -1,5 +1,5 @@
-import React, { Component } from "react"
 import { Switch, Route } from "react-router-dom"
+import React from 'react'
 import "./reset.css"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -16,9 +16,9 @@ import MoveStepsModal from './components/MoveStepsModal/MoveStepsModal'
 import Trainers from './components/Trainers/MeetTrainers'
 import CircuitHistory from './components/Circuits/CircuitHistory'
 import ProfilePic from './components/ProfilePic/ProfilePic'
-import Dashboard from './components/Spotify/Dashboard'
+// import Dashboard from './components/Spotify/Dashboard'
 import SpotifyWidget from './components/Spotify/SpotifyWidget'
-import SpotifyLogin from './components/Spotify/SpotifyLogin'
+// import SpotifyLogin from './components/Spotify/SpotifyLogin'
 import MeetTrainers from './components/MeetInstructors/MeetInstructors'
 import SpotifyFooter from './components/Spotify/SpotifyFooter'
 import {SpotifyContext} from './context/SpotifyContext'
@@ -59,5 +59,5 @@ function App() {
 }
 
 export default App;
-// {accessToken &&   <SpotifyFooter/> }
+
 
