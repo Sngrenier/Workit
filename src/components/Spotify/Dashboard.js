@@ -1,28 +1,20 @@
 
 import {Container, Form} from 'react-bootstrap'
 import {useState, useEffect, useContext} from 'react'
-// import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
-import Player from './Player'
 import useSpotifyAuth from './UseSpotifyAuth'
 import {SpotifyContext} from '../../context/SpotifyContext'
 import {useHistory, Link} from 'react-router-dom'
-import NavButton, { ButtonContainer } from '../NavButton'
+import { ButtonContainer } from '../NavButton'
 import styled from 'styled-components'
 import './Dashboard.css'
 
-const {REACT_APP_CLIENT_ID} = process.env
-
-// const spotifyApi = new SpotifyWebApi({
-//     clientId: REACT_APP_CLIENT_ID
-// })
 
 
 
 export default function Dashboard(props){
     const history = useHistory()
     console.log(props, 'dashboardcode')
-    // const spotifyContext = useContext(SpotifyContext)
     const {setUri, spotifyApi} = useContext(SpotifyContext)
     const accessToken = useSpotifyAuth(props.code)
     const [search, setSearch] = useState('')
@@ -40,11 +32,7 @@ export default function Dashboard(props){
 
     }
 
-    // useEffect(()=>{
-    //     if(!accessToken) return
 
-    //     spotifyApi.setAccessToken(accessToken)
-    // }, [accessToken])
 
     useEffect(()=>{
 
@@ -109,7 +97,7 @@ export default function Dashboard(props){
              ))}
              
              </div>
-        {/* <div><Player accessToken={accessToken} trackUri={playingTrack?.uri}/></div> */}
+      
 
     </Container>
     </div>
@@ -144,7 +132,7 @@ const DashboardWrapper = styled.div`
 .spotify-title-text{
 
 }
-}
+
 @media screen and (min-width: 520px) and (max-width: 1800px) {
     .img-container{
         width: 30vw;

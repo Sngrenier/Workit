@@ -3,17 +3,6 @@ const nodemailer= require('nodemailer')
 const {EMAIL, PASSWORD} = process.env
  
 module.exports = {
-
-    // membership: (req, res)=> {
-    //     const {membership_type, membership_price} = req.body
-    //     console.log(req.body, 'membership controller function')
-    //     const db = req.app.get('db')
-    //     const date = new Date
-    //     const 
-
-
-    // },
-
    
 
     register: async(req, res) => {
@@ -22,7 +11,7 @@ module.exports = {
             const {email, password, first_name, last_name, birthday, profile_pic, membership_type, membership_price} = req.body
             console.log(req.body, 'register controller function data')
             const db = req.app.get('db')
-            const date = new Date
+            const date = new Date()
             const alreadyExist = await db.user.find_user_by_email([email])
             const foundUser = alreadyExist[0]
 
@@ -40,7 +29,7 @@ module.exports = {
             const user = registeredUser[0]
             delete user.password
             req.session.user = user
-            // return res.status(201).send(req.session.user)
+   
       
             let transporter = nodemailer.createTransport({
                 service: "gmail",
@@ -87,7 +76,7 @@ module.exports = {
          delete user.password
          req.session.user = user
          return res.status(200).send(req.session.user)
-         console.log(user, 'login controller function user data')
+       
         }
         catch(err){
             console.log(err, 'this is a login controller function error')

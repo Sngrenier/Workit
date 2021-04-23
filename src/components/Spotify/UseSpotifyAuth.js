@@ -15,11 +15,7 @@ console.log(code)
         axios.post('http://localhost:3333/spotifylogin/', {
         code,    
         }).then(res=>{
-<<<<<<< HEAD
-            console.log(res.data, 'res.data access token')
-=======
             console.log(res.data, 'res.data from access token.')
->>>>>>> 86eccacc306ba044213987e8c54c7db53165ee0a
             spotifyContext.setAccessToken(res.data.accessToken)
             setAccessToken(res.data.accessToken)
             setRefreshToken(res.data.refreshToken)
