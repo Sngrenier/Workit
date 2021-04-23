@@ -1,9 +1,8 @@
 import { useEffect, useState, useContext} from 'react'
 import CircuitList from './CircuitList'
 import Circuit from './Circuit'
-import NavButton, { ButtonContainer } from '../NavButton'
+import { ButtonContainer } from '../NavButton'
 import axios from 'axios'
-import {useHistory} from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './landingpage.css'
 import ProfilePic from '../ProfilePic/ProfilePic'
@@ -12,28 +11,26 @@ import {SpotifyContext} from '../../context/SpotifyContext'
 
 const LandingPage=()=>{
     const [user, setUser] = useState([])
-    const {push} = useHistory()
-    
-    const spotifyContext = useContext(SpotifyContext)
+    useContext(SpotifyContext)
 
- useEffect(()=>{
-  axios.get(`/myaccount`)  
-  .then((res)=>{
-      console.log(res.data, 'user data from req.session.user')
-      setUser(res.data)
-      
-  }) 
- },[])   
+            useEffect(()=>{
+            axios.get(`/myaccount`)  
+            .then((res)=>{
+                console.log(res.data, 'user data from req.session.user')
+                setUser(res.data)
+                
+            }) 
+            },[])   
 
-const logout=()=>{
-    axios.post(`/logout`)
-    .then((res)=> {
-        
-       
-    })
-}
+            const logout=()=>{
+                axios.post(`/logout`)
+                .then((res)=> {
+                    
+                
+                })
+            }
 
-console.log(user, 'this is user array on the landing page')
+
 
     return (
         <section>
@@ -68,19 +65,19 @@ console.log(user, 'this is user array on the landing page')
 
             <footer className="nav-info">
                 <div className="nav-cols">
-                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/weight-1.png"/>
+                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/weight-1.png" alt='cir-icon'/>
                     <h4 className="cir-tab">Workouts</h4>
                 </div>
                 <div className="nav-cols">
-                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/calendar.png"/>
+                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/calendar.png" alt='cir-icon'/>
                     <h4 className="cir-tab">Planner</h4>
                 </div>
                 <div className="nav-cols">
-                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/trophy.png"/>
+                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/trophy.png" alt='cir-icon'/>
                     <h4 className="cir-tab">progress</h4>
                 </div>
                 <div className="nav-cols">
-                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/restaurant.png"/>
+                    <img className="cir-icon" src="https://img.icons8.com/ios-glyphs/30/ffffff/restaurant.png" alt='cir-icon'/>
                     <h4 className="cir-tab">food</h4>
                 </div>
             </footer>

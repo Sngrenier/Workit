@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React, { Component, useState, useContext} from 'react'
+import React, {useContext} from 'react'
 import {CircuitContext} from '../../context/circuitContext'
 import Circuit from './Circuit'
 import {useHistory} from 'react-router-dom'
@@ -26,7 +25,6 @@ export default CircuitList;
 
 
 
-//setMoves={circuitContext.setMoves}
 
 
 

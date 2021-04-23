@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import './QuitCircuit.css'
 import Alert from 'react-bootstrap/Alert'
 import { ButtonContainer } from '../NavButton'
-import {useContext, useState} from 'react'
+import {useState} from 'react'
 import axios from 'axios'
 // import {SpotifyContext} from '../../context/SpotifyContext'
 
@@ -39,7 +39,7 @@ axios.post(`/quitreasons`, quit_reason)
                     <Link to={`/movecarousel`}>
                         <ButtonContainer className="resume">
                             Resume workout
-                            <img className="closing-btn" src="https://img.icons8.com/plumpy/30/4a90e2/resume-button.png"/>
+                            <img className="closing-btn" src="https://img.icons8.com/plumpy/30/4a90e2/resume-button.png" alt='closing btn'/>
                         </ButtonContainer>
                     </Link>
                         </div>

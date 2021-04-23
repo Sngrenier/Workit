@@ -1,14 +1,10 @@
 import {useState, useEffect, useContext} from 'react'
 import { ButtonContainer } from '../NavButton'
-import MoveCarousel from './MoveCarousel'
 import {CircuitContext} from '../../context/circuitContext'
-import CompletedCircuit from './CompletedCircuit'
 import {Link} from 'react-router-dom'
 import './SelectCircuit.css'
-import {useHistory, useParams} from 'react-router-dom'
-import MoveSteps from '../MoveStepsModal/MoveStepsModal'
-import Circuit from '../Landing/Circuit'
-import Spotify from '../Spotify/SpotifyModal'
+import {useHistory} from 'react-router-dom'
+
 
 
 //this selects the circuit for the user to start the workout
@@ -39,10 +35,10 @@ const SelectCircuit =(props)=> {
         <div className="container-fluid">
             <div className="select-circuit">
             <div className="image-container">
-                <img className="image" src={circuitContext.individualCircuit.mainimg}></img>
+                <img className="image" src={circuitContext.individualCircuit.mainimg} alt='mainImage'/>
             </div>
             <Link to="/landing">
-                <img className="close-icon" src="https://img.icons8.com/ios-glyphs/24/ffffff/cancel.png"/>
+                <img className="close-icon" src="https://img.icons8.com/ios-glyphs/24/ffffff/cancel.png" alt='close icon'/>
                 </Link>
                 
             <div className="cir-landing">
@@ -58,17 +54,17 @@ const SelectCircuit =(props)=> {
         </a>   
         {/* </Link> */}
            <h3 className="staging">what you'll need</h3>
-                <img className="equip-icon" src={circuitContext.individualCircuit.equipment} height='100px' width='100px'/>
+                <img className="equip-icon" src={circuitContext.individualCircuit.equipment} height='100px' width='100px' alt='equpment icon'/>
             <h3 className="staging">what you'll do</h3>
 
             <ul className="move-item">
                 {moves.map((elem, index)=> {
                     return <>
                         {index === 0 ? <h4 className="circuit-title">Circuit 1</h4> : index === 4 ? <h4 className="circuit-title">Circuit 2</h4> : null} 
-            <li className="move-info" key={index} onClick={()=>readMoveDetails(elem.move_id)}> 
+            <li className="move-info" key={moves.move_id} onClick={()=>readMoveDetails(elem.move_id)}> 
             
                 <Link to={`/${elem.move_id}`}>
-                <img className="move-img" src={elem.image} height='auto' width='200px'/>
+                <img className="move-img" src={elem.image} height='auto' width='200px' alt='move'/>
 
                 </Link> 
                 <div className="move-details">

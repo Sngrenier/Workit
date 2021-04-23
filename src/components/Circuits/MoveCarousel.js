@@ -123,7 +123,7 @@ const closeModal = () => {
         setModal(false)
     }
 
-    console.log(spotifyContext, 'spotifycontext')
+   
 
 return (
     <>
@@ -164,6 +164,7 @@ return (
             
             <div className="move-nav-btns">
                 <img className="back-btn" src="https://img.icons8.com/ios-glyphs/40/000000/double-left.png"
+                        alt='back-btn'
                     onClick = { () => {
                     if(index <= moves.length - (rounds * 4)) {
                         setIndex(moves.length - (rounds * 4) + 3)
@@ -174,6 +175,7 @@ return (
                 <ButtonContainer className="play-btn" onClick = {() => {playTimer()}}> {play ? 'pause' : 'play'} </ButtonContainer>  
                                 
                 <img className="forward-btn" src="https://img.icons8.com/ios-glyphs/40/000000/double-right.png" 
+                        alt='forward-btn'
                     onClick = { () => {
                     if(index >= moves.length - (rounds * 4) + 3) {
                         setIndex(moves.length - (rounds * 4))

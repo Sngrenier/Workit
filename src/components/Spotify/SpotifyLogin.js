@@ -1,7 +1,7 @@
 
 import {Container } from 'react-bootstrap'
 import { ButtonContainer } from '../NavButton'
-import {Link, useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import './SpotifyLogin.css'
 
 
@@ -11,8 +11,6 @@ const AUTH_URL = "https://accounts.spotify.com/authorize?client_id=fcbfe81201584
 
 
 export default function SpotifyLogin(){
-
-  const {push} = useHistory()
 
       return (
 

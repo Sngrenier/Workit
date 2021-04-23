@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
-// import PlayWidget from 'react-spotify-widgets';
+import {useEffect, useContext } from 'react';
 import SpotifyPlayer from 'react-spotify-web-playback'
 import {SpotifyContext} from '../../context/SpotifyContext'
 import './Player.css'
@@ -8,10 +7,9 @@ import './Player.css'
  
 export default function Player(){
 
-  // const [play, setPlay] = useState(false)
-  //accessToken, trackUri inside of player parameters
 
-  const {play, setPlay, accessToken, uri, chooseTrack} = useContext(SpotifyContext)
+
+  const {play, setPlay, accessToken, uri} = useContext(SpotifyContext)
 
     useEffect(()=>{
       if(accessToken){
@@ -19,10 +17,6 @@ export default function Player(){
       }
     },[accessToken])
 
-  // useEffect(()=>{
-  //   setPlay(true)
-
-  // }, [trackUri])
 
   if(!accessToken) return null
 
