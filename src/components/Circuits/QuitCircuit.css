@@ -97,7 +97,8 @@
     letter-spacing: .05rem;
     color: var(--mainDark)!important;
     background-color: var(--lightBlue)!important;
-    height:12% !important;
+    /* height:12% !important; */
+    padding: 3% 0 3% 6% !important;
     
 }
 .why-btn:hover{

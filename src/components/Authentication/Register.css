@@ -60,6 +60,9 @@
     font-size: 1.5rem;
     width: 80%;
     padding-top: 5%;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: .02rem;
+    font-weight: 700;
 }
  .info-msg{
         color: var(--mainDark);

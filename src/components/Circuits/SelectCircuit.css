@@ -117,7 +117,10 @@
         width: 80vw !important;
         height: 5vh !important;
         line-height: .5rem;
-        background-color: #a5ecd7 !important;
+        background-color: var(--lightBlue) !important;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .03rem;
+        font-weight: 600;
     }
     .equip-icon{
         border: solid 1px var(--mainGray);
@@ -167,14 +170,31 @@
         padding-left: 5%;
         background-color:transparent;
     }
-    .move-deet{
+    .move-deet-one{
+        margin-bottom: -8%;
+        padding:5%;
+        font-size: .8rem;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .02rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+    .move-deet-two{
         margin-bottom: -8%;
         padding:5%;
         font-size: .6rem;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .02rem;
+        font-weight: 400;
+        line-height: 1.2;
     }
     .start-btn {
         width: 80vw !important;
         margin-bottom: 15vh !important;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .02rem;
+        font-weight: 600;
+        line-height: 1.2;
     }
     .close-icon{
         z-index: 2;
@@ -237,7 +257,10 @@
         width: 80vw !important;
         height: 5vh !important;
         line-height: .3rem;
-        background-color: #a5ecd7 !important;
+        background-color: var(--lightBlue) !important;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .03rem;
+        font-weight: 600;
     }
     .equip-icon{
         border: solid 1px var(--mainGray);
@@ -291,13 +314,30 @@
         padding-left: 15%;
         background-color:transparent;
     }
-    .move-deet{
+    .move-deet-one{
         margin-bottom: -8%;
         padding:5%;
         font-size: .8rem;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .02rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+    .move-deet-two{
+        margin-bottom: -8%;
+        padding:5%;
+        font-size: .6rem;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .02rem;
+        font-weight: 400;
+        line-height: 1.2;
     }
     .start-btn {
         width: 80vw !important;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: .02rem;
+        font-weight: 600;
+        line-height: 1.2;
     }
 
 }

@@ -55,6 +55,10 @@
   .login-btn{
       text-decoration: none !important;
       color: var(--mainWhite) !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: .8rem !important;
+      letter-spacing: .02rem;
+      font-weight: 700;
   }
   .auth-subtitle{
       margin-top: 60%;
@@ -77,6 +81,7 @@
     background-color: var(--darkGray) !important;
     border-color: var(--darkGray) !important;
     font-size: .8rem !important;
+    /* text-transform:uppercase!important; */
     }
   .fb-btn{
     background-color: #4267B2 !important;
@@ -120,6 +125,10 @@
   .login-btn{
       text-decoration: none !important;
       color: var(--mainWhite) !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: .8rem !important;
+      letter-spacing: .02rem;
+      font-weight: 700;
   }
   .auth-subtitle{
       margin-top: 60%;
@@ -214,6 +223,10 @@
   .login-btn{
       text-decoration: none !important;
       color: var(--mainWhite) !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem !important;
+      letter-spacing: .02rem;
+      font-weight: 700;
   }
   .auth-subtitle{
       /* margin-top: 40%; */
@@ -308,6 +321,10 @@
   .login-btn{
       text-decoration: none !important;
       color: var(--mainWhite) !important;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem !important;
+      letter-spacing: .02rem;
+      font-weight: 700;
   }
   .auth-subtitle{
       /* margin-top: 40%; */
