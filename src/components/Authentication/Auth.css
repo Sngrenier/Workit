@@ -81,6 +81,7 @@
     background-color: var(--darkGray) !important;
     border-color: var(--darkGray) !important;
     font-size: .8rem !important;
+    /* text-transform:uppercase!important; */
     }
   .fb-btn{
     background-color: #4267B2 !important;
